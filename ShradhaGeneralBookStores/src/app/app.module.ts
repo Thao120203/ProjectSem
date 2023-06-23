@@ -14,6 +14,7 @@ import { AddCategoryComponent } from './components/category/addCategory.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryService } from './Service/category.service';
 import { BaseURLService } from './Service/BaseURL.service';
+import { HttpClientModule } from '@angular/common/http';
 // import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
 
 
@@ -33,8 +34,8 @@ import { BaseURLService } from './Service/BaseURL.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     CategoryService,
