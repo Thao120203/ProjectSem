@@ -18,6 +18,7 @@ import { RoleService } from './Service/role.service';
 import { PublisherService } from './Service/publisher.service';
 import { EventService } from './Service/event.service';
 import { AuthorService } from './Service/author.service';
+import { HttpClientModule } from '@angular/common/http';
 // import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
 
 
