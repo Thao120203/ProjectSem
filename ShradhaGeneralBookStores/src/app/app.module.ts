@@ -34,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     SendEmailComponent,
     AddCategoryComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
