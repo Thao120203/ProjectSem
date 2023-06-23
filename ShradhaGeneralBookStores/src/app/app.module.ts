@@ -10,11 +10,12 @@ import { LoginAdminComponent } from './components/account/loginAdmin.component';
 import { RegisterAdminComponent } from './components/account/registerAdmin.component';
 import { AdminComponent } from './admin.component';
 import { SendEmailComponent } from './components/account/sendEmail.component';
-import { Router } from '@angular/router';
 import { AddCategoryComponent } from './components/category/addCategory.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategoryService } from './Service/category.service';
+import { BaseURLService } from './Service/BaseURL.service';
 // import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
 
-import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -31,9 +32,14 @@ import { DropdownModule } from 'primeng/dropdown';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DropdownModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
-  providers: [],
+  providers: [
+    CategoryService,
+    BaseURLService
+  ],
   bootstrap: [AdminComponent]
 })
 export class AppModule { }
