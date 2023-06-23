@@ -1,4 +1,4 @@
-import { Category } from './../Model/category.model';
+import { Category } from '../models/category.model';
 import { BaseURLService } from './BaseURL.service';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";

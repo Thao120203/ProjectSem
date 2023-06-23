@@ -12,9 +12,12 @@ import { AdminComponent } from './admin.component';
 import { SendEmailComponent } from './components/account/sendEmail.component';
 import { AddCategoryComponent } from './components/category/addCategory.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CategoryService } from './Service/category.service';
 import { BaseURLService } from './Service/BaseURL.service';
-import { HttpClientModule } from '@angular/common/http';
+import { CategoryService } from './Service/category.service';
+import { RoleService } from './Service/role.service';
+import { PublisherService } from './Service/publisher.service';
+import { EventService } from './Service/event.service';
+import { AuthorService } from './Service/author.service';
 // import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
 
 
@@ -39,7 +42,11 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     CategoryService,
-    BaseURLService
+    BaseURLService,
+    RoleService,
+    PublisherService,
+    EventService,
+    AuthorService
   ],
   bootstrap: [AdminComponent]
 })
