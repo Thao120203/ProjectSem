@@ -11,7 +11,10 @@ import { RegisterAdminComponent } from './components/account/registerAdmin.compo
 import { AdminComponent } from './admin.component';
 import { SendEmailComponent } from './components/account/sendEmail.component';
 import { Router } from '@angular/router';
+import { AddCategoryComponent } from './components/category/addCategory.component';
 // import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
+
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -23,10 +26,12 @@ import { Router } from '@angular/router';
     RegisterAdminComponent,
     AdminComponent,
     SendEmailComponent,
+    AddCategoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AdminComponent]

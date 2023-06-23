@@ -6,13 +6,15 @@ import { AddProductAdminComponent } from './components/product/addproductAdmin.c
 import { LoginAdminComponent } from './components/account/loginAdmin.component';
 import { RegisterAdminComponent } from './components/account/registerAdmin.component';
 import { SendEmailComponent } from './components/account/sendEmail.component';
+import { AddCategoryComponent } from './components/category/addCategory.component';
 
 
 const routes: Routes = 
 [
   {path: '',component:HomeAdminComponent , children:[
     {path: 'productAdmin',component: ProductAdminComponent },
-    {path: 'addproduct',component: AddProductAdminComponent}
+    {path: 'addproduct',component: AddProductAdminComponent},
+    {path: 'addcategory',component: AddCategoryComponent}
   ]},
   {path: 'login',component: LoginAdminComponent},
   {path: 'register',component: RegisterAdminComponent},
