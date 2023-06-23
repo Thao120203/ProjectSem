@@ -9,4 +9,7 @@ export class AddProductAdminComponent implements OnInit{
     ngOnInit(): void {
       
     }
+
+   
+
 }
