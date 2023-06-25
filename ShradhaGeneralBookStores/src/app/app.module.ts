@@ -19,6 +19,7 @@ import { PublisherService } from './Service/publisher.service';
 import { EventService } from './Service/event.service';
 import { AuthorService } from './Service/author.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AccountService } from './Service/account.service';
 // import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
 
 
@@ -34,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     SendEmailComponent,
     AddCategoryComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -48,7 +49,8 @@ import { HttpClientModule } from '@angular/common/http';
     RoleService,
     PublisherService,
     EventService,
-    AuthorService
+    AuthorService,
+    AccountService
   ],
   bootstrap: [AdminComponent]
 })

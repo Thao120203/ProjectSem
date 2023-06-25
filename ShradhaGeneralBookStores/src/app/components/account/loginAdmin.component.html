@@ -27,7 +27,7 @@
                             <div>
                                 <a href="" class="d-inline-block auth-logo">
                                     <img src="../assets/images/logo-light.png" alt="" height="20">
-                                </a>    
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -37,26 +37,26 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card mt-4">
+                          <div class="card-body p-4">
+                            <div class="text-center mt-2">
 
-                            <div class="card-body p-4">
-                                <div class="text-center mt-2">
                                     <h5 class="text-primary">Welcome Come</h5>
                                     <p class="text-muted">Sign in to continue to Shradha General Book Stores.</p>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form action="https://themesbrand.com/velzon/html/corporate/index.html">
+                                    <form [formGroup]="loginFormGroup">
 
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">email</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" placeholder="Enter email"  formControlName="email">
                                         </div>
 
                                         <div class="mb-3">
-                                           
+
                                             <label class="form-label" for="password-input">Password</label>
                                             <div class="position-relative auth-pass-inputgroup mb-3">
-                                                <input type="password" class="form-control pe-5 password-input" placeholder="Enter password" id="password-input">
-                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"></button>
+                                                <input type="password"  class="form-control pe-5  password-input"  placeholder="Enter password"  id="password-input"  formControlName="password">
+                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon" ></button>
                                             </div>
 
                                             <div class="float-end">
@@ -65,7 +65,7 @@
                                         </div>
 
                                         <div class="mt-4">
-                                            <button class="btn btn-secondary w-100" type="submit">Sign In</button>
+                                            <button class="btn btn-secondary w-100"  (click)="login()">Sign In</button>
                                         </div>
 
                                     </form>
@@ -87,7 +87,7 @@
         </div>
         <!-- end auth page content -->
 
-        
+
     </div>
     <!-- end auth-page-wrapper -->
 
