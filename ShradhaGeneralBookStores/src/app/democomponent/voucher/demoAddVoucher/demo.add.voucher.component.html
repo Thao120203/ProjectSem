@@ -1,0 +1,28 @@
+<h3>Add Voucher</h3>
+<form [formGroup]="voucherFormGroup">
+  Name: &nbsp;<input type="text" pInputText formControlName="name"/>
+  <br>
+  <br>
+  Varitycode: &nbsp;<input type="text" pInputText formControlName="varitycode"/>
+  <br>
+  <br>
+  Discount: &nbsp;<p-inputNumber   formControlName="discount"></p-inputNumber>
+  <br>
+  <br>
+  Condition: &nbsp;<p-inputNumber   formControlName="condition"></p-inputNumber>
+  <br>
+  <br>
+  Quantity: &nbsp;<p-inputNumber   formControlName="quantity"></p-inputNumber>
+  <br>
+  <br>
+  Time Start: &nbsp;<p-calendar   formControlName="timestart"></p-calendar>
+  <br>
+  <br>
+  Time End: &nbsp;<p-calendar  formControlName="timeend"></p-calendar>
+  <br>
+  <br>
+  Status: &nbsp;<input type="checkbox"  formControlName="status">
+  <br>
+  <br>
+  <button type="submit" (click)="save()">Save</button>
+</form>

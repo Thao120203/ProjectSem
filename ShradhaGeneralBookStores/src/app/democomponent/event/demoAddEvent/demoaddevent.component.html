@@ -1,0 +1,10 @@
+<h3>Add Order Status</h3>
+<form [formGroup]="eventFormGroup">
+  Name: &nbsp;<input type="text" pInputText formControlName="name"/>
+  <br>
+  <br>
+  Photo: &nbsp;<p-fileUpload mode="basic" chooseLabel="Choose" formControlName="photo"  accept="image/*" (onUpload)="onUpload($event)"></p-fileUpload>
+  <br>
+  <br>
+  <button type="submit" (click)="save()">Save</button>
+</form>

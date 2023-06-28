@@ -12,7 +12,15 @@ import { AdminComponent } from './admin.component';
 import { SendEmailComponent } from './components/account/sendEmail.component';
 import { AddCategoryComponent } from './components/category/addCategory.component';
 import { BaseURLService } from './Service/BaseURL.service';
-// import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
+import { CategoryService } from './Service/category.service';
+import { RoleService } from './Service/role.service';
+import { PublisherService } from './Service/publisher.service';
+import { EventService } from './Service/event.service';
+import { AuthorService } from './Service/author.service';
+import { HttpClientModule } from '@angular/common/http';
+import { AccountService } from './Service/account.service';
+import { InputTextModule } from 'primeng/inputtext';
+import { CalendarModule } from 'primeng/calendar';
 
 // import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
 import { EditorModule } from 'primeng/editor';
@@ -38,14 +46,29 @@ import { OrderStatusService } from './Service/orderstatus.service';
     AdminComponent,
     SendEmailComponent,
     AddCategoryComponent,
+    DemoAddAuthorAdminComponent,
+    DemoAddEventAdminComponent,
+    DemoAddOrderstatusAdminComponent,
+    DemoAddPublisherAdminComponent,
+    DemoAddPaymentmethodAdminComponent,
+    DemoAddRoleAdminComponent,
+    DemoAddVoucherAdminComponent
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
 
+
+    //input
+    InputTextModule,
+    EditorModule,
+    InputNumberModule,
+    FileUploadModule,
+    CalendarModule
   ],
   providers: [
     CategoryService,
