@@ -4,6 +4,8 @@ import { Router } from "@angular/router";
 import * as moment from "moment";
 import { MessageService } from 'primeng/api';
 import { EventService } from "src/app/Service/event.service";
+import { OrderStatusService } from "src/app/Service/orderstatus.service";
+import { OrderStatus } from "src/app/models/orderstatus.model";
 
 
 @Component({
@@ -14,7 +16,7 @@ import { EventService } from "src/app/Service/event.service";
 export class DemoAddOrderstatusAdminComponent implements OnInit{
   orderstatusFormGroup: FormGroup
   constructor(
-
+    private _orderStatus: OrderStatusService,
     private _route: Router,
     private formBuilder: FormBuilder,
     private messageService: MessageService
@@ -28,8 +30,13 @@ export class DemoAddOrderstatusAdminComponent implements OnInit{
     });
   }
   save(){
-    let event: Event = this.orderstatusFormGroup.value;
-    console.dir(event);
+    let oderstatus: OrderStatus = this.orderstatusFormGroup.value as OrderStatus;
+    console.dir(oderstatus);
+    this._orderStatus.create(oderstatus).then(result=>{
+      if(result as true){
+        alert("THanhf cong");
+      }
+    })
   }
- 
+
 }

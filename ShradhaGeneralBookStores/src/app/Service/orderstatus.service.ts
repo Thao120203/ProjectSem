@@ -16,7 +16,7 @@ export class OrderStatusService {
     }
 
     async read(){
-        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'OrderStatus/GetListParent'));
+        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'OrderStatus/Read'));
     }
 
     async delete(id: number){
