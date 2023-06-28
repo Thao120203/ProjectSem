@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
 
 @Injectable()
-export class AuthorService {
+export class ProductImageService {
     constructor(
         private baseUrlservice: BaseURLService,
         private httpclient: HttpClient
