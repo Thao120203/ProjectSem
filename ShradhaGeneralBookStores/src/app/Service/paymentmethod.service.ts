@@ -16,7 +16,7 @@ export class PaymentService {
     }
 
     async read(){
-        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'PaymentMethod/GetListParent'));
+        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'PaymentMethod/Read'));
     }
 
     async delete(id: number){
