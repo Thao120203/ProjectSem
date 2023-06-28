@@ -1,3 +1,4 @@
+import { DemoAddAuthorAdminComponent } from './democomponent/author/demoaddauthor/demoaddauthor.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -20,9 +21,10 @@ import { EventService } from './Service/event.service';
 import { AuthorService } from './Service/author.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AccountService } from './Service/account.service';
+import { InputTextModule } from 'primeng/inputtext';
 // import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
-
-
+import { EditorModule } from 'primeng/editor';
+import { InputNumberModule } from 'primeng/inputnumber';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,7 @@ import { AccountService } from './Service/account.service';
     AdminComponent,
     SendEmailComponent,
     AddCategoryComponent,
+    DemoAddAuthorAdminComponent,
   ],
 
   imports: [
@@ -41,7 +44,13 @@ import { AccountService } from './Service/account.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
+
+    //input
+    InputTextModule,
+    EditorModule,
+    InputNumberModule
   ],
   providers: [
     CategoryService,
@@ -52,6 +61,6 @@ import { AccountService } from './Service/account.service';
     AuthorService,
     AccountService
   ],
-  bootstrap: [AdminComponent]
+  bootstrap: [DemoAddAuthorAdminComponent]
 })
 export class AppModule { }

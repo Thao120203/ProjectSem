@@ -1,0 +1,13 @@
+<h3>Add Author</h3>
+<form [formGroup]="authorFormGroup">
+  Name: &nbsp;<input type="text" pInputText formControlName="name"/>
+  <br>
+  <br>
+  Biography: &nbsp;<p-editor formControlName="biography" [style]="{ height: '200px', width: '200px' }"></p-editor>
+  <br>
+  <br>
+  YearOfBirth: &nbsp;  <p-inputNumber inputId="integeronly" formControlName="yearOfBirth"></p-inputNumber>
+  <br>
+  <button type="submit" (click)="save()">Save</button>
+</form>
+
