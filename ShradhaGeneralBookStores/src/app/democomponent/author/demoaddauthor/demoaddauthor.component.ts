@@ -26,8 +26,16 @@ export class DemoAddAuthorAdminComponent implements OnInit{
       updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
     });
   }
+
   save(){
-    let author: Author = this.authorFormGroup.value;
+    let author: Author = this.authorFormGroup.value as Author;
+    author.yearOfBirth = author.yearOfBirth.toString();
     console.dir(author);
+    this._authorService.create(author).then(result=>{
+      if(result as true){
+        alert("THanhf cong");
+      }
+    })
+
   }
 }

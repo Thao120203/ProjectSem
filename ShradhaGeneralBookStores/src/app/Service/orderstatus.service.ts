@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
 
 @Injectable()
-export class RoleService {
+export class OrderStatusService {
     constructor(
         private baseUrlservice: BaseURLService,
         private httpclient: HttpClient
@@ -16,7 +16,7 @@ export class RoleService {
     }
 
     async read(){
-        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'OrderStatus/GetListParent'));
+        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'OrderStatus/Read'));
     }
 
     async delete(id: number){

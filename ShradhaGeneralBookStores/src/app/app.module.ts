@@ -34,6 +34,7 @@ import { DemoAddPublisherAdminComponent } from './democomponent/publisher/demoAd
 import { DemoAddPaymentmethodAdminComponent } from './democomponent/paymentmethod/demoAddPaymentMethod/demo.add.paymentmethod.component';
 import { DemoAddRoleAdminComponent } from './democomponent/role/demoAddRole/demo.add.role.component';
 import { DemoAddVoucherAdminComponent } from './democomponent/voucher/demoAddVoucher/demo.add.voucher.component';
+import { OrderStatusService } from './Service/orderstatus.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,7 @@ import { DemoAddVoucherAdminComponent } from './democomponent/voucher/demoAddVou
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+
 
     //input
     InputTextModule,
@@ -76,8 +77,9 @@ import { DemoAddVoucherAdminComponent } from './democomponent/voucher/demoAddVou
     PublisherService,
     EventService,
     AuthorService,
-    AccountService
+    AccountService,
+    OrderStatusService
   ],
-  bootstrap: [DemoAddVoucherAdminComponent]
+  bootstrap: [DemoAddOrderstatusAdminComponent]
 })
 export class AppModule { }
