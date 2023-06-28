@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import * as moment from "moment";
 import { MessageService } from 'primeng/api';
 import { EventService } from "src/app/Service/event.service";
-import { PaymentService } from "src/app/Service/paymentmethod.service";
+import { PaymentMethodService } from "src/app/Service/paymentmethod.service";
 import { PaymentMethod } from "src/app/models/paymentmethod.model";
 
 
@@ -16,7 +16,7 @@ import { PaymentMethod } from "src/app/models/paymentmethod.model";
 export class DemoAddPaymentmethodAdminComponent implements OnInit{
   paymentmethodFormGroup: FormGroup
   constructor(
-    private _paymentService:PaymentService,
+    private _paymentService:PaymentMethodService,
     private _route: Router,
     private formBuilder: FormBuilder,
     private messageService: MessageService
@@ -38,5 +38,5 @@ export class DemoAddPaymentmethodAdminComponent implements OnInit{
       }
     })
   }
- 
+
 }

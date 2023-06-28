@@ -1,39 +1,45 @@
+<div class="pagetitle">
+  <h1>Admin</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/']">Admin</a></li>
+      <li class="breadcrumb-item ">List Catrgories</li>
+      <li class="breadcrumb-item active">Add Category</li>
 
-
-<!-- Container-fluid starts-->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-header">
-                    <h5>Add Category</h5>
-                </div>
-                <div class="card-body">
-                    <div class="row product-adding">
-                        <div class="form-group">
-                            <label for="validationCustom01" class="col-form-label pt-0">Name</label>
-                            <input class="form-control" id="validationCustom01" type="text" [(ngModel)]="name" required="">
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label">Categories</label>
-                            <select class="custom-select form-control" [(ngModel)]="parentid" required="">
-                                <option value="0">------</option>
-                                <option *ngFor="let category of categories"  value="{{category.id}}">{{category.name}}</option>
-                            </select>
-                        </div>
-                        <br>
-                        <br>
-                        <div class="col-lg-12">
-                            <div class="text-end">
-                                <button type="submit" class="btn btn-primary" (click)="save()">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </ol>
+  </nav>
 </div>
-<!-- Container-fluid Ends-->
 
 
+<section class="section">
+  <div class="row">
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Add Category</h5>
+
+        <!-- Multi Columns Form -->
+        <form class="row g-3" [formGroup]="addCategoryForm">
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">Your Name</label>
+            <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
+          </div>
+
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">Your Name</label>
+            <p-dropdown [filter]="true"  [options]="categories" formControlName="parentId" optionLabel="name" optionValue="id" [style]="{'width':'100%'}"></p-dropdown>
+          </div>
+
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" (click)="save()">Submit</button> &nbsp;
+            <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
+          </div>
+        </form><!-- End Multi Columns Form -->
+
+      </div>
+    </div>
+
+
+  </div>
+</section>

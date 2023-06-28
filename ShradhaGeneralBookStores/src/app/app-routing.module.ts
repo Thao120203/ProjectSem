@@ -8,9 +8,10 @@ import { RegisterAdminComponent } from './components/account/registerAdmin.compo
 import { SendEmailComponent } from './components/account/sendEmail.component';
 import { AddCategoryComponent } from './components/category/addCategory.component';
 import { AddAuthorComponent } from './components/author/addAuthor.component';
+import { ListCategoryComponent } from './components/category/listCategory.component';
 
 
-const routes: Routes = 
+const routes: Routes =
 [
   {path: '',component:HomeAdminComponent , children:[
     {path: 'productAdmin',component: ProductAdminComponent },

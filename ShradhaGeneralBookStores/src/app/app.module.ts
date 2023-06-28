@@ -1,3 +1,4 @@
+import { PaymentMethodService } from './Service/paymentmethod.service';
 import { DemoAddAuthorAdminComponent } from './democomponent/author/demoaddauthor/demoaddauthor.component';
 import { NgModule } from '@angular/core';
 
@@ -35,6 +36,14 @@ import { DemoAddPaymentmethodAdminComponent } from './democomponent/paymentmetho
 import { DemoAddRoleAdminComponent } from './democomponent/role/demoAddRole/demo.add.role.component';
 import { DemoAddVoucherAdminComponent } from './democomponent/voucher/demoAddVoucher/demo.add.voucher.component';
 import { OrderStatusService } from './Service/orderstatus.service';
+import { HeaderComponent } from './supportcomponents/header/header.component';
+import { AsideComponent } from './supportcomponents/aside/aside.component';
+import { DropdownModule } from 'primeng/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ListCategoryComponent } from './components/category/listCategory.component';
+import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
+import { FooterComponent } from './supportcomponents/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +61,11 @@ import { OrderStatusService } from './Service/orderstatus.service';
     DemoAddPublisherAdminComponent,
     DemoAddPaymentmethodAdminComponent,
     DemoAddRoleAdminComponent,
-    DemoAddVoucherAdminComponent
+    DemoAddVoucherAdminComponent,
+    HeaderComponent,
+    AsideComponent,
+    ListCategoryComponent,
+    FooterComponent
   ],
 
   imports: [
@@ -68,7 +81,11 @@ import { OrderStatusService } from './Service/orderstatus.service';
     EditorModule,
     InputNumberModule,
     FileUploadModule,
-    CalendarModule
+    CalendarModule,
+    DropdownModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    DataViewModule
   ],
   providers: [
     CategoryService,
@@ -78,8 +95,9 @@ import { OrderStatusService } from './Service/orderstatus.service';
     EventService,
     AuthorService,
     AccountService,
-    OrderStatusService
+    OrderStatusService,
+    PaymentMethodService
   ],
-  bootstrap: [DemoAddOrderstatusAdminComponent]
+  bootstrap: [AdminComponent]
 })
 export class AppModule { }
