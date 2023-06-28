@@ -1,0 +1,16 @@
+<h3>Add Publisher</h3>
+<form [formGroup]="publisherFormGroup">
+  Name: &nbsp;<input type="text" pInputText formControlName="name"/>
+  <br>
+  <br>
+  Name short: &nbsp;<input type="text" pInputText formControlName="nameshort"/>
+  <br>
+  <br>
+  Location: &nbsp;<input type="text" pInputText formControlName="location"/>
+  <br>
+  <br>
+  Contact Number: &nbsp;<p-inputNumber formControlName="contactnumber"></p-inputNumber>
+  <br>
+  <br>
+  <button type="submit" (click)="save()">Save</button>
+</form>
