@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import * as moment from "moment";
 import { MessageService } from 'primeng/api';
 import { EventService } from "src/app/Service/event.service";
+import { PublisherService } from "src/app/Service/publisher.service";
 import { Publisher } from "src/app/models/publisher.model";
 
 
@@ -18,7 +19,8 @@ export class DemoAddPublisherAdminComponent implements OnInit{
 
     private _route: Router,
     private formBuilder: FormBuilder,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private _publisherService: PublisherService
   ){}
 
   ngOnInit(): void {
@@ -32,8 +34,13 @@ export class DemoAddPublisherAdminComponent implements OnInit{
     });
   }
   save(){
-    let publisher: Publisher = this.publisherFormGroup.value;
+    let publisher: Publisher = this.publisherFormGroup.value as Publisher;
     console.dir(publisher);
+    this._publisherService.create(publisher).then(result=>{
+      if(result as true){
+        alert("THanhf cong");
+      }
+    })
   }
  
 }

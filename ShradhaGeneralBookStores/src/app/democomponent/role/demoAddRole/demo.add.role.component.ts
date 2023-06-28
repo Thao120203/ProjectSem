@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import * as moment from "moment";
 import { MessageService } from 'primeng/api';
 import { EventService } from "src/app/Service/event.service";
+import { RoleService } from "src/app/Service/role.service";
 import { Role } from "src/app/models/role.model";
 
 
@@ -18,7 +19,8 @@ export class DemoAddRoleAdminComponent implements OnInit{
 
     private _route: Router,
     private formBuilder: FormBuilder,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private _roleService: RoleService
   ){}
 
   ngOnInit(): void {
@@ -29,8 +31,13 @@ export class DemoAddRoleAdminComponent implements OnInit{
     });
   }
   save(){
-    let role: Role = this.roleFormGroup.value;
+    let role: Role = this.roleFormGroup.value as Role;
     console.dir(role);
+    this._roleService.create(role).then(result=>{
+      if(result as true){
+        alert("THanhf cong");
+      }
+    })
   }
  
 }
