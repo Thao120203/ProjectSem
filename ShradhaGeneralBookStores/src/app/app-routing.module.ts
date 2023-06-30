@@ -17,6 +17,7 @@ const routes: Routes =
     {path: 'productAdmin',component: ProductAdminComponent },
     {path: 'addproduct',component: AddProductAdminComponent},
     {path: 'addcategory',component: AddCategoryComponent},
+    {path: 'listcategory',component: ListCategoryComponent},
     {path: 'addauthor',component: AddAuthorComponent},
   ]},
   {path: 'login',component: LoginAdminComponent},

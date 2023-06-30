@@ -44,6 +44,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ListCategoryComponent } from './components/category/listCategory.component';
 import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 import { FooterComponent } from './supportcomponents/footer/footer.component';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +87,8 @@ import { FooterComponent } from './supportcomponents/footer/footer.component';
     DropdownModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    DataViewModule
+    DataViewModule,
+    ProgressSpinnerModule
   ],
   providers: [
     CategoryService,
