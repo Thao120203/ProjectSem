@@ -9,6 +9,11 @@ import { SendEmailComponent } from './components/account/sendEmail.component';
 import { AddCategoryComponent } from './components/category/addCategory.component';
 import { AddAuthorComponent } from './components/author/addAuthor.component';
 import { ListCategoryComponent } from './components/category/listCategory.component';
+import { AddOrderStatusComponent } from './components/orderstatus/addOrderStatus.component';
+import { AddPaymentMethodComponent } from './components/paymentmethod/addPaymentMethod.component';
+import { AddPublisherComponent } from './components/publisher/addPublisher.component';
+import { AddRoleComponent } from './components/role/addrole.component';
+import { AddVoucherComponent } from './components/voucher/addVoucher.component';
 
 
 const routes: Routes =
@@ -20,6 +25,16 @@ const routes: Routes =
     {path: 'listcategory',component: ListCategoryComponent},
     {path: 'addauthor',component: AddAuthorComponent},
     {path: 'listauthor',component: ListCategoryComponent},
+    {path: 'addorderstatus',component: AddOrderStatusComponent},
+    {path: 'listorderstatus',component: ListCategoryComponent},
+    {path: 'addpaymentmethod',component: AddPaymentMethodComponent},
+    {path: 'listpaymentmethod',component: ListCategoryComponent},
+    {path: 'addpublisher',component: AddPublisherComponent},
+    {path: 'listpublisher',component: ListCategoryComponent},
+    {path: 'addrole',component: AddRoleComponent},
+    {path: 'listrole',component: ListCategoryComponent},
+    {path: 'addvoucher',component: AddVoucherComponent},
+    {path: 'listvoucher',component: ListCategoryComponent},
 
   ]},
   {path: 'login',component: LoginAdminComponent},

@@ -46,6 +46,12 @@ import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 import { FooterComponent } from './supportcomponents/footer/footer.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { AddAuthorComponent } from './components/author/addAuthor.component';
+import { AddOrderStatusComponent } from './components/orderstatus/addOrderStatus.component';
+import { AddPaymentMethodComponent } from './components/paymentmethod/addPaymentMethod.component';
+import { AddPublisherComponent } from './components/publisher/addPublisher.component';
+import { AddRoleComponent } from './components/role/addrole.component';
+import { AddVoucherComponent } from './components/voucher/addVoucher.component';
+import { VoucherService } from './Service/voucher.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +75,12 @@ import { AddAuthorComponent } from './components/author/addAuthor.component';
     AsideComponent,
     ListCategoryComponent,
     FooterComponent,
-    AddAuthorComponent
+    AddAuthorComponent,
+    AddOrderStatusComponent,
+    AddPaymentMethodComponent,
+    AddPublisherComponent,
+    AddRoleComponent,
+    AddVoucherComponent
   ],
 
   imports: [
@@ -101,7 +112,8 @@ import { AddAuthorComponent } from './components/author/addAuthor.component';
     AuthorService,
     AccountService,
     OrderStatusService,
-    PaymentMethodService
+    PaymentMethodService,
+    VoucherService
   ],
   bootstrap: [AdminComponent]
 })

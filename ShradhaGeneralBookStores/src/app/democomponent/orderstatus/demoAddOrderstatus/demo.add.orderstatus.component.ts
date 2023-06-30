@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
 import * as moment from "moment";
 import { MessageService } from 'primeng/api';
-import { EventService } from "src/app/Service/event.service";
 import { OrderStatusService } from "src/app/Service/orderstatus.service";
 import { OrderStatus } from "src/app/models/orderstatus.model";
 
