@@ -19,6 +19,8 @@ const routes: Routes =
     {path: 'addcategory',component: AddCategoryComponent},
     {path: 'listcategory',component: ListCategoryComponent},
     {path: 'addauthor',component: AddAuthorComponent},
+    {path: 'listauthor',component: ListCategoryComponent},
+
   ]},
   {path: 'login',component: LoginAdminComponent},
   {path: 'register',component: RegisterAdminComponent},

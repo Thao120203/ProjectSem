@@ -45,6 +45,7 @@ import { ListCategoryComponent } from './components/category/listCategory.compon
 import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 import { FooterComponent } from './supportcomponents/footer/footer.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { AddAuthorComponent } from './components/author/addAuthor.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     HeaderComponent,
     AsideComponent,
     ListCategoryComponent,
-    FooterComponent
+    FooterComponent,
+    AddAuthorComponent
   ],
 
   imports: [
