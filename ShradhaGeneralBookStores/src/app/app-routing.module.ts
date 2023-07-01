@@ -25,6 +25,8 @@ import { EditAuthorComponent } from './components/author/editAuthor/editAuthor.c
 import { EditPublisherComponent } from './components/publisher/editPublisher/editPublisher.component';
 import { EditRoleComponent } from './components/role/editRole/editRole.component';
 import { EditVoucherComponent } from './components/voucher/editVoucher/editVoucher.component';
+import { EditOrderStatusComponent } from './components/orderstatus/editOrderStatus/editOrderStatus.component';
+import { EditPaymentMethodComponent } from './components/paymentmethod/editPaymentMethod/editPaymentMethod.component';
 
 
 const routes: Routes =
@@ -45,9 +47,11 @@ const routes: Routes =
 
     {path: 'addorderstatus',component: AddOrderStatusComponent},
     {path: 'listorderstatus',component: ListOrderStatusComponent},
+    {path: 'editorderstatus',component: EditOrderStatusComponent},
 
     {path: 'addpaymentmethod',component: AddPaymentMethodComponent},
     {path: 'listpaymentmethod',component: ListPaymentMethodComponent},
+    {path: 'editpaymentmethod',component: EditPaymentMethodComponent},
 
     {path: 'addpublisher',component: AddPublisherComponent},
     {path: 'listpublisher',component: ListPublisherComponent},

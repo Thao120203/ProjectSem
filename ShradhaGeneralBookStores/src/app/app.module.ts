@@ -63,6 +63,8 @@ import { EditAuthorComponent } from './components/author/editAuthor/editAuthor.c
 import { EditPublisherComponent } from './components/publisher/editPublisher/editPublisher.component';
 import { EditRoleComponent } from './components/role/editRole/editRole.component';
 import { EditVoucherComponent } from './components/voucher/editVoucher/editVoucher.component';
+import { EditOrderStatusComponent } from './components/orderstatus/editOrderStatus/editOrderStatus.component';
+import { EditPaymentMethodComponent } from './components/paymentmethod/editPaymentMethod/editPaymentMethod.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +105,9 @@ import { EditVoucherComponent } from './components/voucher/editVoucher/editVouch
     EditPublisherComponent,
     EditRoleComponent,
     EditVoucherComponent
+    EditAuthorComponent,
+    EditOrderStatusComponent,
+    EditPaymentMethodComponent
   ],
 
   imports: [
