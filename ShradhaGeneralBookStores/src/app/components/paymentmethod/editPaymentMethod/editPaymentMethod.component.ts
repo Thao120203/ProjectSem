@@ -12,11 +12,11 @@ import { PaymentMethod } from 'src/app/models/paymentmethod.model';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './addPaymentMethod.component.html',
+    templateUrl: './editPaymentMethod.component.html',
 
 })
 
-export class AddPaymentMethodComponent implements OnInit{
+export class EditPaymentMethodComponent implements OnInit{
   payment:PaymentMethod = new PaymentMethod();
   paymentMethodFormGroup: FormGroup;
   constructor(
