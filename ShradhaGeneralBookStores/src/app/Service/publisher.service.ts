@@ -12,18 +12,18 @@ export class PublisherService {
     ){}
 
     async create(publisher: Publisher){
-      return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'Author/Create',publisher));
+      return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'Publisher/Create',publisher));
     }
 
     async read(){
-        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Author/GetListParent'));
+        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Publisher/Read'));
     }
 
     async delete(id: number){
-        return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'Author/Delete?id=' + id));
+        return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'Publisher/Delete?id=' + id));
     }
 
     async update(publisher: Publisher){
-      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Author/update',publisher));
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Publisher/update',publisher));
     }
 }

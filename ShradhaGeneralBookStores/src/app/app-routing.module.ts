@@ -17,6 +17,8 @@ import { AddVoucherComponent } from './components/voucher/addVoucher.component';
 import { AddRoleComponent } from './components/role/addRole.component';
 import { EditCategoryComponent } from './components/category/edit/editCategory.component';
 import { ListOrderStatusComponent } from './components/orderstatus/listOrdersStatus/listOrderStatus.component';
+import { ListPaymentMethodComponent } from './components/paymentmethod/listPaymentMethod/listPaymentMethod.component';
+import { ListPublisherComponent } from './components/publisher/listPublisher/listPublisher.component';
 
 
 const routes: Routes =
@@ -37,10 +39,10 @@ const routes: Routes =
     {path: 'listorderstatus',component: ListOrderStatusComponent},
 
     {path: 'addpaymentmethod',component: AddPaymentMethodComponent},
-    {path: 'listpaymentmethod',component: ListCategoryComponent},
+    {path: 'listpaymentmethod',component: ListPaymentMethodComponent},
 
     {path: 'addpublisher',component: AddPublisherComponent},
-    {path: 'listpublisher',component: ListCategoryComponent},
+    {path: 'listpublisher',component: ListPublisherComponent},
 
     {path: 'addrole',component: AddRoleComponent},
     {path: 'listrole',component: ListCategoryComponent},
