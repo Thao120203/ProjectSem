@@ -1,3 +1,4 @@
+import { ListAuthorComponent } from './components/author/listAuthor/listAuthor.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeAdminComponent } from './components/home/homeAdmin.component';
@@ -12,8 +13,9 @@ import { ListCategoryComponent } from './components/category/listCategory.compon
 import { AddOrderStatusComponent } from './components/orderstatus/addOrderStatus.component';
 import { AddPaymentMethodComponent } from './components/paymentmethod/addPaymentMethod.component';
 import { AddPublisherComponent } from './components/publisher/addPublisher.component';
-import { AddRoleComponent } from './components/role/addrole.component';
 import { AddVoucherComponent } from './components/voucher/addVoucher.component';
+import { AddRoleComponent } from './components/role/addRole.component';
+import { EditCategoryComponent } from './components/category/edit/editCategory.component';
 
 
 const routes: Routes =
@@ -21,10 +23,14 @@ const routes: Routes =
   {path: '',component:HomeAdminComponent , children:[
     {path: 'productAdmin',component: ProductAdminComponent },
     {path: 'addproduct',component: AddProductAdminComponent},
+
     {path: 'addcategory',component: AddCategoryComponent},
+    {path: 'editcategory',component: EditCategoryComponent},
     {path: 'listcategory',component: ListCategoryComponent},
+
+
     {path: 'addauthor',component: AddAuthorComponent},
-    {path: 'listauthor',component: ListCategoryComponent},
+    {path: 'listauthor',component: ListAuthorComponent},
     {path: 'addorderstatus',component: AddOrderStatusComponent},
     {path: 'listorderstatus',component: ListCategoryComponent},
     {path: 'addpaymentmethod',component: AddPaymentMethodComponent},

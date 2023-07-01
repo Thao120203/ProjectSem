@@ -16,7 +16,7 @@ export class AuthorService {
     }
 
     async read(){
-        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Author/GetListParent'));
+        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Author/Read'));
     }
 
     async delete(id: number){

@@ -49,9 +49,11 @@ import { AddAuthorComponent } from './components/author/addAuthor.component';
 import { AddOrderStatusComponent } from './components/orderstatus/addOrderStatus.component';
 import { AddPaymentMethodComponent } from './components/paymentmethod/addPaymentMethod.component';
 import { AddPublisherComponent } from './components/publisher/addPublisher.component';
-import { AddRoleComponent } from './components/role/addrole.component';
 import { AddVoucherComponent } from './components/voucher/addVoucher.component';
 import { VoucherService } from './Service/voucher.service';
+import { ListAuthorComponent } from './components/author/listAuthor/listAuthor.component';
+import { AddRoleComponent } from './components/role/addRole.component';
+import { EditCategoryComponent } from './components/category/edit/editCategory.component';
 
 @NgModule({
   declarations: [
@@ -79,8 +81,10 @@ import { VoucherService } from './Service/voucher.service';
     AddOrderStatusComponent,
     AddPaymentMethodComponent,
     AddPublisherComponent,
+    AddVoucherComponent,
+    ListAuthorComponent,
     AddRoleComponent,
-    AddVoucherComponent
+    EditCategoryComponent
   ],
 
   imports: [
@@ -101,7 +105,7 @@ import { VoucherService } from './Service/voucher.service';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     DataViewModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
   ],
   providers: [
     CategoryService,

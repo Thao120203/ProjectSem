@@ -26,8 +26,19 @@ export class ListCategoryComponent implements OnInit {
     error=>{
 
     })
-
+  }
+  deleted(id: number){
+    if(confirm('Are you sure you want to delete')){
+      this._categoryService.delete(id).then(result=>{
+        if(result as boolean){
+          alert('Deleted');
+          this.ngOnInit();
+        }
+        else{
+          alert('Cannot delete');
+        }
+      });
+    }
 
   }
-  
 }

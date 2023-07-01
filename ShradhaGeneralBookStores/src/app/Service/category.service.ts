@@ -26,4 +26,12 @@ export class CategoryService {
     async update(category: Category){
       return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Category/update',category));
     }
+
+    async get(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Category/get?id=' + id));
+  }
+
+  async readnextid(id: number){
+    return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Category/GetAllCategoryByLevelOnlyId?id=' + id));
+}
 }
