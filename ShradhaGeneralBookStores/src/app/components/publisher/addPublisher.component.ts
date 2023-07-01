@@ -25,9 +25,9 @@ export class AddPublisherComponent implements OnInit{
 
       this.publisherFormGroup = this.formbuilder.group({
         name:[''],
-        nameshort:[''],
+        nameShort:[''],
         location:[''],
-        contactnumber:0,
+        contactNumber:0,
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
       });

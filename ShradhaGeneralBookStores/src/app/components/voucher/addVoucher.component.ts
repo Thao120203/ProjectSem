@@ -28,12 +28,12 @@ export class AddVoucherComponent implements OnInit{
 
       this.voucherFormGroup = this.formbuilder.group({
         name:[''],
-        varitycode:[''],
+        varityCode:[''],
         discount:0,
         condition:0,
         quantity:0,
-        timestart:[''],
-        timeend:[''],
+        timeStart:[''],
+        timeEnd:[''],
         status:false,
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]

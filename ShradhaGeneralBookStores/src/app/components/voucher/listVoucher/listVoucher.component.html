@@ -43,7 +43,7 @@
               <td>{{voucher.updatedAt}}</td>
               <td>
                 <button type="button" class="btn btn-danger" (click)="deleted(voucher.id)"><i class="bi bi-trash-fill"></i></button> |
-                <a [routerLink]="['/editcategory',{id: voucher.id}]"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
+                <a [routerLink]="['/editvoucher',{id: voucher.id}]"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
               </td>
             </tr>
           </tbody>

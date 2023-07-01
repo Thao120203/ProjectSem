@@ -22,6 +22,9 @@ import { ListPublisherComponent } from './components/publisher/listPublisher/lis
 import { ListRoleComponent } from './components/role/listRole/listRole.component';
 import { ListVoucherComponent } from './components/voucher/listVoucher/listVoucher.component';
 import { EditAuthorComponent } from './components/author/editAuthor/editAuthor.component';
+import { EditPublisherComponent } from './components/publisher/editPublisher/editPublisher.component';
+import { EditRoleComponent } from './components/role/editRole/editRole.component';
+import { EditVoucherComponent } from './components/voucher/editVoucher/editVoucher.component';
 
 
 const routes: Routes =
@@ -48,12 +51,17 @@ const routes: Routes =
 
     {path: 'addpublisher',component: AddPublisherComponent},
     {path: 'listpublisher',component: ListPublisherComponent},
+    {path: 'editpublisher',component: EditPublisherComponent},
 
     {path: 'addrole',component: AddRoleComponent},
     {path: 'listrole',component: ListRoleComponent},
+    {path: 'editrole',component: EditRoleComponent},
+
 
     {path: 'addvoucher',component: AddVoucherComponent},
     {path: 'listvoucher',component: ListVoucherComponent},
+    {path: 'editvoucher',component: EditVoucherComponent},
+
 
   ]},
   {path: 'login',component: LoginAdminComponent},
