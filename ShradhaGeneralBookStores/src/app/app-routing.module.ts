@@ -19,6 +19,9 @@ import { EditCategoryComponent } from './components/category/edit/editCategory.c
 import { ListOrderStatusComponent } from './components/orderstatus/listOrdersStatus/listOrderStatus.component';
 import { ListPaymentMethodComponent } from './components/paymentmethod/listPaymentMethod/listPaymentMethod.component';
 import { ListPublisherComponent } from './components/publisher/listPublisher/listPublisher.component';
+import { ListRoleComponent } from './components/role/listRole/listRole.component';
+import { ListVoucherComponent } from './components/voucher/listVoucher/listVoucher.component';
+import { EditAuthorComponent } from './components/author/editAuthor/editAuthor.component';
 
 
 const routes: Routes =
@@ -34,6 +37,8 @@ const routes: Routes =
 
     {path: 'addauthor',component: AddAuthorComponent},
     {path: 'listauthor',component: ListAuthorComponent},
+    {path: 'editauthor',component: EditAuthorComponent},
+
 
     {path: 'addorderstatus',component: AddOrderStatusComponent},
     {path: 'listorderstatus',component: ListOrderStatusComponent},
@@ -45,10 +50,10 @@ const routes: Routes =
     {path: 'listpublisher',component: ListPublisherComponent},
 
     {path: 'addrole',component: AddRoleComponent},
-    {path: 'listrole',component: ListCategoryComponent},
+    {path: 'listrole',component: ListRoleComponent},
 
     {path: 'addvoucher',component: AddVoucherComponent},
-    {path: 'listvoucher',component: ListCategoryComponent},
+    {path: 'listvoucher',component: ListVoucherComponent},
 
   ]},
   {path: 'login',component: LoginAdminComponent},

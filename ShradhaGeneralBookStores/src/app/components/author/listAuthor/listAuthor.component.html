@@ -35,7 +35,7 @@
               <td>{{author.updatedAt}}</td>
               <td>
                 <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button> |
-                <button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button>
+                <a [routerLink]="['/editauthor',{id: author.id}]"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
               </td>
             </tr>
           </tbody>

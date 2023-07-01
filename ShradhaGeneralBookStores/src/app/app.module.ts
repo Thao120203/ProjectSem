@@ -59,6 +59,7 @@ import { ListRoleComponent } from './components/role/listRole/listRole.component
 import { ListVoucherComponent } from './components/voucher/listVoucher/listVoucher.component';
 import { ListPaymentMethodComponent } from './components/paymentmethod/listPaymentMethod/listPaymentMethod.component';
 import { ListPublisherComponent } from './components/publisher/listPublisher/listPublisher.component';
+import { EditAuthorComponent } from './components/author/editAuthor/editAuthor.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,12 @@ import { ListPublisherComponent } from './components/publisher/listPublisher/lis
     ListAuthorComponent,
     AddRoleComponent,
     EditCategoryComponent,
-    ListOrderStatusComponent
+    ListOrderStatusComponent,
+    ListRoleComponent,
+    ListVoucherComponent,
+    ListPaymentMethodComponent,
+    ListPublisherComponent,
+    EditAuthorComponent
   ],
 
   imports: [
