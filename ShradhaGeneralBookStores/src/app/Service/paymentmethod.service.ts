@@ -19,7 +19,7 @@ export class PaymentMethodService {
         return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'PaymentMethod/Read'));
     }
     async get(id: number){
-      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'OrderStatus/get?id=' + id));
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'PaymentMethod/get?id=' + id));
     }
     async delete(id: number){
         return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'PaymentMethod/Delete?id=' + id));

@@ -12,11 +12,11 @@ import { PaymentMethod } from 'src/app/models/paymentmethod.model';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './addPaymentMethod.component.html',
+    templateUrl: './editPaymentMethod.component.html',
 
 })
 
-export class AddPaymentMethodComponent implements OnInit{
+export class EditPaymentMethodComponent implements OnInit{
   payment:PaymentMethod = new PaymentMethod();
   paymentMethodFormGroup: FormGroup;
   constructor(
@@ -30,7 +30,9 @@ export class AddPaymentMethodComponent implements OnInit{
         var id = parseInt(c.get('id'));
         this.payment.id = id;
         this._paymentMethodService.get(id).then(result=>{
-          this.payment = result[0] as Author;
+          this.payment = result[0] as PaymentMethod;
+
+          console.log(this.payment);
 
           //set value from
           this.paymentMethodFormGroup.get('id').setValue(this.payment.id);
