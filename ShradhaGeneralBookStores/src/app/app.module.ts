@@ -57,6 +57,8 @@ import { EditCategoryComponent } from './components/category/edit/editCategory.c
 import { ListOrderStatusComponent } from './components/orderstatus/listOrdersStatus/listOrderStatus.component';
 import { ListRoleComponent } from './components/role/listRole/listRole.component';
 import { ListVoucherComponent } from './components/voucher/listVoucher/listVoucher.component';
+import { ListPaymentMethodComponent } from './components/paymentmethod/listPaymentMethod/listPaymentMethod.component';
+import { ListPublisherComponent } from './components/publisher/listPublisher/listPublisher.component';
 
 @NgModule({
   declarations: [
@@ -88,9 +90,7 @@ import { ListVoucherComponent } from './components/voucher/listVoucher/listVouch
     ListAuthorComponent,
     AddRoleComponent,
     EditCategoryComponent,
-    ListOrderStatusComponent,
-    ListRoleComponent,
-    ListVoucherComponent
+    ListOrderStatusComponent
   ],
 
   imports: [
