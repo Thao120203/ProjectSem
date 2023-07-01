@@ -22,6 +22,7 @@ import { ListPublisherComponent } from './components/publisher/listPublisher/lis
 import { ListRoleComponent } from './components/role/listRole/listRole.component';
 import { ListVoucherComponent } from './components/voucher/listVoucher/listVoucher.component';
 import { EditAuthorComponent } from './components/author/editAuthor/editAuthor.component';
+import { EditOrderStatusComponent } from './components/orderstatus/editOrderStatus/editOrderStatus.component';
 
 
 const routes: Routes =
@@ -42,9 +43,11 @@ const routes: Routes =
 
     {path: 'addorderstatus',component: AddOrderStatusComponent},
     {path: 'listorderstatus',component: ListOrderStatusComponent},
+    {path: 'editorderstatus',component: EditOrderStatusComponent},
 
     {path: 'addpaymentmethod',component: AddPaymentMethodComponent},
     {path: 'listpaymentmethod',component: ListPaymentMethodComponent},
+    {path: 'editpaymentmethod',component: EditOrderStatusComponent},
 
     {path: 'addpublisher',component: AddPublisherComponent},
     {path: 'listpublisher',component: ListPublisherComponent},
