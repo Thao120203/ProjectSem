@@ -55,6 +55,8 @@ import { ListAuthorComponent } from './components/author/listAuthor/listAuthor.c
 import { AddRoleComponent } from './components/role/addRole.component';
 import { EditCategoryComponent } from './components/category/edit/editCategory.component';
 import { ListOrderStatusComponent } from './components/orderstatus/listOrdersStatus/listOrderStatus.component';
+import { ListRoleComponent } from './components/role/listRole/listRole.component';
+import { ListVoucherComponent } from './components/voucher/listVoucher/listVoucher.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +88,9 @@ import { ListOrderStatusComponent } from './components/orderstatus/listOrdersSta
     ListAuthorComponent,
     AddRoleComponent,
     EditCategoryComponent,
-    ListOrderStatusComponent
+    ListOrderStatusComponent,
+    ListRoleComponent,
+    ListVoucherComponent
   ],
 
   imports: [

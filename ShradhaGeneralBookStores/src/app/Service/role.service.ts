@@ -16,7 +16,7 @@ export class RoleService {
     }
 
     async read(){
-        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Role/GetListParent'));
+        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Role/Read'));
     }
 
     async delete(id: number){

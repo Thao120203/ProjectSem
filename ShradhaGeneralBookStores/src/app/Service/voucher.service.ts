@@ -16,7 +16,7 @@ export class VoucherService {
     }
 
     async read(){
-        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Voucher/GetListParent'));
+        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Voucher/Read'));
     }
 
     async delete(id: number){
