@@ -27,6 +27,7 @@ import { EditRoleComponent } from './components/role/editRole/editRole.component
 import { EditVoucherComponent } from './components/voucher/editVoucher/editVoucher.component';
 import { EditOrderStatusComponent } from './components/orderstatus/editOrderStatus/editOrderStatus.component';
 import { EditPaymentMethodComponent } from './components/paymentmethod/editPaymentMethod/editPaymentMethod.component';
+import { AddAccountComponent } from './components/account/addAccount/addAccount.component';
 
 
 const routes: Routes =
@@ -63,6 +64,10 @@ const routes: Routes =
 
 
     {path: 'addvoucher',component: AddVoucherComponent},
+    {path: 'listvoucher',component: ListVoucherComponent},
+    {path: 'editvoucher',component: EditVoucherComponent},
+
+    {path: 'addaccount',component: AddAccountComponent},
     {path: 'listvoucher',component: ListVoucherComponent},
     {path: 'editvoucher',component: EditVoucherComponent},
 
