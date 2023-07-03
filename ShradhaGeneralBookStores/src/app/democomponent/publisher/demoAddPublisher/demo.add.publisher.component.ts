@@ -1,5 +1,5 @@
 import { Component,OnInit } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import * as moment from "moment";
 import { MessageService } from 'primeng/api';
@@ -25,10 +25,21 @@ export class DemoAddPublisherAdminComponent implements OnInit{
 
   ngOnInit(): void {
     this.publisherFormGroup = this.formBuilder.group({
-      name:[''],
-      nameshort:[''],
-      location:[''],
-      contactnumber:0,
+      name:['',[
+        Validators.required
+      ]],
+      nameshort:['',[
+        Validators.required
+      ]],
+      location:['',[
+        Validators.required
+      ]],
+      contactnumber:[0,[
+        Validators.required,
+        // Validators.maxLength(10),
+        // Validators.minLength(8),
+        Validators.pattern(/^[0-9]{10,10}$/)
+      ]],
       createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
       updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
     });

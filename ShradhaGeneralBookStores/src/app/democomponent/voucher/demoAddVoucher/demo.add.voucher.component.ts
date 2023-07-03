@@ -1,5 +1,5 @@
 import { Component,OnInit } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import * as moment from "moment";
 import { MessageService } from 'primeng/api';
@@ -25,13 +25,27 @@ export class DemoAddVoucherAdminComponent implements OnInit{
 
   ngOnInit(): void {
     this.voucherFormGroup = this.formBuilder.group({
-      name:[''],
-      varitycode:[''],
-      discount:0,
-      condition:0,
-      quantity:0,
-      timestart:[''],
-      timeend:[''],
+      name:['',[
+        Validators.required
+      ]],
+      varitycode:['',[
+        Validators.required
+      ]],
+      discount:[0,[
+        Validators.required
+      ]],
+      condition:[0,[
+        Validators.required
+      ]],
+      quantity:[0,[
+        Validators.required
+      ]],
+      timestart:['',[
+        Validators.required
+      ]],
+      timeend:['',[
+        Validators.required
+      ]],
       status:false,
       createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
       updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
