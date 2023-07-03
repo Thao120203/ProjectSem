@@ -19,6 +19,10 @@ export class PublisherService {
         return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Publisher/Read'));
     }
 
+    async get(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Publisher/get?id=' + id));
+    }
+
     async delete(id: number){
         return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'Publisher/Delete?id=' + id));
     }

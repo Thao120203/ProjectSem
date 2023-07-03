@@ -8,41 +8,47 @@ import { OrderStatusService } from 'src/app/Service/orderstatus.service';
 import { OrderStatus } from 'src/app/models/orderstatus.model';
 import { VoucherService } from 'src/app/Service/voucher.service';
 import { Voucher } from 'src/app/models/voucher.model';
-
+import { AccountService } from 'src/app/Service/account.service';
+import { Account } from 'src/app/models/account.model';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './addVoucher.component.html',
+    templateUrl: './addAccount.component.html',
 
 })
 
-export class AddVoucherComponent implements OnInit{
-
-  voucherFormGroup: FormGroup;
+export class AddAccountComponent implements OnInit{
+  roles: string[];
+  password: string;
+  accountFormGroup: FormGroup;
   constructor(
-    private _voucherService: VoucherService,
+    private _accountService: AccountService,
     private formbuilder: FormBuilder,
     private router: Router
   ) {}
     ngOnInit() {
+      this.roles = [
+        'AAA',
+        'BBB',
+        'CCC'
+      ];
 
-      this.voucherFormGroup = this.formbuilder.group({
-        name:[''],
-        varityCode:[''],
-        discount:0,
-        condition:0,
-        quantity:0,
-        timeStart:[''],
-        timeEnd:[''],
-        status:false,
+      this.accountFormGroup = this.formbuilder.group({
+        email: [''],
+        password: [''],
+        firstName: [''],
+        lastName: [''],
+        phone: [''],
+        avatar: [''],       
+        sercurityCode: [''],
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
       });
     }
 
     save(){
-      let voucher = this.voucherFormGroup.value as Voucher;
-      this._voucherService.create(voucher).then(result=>{
+      let account = this.accountFormGroup.value as Account;
+      this._accountService.register(account).then(result=>{
         if(result as true){
           alert("THanhf cong");
         }

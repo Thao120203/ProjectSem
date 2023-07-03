@@ -22,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AccountService } from './Service/account.service';
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { PasswordModule } from 'primeng/password';
 
 // import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
 import { EditorModule } from 'primeng/editor';
@@ -60,8 +62,12 @@ import { ListVoucherComponent } from './components/voucher/listVoucher/listVouch
 import { ListPaymentMethodComponent } from './components/paymentmethod/listPaymentMethod/listPaymentMethod.component';
 import { ListPublisherComponent } from './components/publisher/listPublisher/listPublisher.component';
 import { EditAuthorComponent } from './components/author/editAuthor/editAuthor.component';
+import { EditPublisherComponent } from './components/publisher/editPublisher/editPublisher.component';
+import { EditRoleComponent } from './components/role/editRole/editRole.component';
+import { EditVoucherComponent } from './components/voucher/editVoucher/editVoucher.component';
 import { EditOrderStatusComponent } from './components/orderstatus/editOrderStatus/editOrderStatus.component';
 import { EditPaymentMethodComponent } from './components/paymentmethod/editPaymentMethod/editPaymentMethod.component';
+import { AddAccountComponent } from './components/account/addAccount/addAccount.component';
 
 @NgModule({
   declarations: [
@@ -99,8 +105,13 @@ import { EditPaymentMethodComponent } from './components/paymentmethod/editPayme
     ListPaymentMethodComponent,
     ListPublisherComponent,
     EditAuthorComponent,
+    EditPublisherComponent,
+    EditRoleComponent,
+    EditVoucherComponent,
+    EditAuthorComponent,
     EditOrderStatusComponent,
-    EditPaymentMethodComponent
+    EditPaymentMethodComponent,
+    AddAccountComponent
   ],
 
   imports: [
@@ -122,6 +133,8 @@ import { EditPaymentMethodComponent } from './components/paymentmethod/editPayme
     NoopAnimationsModule,
     DataViewModule,
     ProgressSpinnerModule,
+    MultiSelectModule,
+    PasswordModule
   ],
   providers: [
     CategoryService,
