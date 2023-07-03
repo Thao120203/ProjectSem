@@ -30,7 +30,7 @@ export class EditPaymentMethodComponent implements OnInit{
         var id = parseInt(c.get('id'));
         this.payment.id = id;
         this._paymentMethodService.get(id).then(result=>{
-          this.payment = result[0] as Author;
+          this.payment = result[0] as PaymentMethod;
 
           //set value from
           this.paymentMethodFormGroup.get('id').setValue(this.payment.id);
