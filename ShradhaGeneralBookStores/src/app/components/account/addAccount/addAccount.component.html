@@ -23,7 +23,7 @@
             <label for="inputName5" class="form-label">First Name</label>
             <input type="text" pInputText formControlName="firstName" [style]="{'width':'100%'}"/>
           </div>
-          
+
           <div class="col-md-6">
             <label for="inputName5" class="form-label">Last Name</label>
             <input type="text" pInputText formControlName="lastName" [style]="{'width':'100%'}"/>
@@ -31,18 +31,17 @@
 
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Role</label>
-            <p-multiSelect [options]="roles"></p-multiSelect>
+            <p-multiSelect [options]="roles" optionLabel="name" optionValue="id" formControlName="roleId" [styleClass]="'w-100'"></p-multiSelect>
           </div>
 
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Email</label>
-            <input type="text" pInputText formControlName="lastName" [style]="{'width':'100%'}"/>
+            <input type="text" pInputText formControlName="email" class="w-100"/>
           </div>
 
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Password</label>
-            <br/>
-            <p-password [(ngModel)]="password" [toggleMask]="true" ></p-password>
+            <p-password [(ngModel)]="password" formControlName="password" [toggleMask]="true" [styleClass]="'w-100'" [inputStyle]="{'width':'100%','display':'block'}"></p-password>
           </div>
 
           <div class="col-md-12">

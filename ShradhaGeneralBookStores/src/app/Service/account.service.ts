@@ -1,9 +1,10 @@
-import { Account } from './../modelapi/accountapi.model';
+import { AccountAPI } from './../modelapi/accountapi.model';
 import { Author } from '../models/author.model';
 import { BaseURLService } from './BaseURL.service';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
+import { Account } from '../models/account.model';
 
 @Injectable()
 export class AccountService {
@@ -24,7 +25,11 @@ export class AccountService {
         return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'Author/Delete?id=' + id));
     }
 
-    async update(author: Author){
-      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Author/update',author));
+    async update(account: Account){
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Account/update',account));
+    }
+
+    async create(account: AccountAPI){
+      return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'Account/Create',account));
     }
 }

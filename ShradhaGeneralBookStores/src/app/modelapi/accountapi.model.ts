@@ -1,4 +1,4 @@
-export class Account{
+export class AccountAPI{
     id: number;
     email: string;
     password: string;
@@ -8,4 +8,5 @@ export class Account{
     avatar: string;
     status: boolean;
     sercurityCode: string;
+    roleId: number[];
 }

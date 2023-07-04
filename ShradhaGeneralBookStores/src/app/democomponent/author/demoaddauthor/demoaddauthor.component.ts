@@ -1,5 +1,5 @@
 import { Component,OnInit } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import * as moment from "moment";
 import { AuthorService } from "src/app/Service/author.service";
@@ -19,7 +19,7 @@ export class DemoAddAuthorAdminComponent implements OnInit{
 
   ngOnInit(): void {
     this.authorFormGroup = this.formBuilder.group({
-      name:[''],
+      name:['',Validators.required],
       biography:[''],
       yearOfBirth: [''],
       createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
