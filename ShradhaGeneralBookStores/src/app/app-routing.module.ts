@@ -34,7 +34,6 @@ import { AddInvoiceComponent } from './components/invoice/addInvoice.component';
 import { ListInvoiceComponent } from './components/invoice/listInvoice/listInvoice.component';
 import { EditInvoiceComponent } from './components/invoice/editInvoice/editInvoice.component';
 import { ListCategoryComponent } from './components/category/listCategory/listCategory.component';
-import { AddAccountComponent } from './components/account/addAccount/addAccount.component';
 import { ListAccountComponent } from './components/account/listaccount/listAccount.component';
 
 
