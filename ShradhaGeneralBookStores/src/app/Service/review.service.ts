@@ -16,7 +16,11 @@ export class ReviewService {
     }
 
     async read(){
-        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Review/GetListParent'));
+        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Review/Read'));
+    }
+
+    async get(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Review/get?id=' + id));
     }
 
     async delete(id: number){

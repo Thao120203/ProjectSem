@@ -1,0 +1,54 @@
+<div class="pagetitle">
+  <h1>Admin</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/']">Admin</a></li>
+      <li class="breadcrumb-item ">List Invoices</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="section">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Invoices</h5>
+
+        <table class="table table-bordered" *ngIf="invoices != null;else elseBlock">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Invoice Number</th>
+              <th scope="col">Payment</th>
+              <th scope="col">Account ID</th>
+              <th scope="col">Status</th>
+              <th scope="col">Created At</th>
+              <th scope="col">Updated At</th>
+              <th scope="col" colspan="2">Action</th>
+            </tr>
+          </thead>
+
+          <tbody >
+            <tr *ngFor="let invoice of invoices">
+              <th scope="row">{{invoice.id}}</th>
+              <td>{{invoice.invoiceNumber}}</td>
+              <td>{{invoice.payment}}</td>
+              <td>{{invoice.accountId}}</td>
+              <td>{{invoice.status}}</td>
+              <td>{{invoice.createdAt}}</td>
+              <td>{{invoice.updatedAt}}</td>
+              <td>
+                <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button> |
+                <a [routerLink]="['/editinvoice',{id: invoice.id}]"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ng-template #elseBlock>
+            <p-progressSpinner [style]="{'display':'flex','width':'10%'}"></p-progressSpinner>
+        </ng-template>
+      </div>
+    </div>
+
+  </div>
+</section>

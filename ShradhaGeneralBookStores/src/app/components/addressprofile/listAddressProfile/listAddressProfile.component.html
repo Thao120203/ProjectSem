@@ -1,0 +1,52 @@
+<div class="pagetitle">
+  <h1>Admin</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/']">Admin</a></li>
+      <li class="breadcrumb-item ">List Address Profiles</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="section">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Address Profiles</h5>
+
+        <table class="table table-bordered" *ngIf="addressProfiles != null;else elseBlock">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Street</th>
+              <th scope="col">Distric</th>
+              <th scope="col">City</th>
+              <th scope="col">Created At</th>
+              <th scope="col">Updated At</th>
+              <th scope="col" colspan="2">Action</th>
+            </tr>
+          </thead>
+
+          <tbody >
+            <tr *ngFor="let addressProfile of addressProfiles">
+              <th scope="row">{{addressProfile.id}}</th>
+              <td>{{addressProfile.street}}</td>
+              <td>{{addressProfile.district}}</td>
+              <td>{{addressProfile.city}}</td>
+              <td>{{addressProfile.createdAt}}</td>
+              <td>{{addressProfile.updatedAt}}</td>
+              <td>
+                <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button> |
+                <a [routerLink]="['/editaddressprofile',{id: addressProfile.id}]"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ng-template #elseBlock>
+            <p-progressSpinner [style]="{'display':'flex','width':'10%'}"></p-progressSpinner>
+        </ng-template>
+      </div>
+    </div>
+
+  </div>
+</section>

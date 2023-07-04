@@ -9,13 +9,12 @@ import { RegisterAdminComponent } from './components/account/registerAdmin.compo
 import { SendEmailComponent } from './components/account/sendEmail.component';
 import { AddCategoryComponent } from './components/category/addCategory.component';
 import { AddAuthorComponent } from './components/author/addAuthor.component';
-import { ListCategoryComponent } from './components/category/listCategory.component';
 import { AddOrderStatusComponent } from './components/orderstatus/addOrderStatus.component';
 import { AddPaymentMethodComponent } from './components/paymentmethod/addPaymentMethod.component';
 import { AddPublisherComponent } from './components/publisher/addPublisher.component';
 import { AddVoucherComponent } from './components/voucher/addVoucher.component';
 import { AddRoleComponent } from './components/role/addRole.component';
-import { EditCategoryComponent } from './components/category/edit/editCategory.component';
+import { EditCategoryComponent } from './components/category/editCategory/editCategory.component';
 import { ListOrderStatusComponent } from './components/orderstatus/listOrdersStatus/listOrderStatus.component';
 import { ListPaymentMethodComponent } from './components/paymentmethod/listPaymentMethod/listPaymentMethod.component';
 import { ListPublisherComponent } from './components/publisher/listPublisher/listPublisher.component';
@@ -27,7 +26,14 @@ import { EditRoleComponent } from './components/role/editRole/editRole.component
 import { EditVoucherComponent } from './components/voucher/editVoucher/editVoucher.component';
 import { EditOrderStatusComponent } from './components/orderstatus/editOrderStatus/editOrderStatus.component';
 import { EditPaymentMethodComponent } from './components/paymentmethod/editPaymentMethod/editPaymentMethod.component';
-import { AddAccountComponent } from './components/account/addAccount/addAccount.component';
+import { AddAccountComponent } from './components/account/addAccount.component';
+import { AddAddressProfileComponent } from './components/addressprofile/addAdddressProfile/addAddressProfile.component';
+import { ListAddressProfileComponent } from './components/addressprofile/listAddressProfile/listAddressProfile.component';
+import { EditAddressProfileComponent } from './components/addressprofile/editAddressProfile/editAddressProfile.component';
+import { AddInvoiceComponent } from './components/invoice/addInvoice.component';
+import { ListInvoiceComponent } from './components/invoice/listInvoice/listInvoice.component';
+import { EditInvoiceComponent } from './components/invoice/editInvoice/editInvoice.component';
+import { ListCategoryComponent } from './components/category/listCategory/listCategory.component';
 
 
 const routes: Routes =
@@ -71,6 +77,13 @@ const routes: Routes =
     {path: 'listvoucher',component: ListVoucherComponent},
     {path: 'editvoucher',component: EditVoucherComponent},
 
+    {path: 'addaddressprofile',component: AddAddressProfileComponent},
+    {path: 'listaddressprofile',component: ListAddressProfileComponent},
+    {path: 'editaddressprofile',component: EditAddressProfileComponent},
+
+    {path: 'addinvoice',component: AddInvoiceComponent},
+    {path: 'listinvoice',component: ListInvoiceComponent},
+    {path: 'editinvoice',component: EditInvoiceComponent},
 
   ]},
   {path: 'login',component: LoginAdminComponent},

@@ -1,0 +1,53 @@
+<div class="pagetitle">
+  <h1>Admin</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/']">Admin</a></li>
+      <li class="breadcrumb-item ">List Address Profiles</li>
+      <li class="breadcrumb-item active">Add Address Profile</li>
+
+    </ol>
+  </nav>
+</div>
+
+<section class="section">
+  <div class="row">
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Add Address Profile</h5>
+
+        <!-- Multi Columns Form -->
+        <form class="row g-3" [formGroup]="addressProfileFormGroup">
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">Account ID</label>
+            <input type="text" pInputText formControlName="accountId" [style]="{'width':'100%'}"/>
+          </div>
+
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">Street</label>
+            <p-editor formControlName="biography" [style]="{ height: '100%', width: '100%' }"></p-editor>
+          </div>
+
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">District</label>
+            <input type="number" pInputText formControlName="district" [style]="{'width':'100%'}"/>
+          </div>
+
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">City</label>
+            <input type="number" pInputText formControlName="city" [style]="{'width':'100%'}"/>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" (click)="save()">Submit</button> &nbsp;
+            <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
+          </div>
+        </form><!-- End Multi Columns Form -->
+
+      </div>
+    </div>
+
+
+  </div>
+</section>
