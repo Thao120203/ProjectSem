@@ -11,6 +11,7 @@ import { Author } from "src/app/models/author.model";
 })
 export class DemoAddAuthorAdminComponent implements OnInit{
   authorFormGroup: FormGroup
+  email:string
   constructor(
     private _authorService: AuthorService,
     private _route: Router,
@@ -19,9 +20,17 @@ export class DemoAddAuthorAdminComponent implements OnInit{
 
   ngOnInit(): void {
     this.authorFormGroup = this.formBuilder.group({
-      name:['',Validators.required],
+      name:['',[
+        Validators.required,
+      ]],
       biography:[''],
-      yearOfBirth: [''],
+      yearOfBirth: ['',[
+        Validators.required,
+      ]],
+      email:['',[
+        Validators.required,
+        Validators.pattern(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/)
+      ]],
       createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
       updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
     });

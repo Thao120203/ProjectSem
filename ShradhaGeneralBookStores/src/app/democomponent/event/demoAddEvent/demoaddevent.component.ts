@@ -1,5 +1,5 @@
 import { Component,OnInit } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import * as moment from "moment";
 import { MessageService } from 'primeng/api';
@@ -22,7 +22,9 @@ export class DemoAddEventAdminComponent implements OnInit{
 
   ngOnInit(): void {
     this.eventFormGroup = this.formBuilder.group({
-      name:[''],
+      name:['',[
+        Validators.required,
+      ]],
       photo:[''],
       createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
       updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
