@@ -32,4 +32,17 @@ export class AccountService {
     async create(account: AccountAPI){
       return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'Account/Create',account));
     }
+
+    async checkexists(email: string){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'Account/CheckExist?email=' + email));
+    }
+
+    async getRoleByAccountId(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'Account/GetRoleByAccountId?id=' + id));
+    }
+
+    async read(){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'Account/Read'));
+    }
+
 }

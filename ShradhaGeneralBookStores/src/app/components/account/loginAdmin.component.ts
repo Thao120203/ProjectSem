@@ -10,7 +10,7 @@ import { Account } from "src/app/models/account.model";
     templateUrl: './loginAdmin.component.html'
 })
 export class LoginAdminComponent implements OnInit{
-  loginFormGroup: FormGroup
+  loginFormGroup: FormGroup;
   constructor(
     private _accountservice: AccountService,
     private _route: Router,
@@ -20,6 +20,7 @@ export class LoginAdminComponent implements OnInit{
     this.loginFormGroup = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
+      rememberme: [false]
     })
   }
 
@@ -28,7 +29,9 @@ export class LoginAdminComponent implements OnInit{
       this.loginFormGroup.markAllAsTouched();
       return;
     }
-    let account: Account = this.loginFormGroup.value as Account;
+    let account: Account = new Account();
+    account.email = this.loginFormGroup.controls['email'].value;
+    account.password = this.loginFormGroup.controls['password'].value;
     account.createdAt = moment().format('DD/MM/YYYY HH:mm:ss');
     account.updatedAt = moment().format('DD/MM/YYYY HH:mm:ss');
     this._accountservice.login(account).then(
@@ -36,13 +39,22 @@ export class LoginAdminComponent implements OnInit{
         if(result as boolean){
           //làm vào trong lun
           alert('đăng nhập đúng');
+          if(this.loginFormGroup.controls['rememberme'].value){
+            localStorage.setItem('email',account.email);
+          }
+          sessionStorage.setItem('email',account.email);
+          this._route.navigate(['']);
         }else (
           //làm vào trong lun
-
-          alert('đăng nhập sai đúng')
+          alert('đăng nhập sai')
         )
       }
     );
+    console.dir(this.loginFormGroup.controls['rememberme'].value);
     console.dir(account);
+  }
+
+  tichxanh(evt:any){
+
   }
 }

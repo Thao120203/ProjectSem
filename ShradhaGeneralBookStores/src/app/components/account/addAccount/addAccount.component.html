@@ -36,7 +36,7 @@
 
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Email</label>
-            <input type="text" pInputText formControlName="email" class="w-100"/>
+            <input type="text" pInputText formControlName="email" (change)="checkExist($event)" class="w-100"/>
           </div>
 
           <div class="col-md-12">

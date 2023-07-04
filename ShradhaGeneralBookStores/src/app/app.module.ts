@@ -68,6 +68,7 @@ import { EditVoucherComponent } from './components/voucher/editVoucher/editVouch
 import { EditOrderStatusComponent } from './components/orderstatus/editOrderStatus/editOrderStatus.component';
 import { EditPaymentMethodComponent } from './components/paymentmethod/editPaymentMethod/editPaymentMethod.component';
 import { AddAccountComponent } from './components/account/addAccount/addAccount.component';
+import { ListAccountComponent } from './components/account/listaccount/listAccount.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { AddAccountComponent } from './components/account/addAccount/addAccount.
     EditAuthorComponent,
     EditOrderStatusComponent,
     EditPaymentMethodComponent,
-    AddAccountComponent
+    AddAccountComponent,
+    ListAccountComponent
   ],
 
   imports: [
@@ -148,6 +150,6 @@ import { AddAccountComponent } from './components/account/addAccount/addAccount.
     PaymentMethodService,
     VoucherService
   ],
-  bootstrap: [DemoAddAuthorAdminComponent]
+  bootstrap: [AdminComponent]
 })
 export class AppModule { }
