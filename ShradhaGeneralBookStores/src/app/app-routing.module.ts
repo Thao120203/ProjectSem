@@ -34,6 +34,8 @@ import { AddInvoiceComponent } from './components/invoice/addInvoice.component';
 import { ListInvoiceComponent } from './components/invoice/listInvoice/listInvoice.component';
 import { EditInvoiceComponent } from './components/invoice/editInvoice/editInvoice.component';
 import { ListCategoryComponent } from './components/category/listCategory/listCategory.component';
+import { AddAccountComponent } from './components/account/addAccount/addAccount.component';
+import { ListAccountComponent } from './components/account/listaccount/listAccount.component';
 
 
 const routes: Routes =
@@ -74,8 +76,8 @@ const routes: Routes =
     {path: 'editvoucher',component: EditVoucherComponent},
 
     {path: 'addaccount',component: AddAccountComponent},
-    {path: 'listvoucher',component: ListVoucherComponent},
-    {path: 'editvoucher',component: EditVoucherComponent},
+    {path: 'listaccount',component: ListAccountComponent},
+    {path: 'editaccount',component: EditVoucherComponent},
 
     {path: 'addaddressprofile',component: AddAddressProfileComponent},
     {path: 'listaddressprofile',component: ListAddressProfileComponent},

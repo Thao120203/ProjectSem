@@ -66,6 +66,8 @@ import { EditRoleComponent } from './components/role/editRole/editRole.component
 import { EditVoucherComponent } from './components/voucher/editVoucher/editVoucher.component';
 import { EditOrderStatusComponent } from './components/orderstatus/editOrderStatus/editOrderStatus.component';
 import { EditPaymentMethodComponent } from './components/paymentmethod/editPaymentMethod/editPaymentMethod.component';
+import { AddAccountComponent } from './components/account/addAccount/addAccount.component';
+import { ListAccountComponent } from './components/account/listaccount/listAccount.component';
 import { AddAccountComponent } from './components/account//addAccount.component';
 import { AddAddressProfileComponent } from './components/addressprofile/addAdddressProfile/addAddressProfile.component';
 import { AddressProfileService } from './Service/addressprofile.service';
