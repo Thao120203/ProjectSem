@@ -22,6 +22,12 @@
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Your Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
+            <div *ngIf="authorFormGroup.get('name').touched">
+              <div *ngIf="authorFormGroup.hasError('required',['name'])">
+                Name is required
+              </div>
+            </div>
+
           </div>
 
           <div class="col-md-12">
@@ -32,11 +38,15 @@
           <div class="col-md-12">
             <label for="inputName5" class="form-label">YearOfBirth</label>
             <input type="number" pInputText formControlName="yearOfBirth" [style]="{'width':'100%'}"/>
-
+            <div *ngIf="authorFormGroup.get('yearOfBirth').touched">
+              <div *ngIf="authorFormGroup.hasError('required',['yearOfBirth'])">
+                Year Of Birth is required
+              </div>
+            </div>
           </div>
 
           <div class="text-center">
-            <button type="submit" class="btn btn-primary" (click)="save()">Submit</button> &nbsp;
+            <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="authorFormGroup.invalid">Submit</button> &nbsp;
             <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
           </div>
         </form><!-- End Multi Columns Form -->

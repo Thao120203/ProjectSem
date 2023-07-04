@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { CategoryService } from 'src/app/Service/category.service';
@@ -39,7 +39,9 @@ export class AddCategoryComponent implements OnInit {
     })
 
     this.addCategoryForm = this.formbuilder.group({
-      name: [''],
+      name: ['',[
+        Validators.required
+      ]],
       parentId: [''],
       createdAt: [moment().format("DD/MM/YYYY HH:mm:ss")],
       updatedAt: [moment().format("DD/MM/YYYY HH:mm:ss")]

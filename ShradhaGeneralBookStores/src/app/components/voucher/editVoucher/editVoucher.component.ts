@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component,OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthorService } from 'src/app/Service/author.service';
 import * as moment from 'moment';
 import { Author } from 'src/app/models/author.model';
@@ -50,13 +50,27 @@ export class EditVoucherComponent implements OnInit{
       //create form group add Id
       this.voucherFormGroup = this.formbuilder.group({
         id:[''],
-        name:[''],
-        varityCode:[''],
-        discount:0,
-        condition:0,
-        quantity:0,
-        timeStart:[''],
-        timeEnd:[''],
+        name:['',[
+          Validators.required
+        ]],
+        varityCode:['',[
+          Validators.required
+        ]],
+        discount:[0,[
+          Validators.required
+        ]],
+        condition:[0,[
+          Validators.required
+        ]],
+        quantity:[0,[
+          Validators.required
+        ]],
+        timeStart:['',[
+          Validators.required
+        ]],
+        timeEnd:['',[
+          Validators.required
+        ]],
         status:false,
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
@@ -65,6 +79,8 @@ export class EditVoucherComponent implements OnInit{
 
     save(){
       let voucher = this.voucherFormGroup.value as Voucher;
+      voucher.timeStart = moment(voucher.timeStart).format('DD/MM/YYYY HH:mm:ss');
+      voucher.timeEnd = moment(voucher.timeEnd).format('DD/MM/YYYY HH:mm:ss');
       this._voucherService.update(voucher).then(result=>{
         if(result as true){
           alert("THanhf cong");

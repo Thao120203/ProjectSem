@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Component,OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import * as moment from 'moment';
 
 import { PublisherService } from 'src/app/Service/publisher.service';
@@ -24,10 +24,19 @@ export class AddPublisherComponent implements OnInit{
     ngOnInit() {
 
       this.publisherFormGroup = this.formbuilder.group({
-        name:[''],
-        nameShort:[''],
-        location:[''],
-        contactNumber:0,
+        name:['',[
+          Validators.required
+        ]],
+        nameShort:['',[
+          Validators.required
+        ]],
+        location:['',[
+          Validators.required
+        ]],
+        contactNumber:['',[
+          Validators.required,
+          Validators.pattern(/^[0-9]{10,10}$/)
+        ]],
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
       });

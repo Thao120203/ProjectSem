@@ -63,7 +63,7 @@
   </div>
   <br>
   <br>
-  Status: &nbsp;<input type="checkbox"  formControlName="status">
+  Status: &nbsp;<input type="checkbox"  formControlName="status" [disabled]="voucherFormGroup.invalid">
   <br>
   <br>
   <button type="submit" (click)="save()">Save</button>

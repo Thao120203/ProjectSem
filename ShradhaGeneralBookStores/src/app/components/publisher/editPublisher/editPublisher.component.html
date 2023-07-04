@@ -22,25 +22,48 @@
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Publisher Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
+            <div *ngIf="publisherFormGroup.get('name').touched">
+              <div *ngIf="publisherFormGroup.hasError('required',['name'])">
+                Name is required
+              </div>
+            </div>
           </div>
           
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Publisher Short Name</label>
             <input type="text" pInputText formControlName="nameShort" [style]="{'width':'100%'}"/>
+            <div *ngIf="publisherFormGroup.get('nameShort').touched">
+              <div *ngIf="publisherFormGroup.hasError('required',['nameShort'])">
+                Name short is required
+              </div>
+            </div>
           </div>
 
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Location</label>
             <input type="text" pInputText formControlName="location" [style]="{'width':'100%'}"/>
+            <div *ngIf="publisherFormGroup.get('location').touched">
+              <div *ngIf="publisherFormGroup.hasError('required',['location'])">
+                Location is required
+              </div>
+            </div>
           </div>
 
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Contact Number</label>
             <input type="text" pInputText formControlName="contactNumber" [style]="{'width':'100%'}"/>
+            <div *ngIf="publisherFormGroup.get('contactNumber').touched">
+              <div *ngIf="publisherFormGroup.hasError('required',['contactNumber'])">
+                Contact Number is required
+              </div>
+              <div *ngIf="publisherFormGroup.hasError('pattern',['contactNumber'])">
+                Contact Number is invalid
+              </div>
+            </div>
           </div>
 
           <div class="text-center">
-            <button type="submit" class="btn btn-primary" (click)="save()">Submit</button> &nbsp;
+            <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="publisherFormGroup.invalid">Submit</button> &nbsp;
             <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
           </div>
         </form><!-- End Multi Columns Form -->

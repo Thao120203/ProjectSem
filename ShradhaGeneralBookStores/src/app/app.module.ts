@@ -148,6 +148,6 @@ import { AddAccountComponent } from './components/account/addAccount/addAccount.
     PaymentMethodService,
     VoucherService
   ],
-  bootstrap: [DemoAddAuthorAdminComponent]
+  bootstrap: [AdminComponent]
 })
 export class AppModule { }

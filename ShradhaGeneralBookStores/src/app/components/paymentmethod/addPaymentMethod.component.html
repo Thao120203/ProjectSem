@@ -22,10 +22,15 @@
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Payment Method Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
+            <div *ngIf="paymentMethodFormGroup.get('name').touched">
+              <div *ngIf="paymentMethodFormGroup.hasError('required',['name'])">
+                Name is required
+              </div>
+            </div>
           </div>
 
           <div class="text-center">
-            <button type="submit" class="btn btn-primary" (click)="save()">Submit</button> &nbsp;
+            <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="paymentMethodFormGroup.invalid">Submit</button> &nbsp;
             <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
           </div>
         </form><!-- End Multi Columns Form -->

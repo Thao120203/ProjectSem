@@ -55,7 +55,9 @@ export class EditCategoryComponent implements OnInit {
     })
     this.editCategoryForm = this.formbuilder.group({
       id:[''],
-      name: [''],
+      name: ['',[
+        Validators.required
+      ]],
       parentId: [''],
       createdAt: [moment().format("DD/MM/YYYY HH:mm:ss")],
       updatedAt: [moment().format("DD/MM/YYYY HH:mm:ss")]

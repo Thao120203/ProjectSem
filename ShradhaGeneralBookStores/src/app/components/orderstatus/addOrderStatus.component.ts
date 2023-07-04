@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Component,OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthorService } from 'src/app/Service/author.service';
 import * as moment from 'moment';
 import { Author } from 'src/app/models/author.model';
@@ -25,7 +25,9 @@ export class AddOrderStatusComponent implements OnInit{
     ngOnInit() {
 
       this.orderStatusFormGroup = this.formbuilder.group({
-        name:[''],
+        name:['',[
+          Validators.required,
+        ]],
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
       });

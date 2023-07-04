@@ -22,6 +22,11 @@
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Payment Method Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
+            <div *ngIf="paymentMethodFormGroup.get('name').touched">
+              <div *ngIf="paymentMethodFormGroup.hasError('required',['name'])">
+                Name is required
+              </div>
+            </div>
           </div>
 
           <div class="text-center">

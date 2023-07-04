@@ -22,10 +22,15 @@
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Role Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
+            <div *ngIf="roleFormGroup.get('name').touched">
+              <div *ngIf="roleFormGroup.hasError('required',['name'])">
+                Name is required
+              </div>
+            </div>
           </div>
 
           <div class="text-center">
-            <button type="submit" class="btn btn-primary" (click)="save()">Submit</button> &nbsp;
+            <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="roleFormGroup.invalid">Submit</button> &nbsp;
             <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
           </div>
         </form><!-- End Multi Columns Form -->

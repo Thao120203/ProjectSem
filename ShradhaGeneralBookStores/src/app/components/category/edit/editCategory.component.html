@@ -23,10 +23,15 @@
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Your Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
+            <div *ngIf="editCategoryForm.get('name').touched">
+              <div *ngIf="editCategoryForm.hasError('required',['name'])">
+                Name is required
+              </div>
+            </div>
           </div>
 
           <div class="col-md-12">
-            <label for="inputName5" class="form-label">Your Name</label>
+            <label for="inputName5" class="form-label">Parent</label>
             <p-dropdown [filter]="true"  [options]="categories" formControlName="parentId" optionLabel="name" optionValue="id" [style]="{'width':'100%'}"></p-dropdown>
           </div>
 

@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component,OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthorService } from 'src/app/Service/author.service';
 import * as moment from 'moment';
 import { Author } from 'src/app/models/author.model';
@@ -44,11 +44,22 @@ export class EditPublisherComponent implements OnInit{
 
       //create form group add Id
       this.publisherFormGroup = this.formbuilder.group({
-        id:[''],
-        name:[''],
-        nameShort:[''],
-        location:[''],
-        contactNumber:0,
+        id:['',[
+          Validators.required
+        ]],
+        name:['',[
+          Validators.required
+        ]],
+        nameShort:['',[
+          Validators.required
+        ]],
+        location:['',[
+          Validators.required
+        ]],
+        contactNumber:[0,[
+          Validators.required,
+          Validators.pattern(/^[0-9]{10,10}$/)
+        ]],
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
       });

@@ -23,16 +23,21 @@
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Your Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
+            <div *ngIf="addCategoryForm.get('name').touched">
+              <div *ngIf="addCategoryForm.hasError('required',['name'])">
+                Name is required
+              </div>
+            </div>
           </div>
 
           <div class="col-md-12">
-            <label for="inputName5" class="form-label">Your Name</label>
+            <label for="inputName5" class="form-label">Parent</label>
             <p-dropdown [filter]="true"  [options]="categories" formControlName="parentId" optionLabel="name" optionValue="id" [style]="{'width':'100%'}"></p-dropdown>
           </div>
 
 
           <div class="text-center">
-            <button type="submit" class="btn btn-primary" (click)="save()">Submit</button> &nbsp;
+            <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="addCategoryForm.invalid">Submit</button> &nbsp;
             <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
           </div>
         </form><!-- End Multi Columns Form -->
