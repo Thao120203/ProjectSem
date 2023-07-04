@@ -16,7 +16,11 @@ export class InvoiceService {
     }
 
     async read(){
-        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Invoice/GetListParent'));
+        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Invoice/Read'));
+    }
+
+    async get(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Invoice/get?id=' + id));
     }
 
     async delete(id: number){

@@ -16,7 +16,10 @@ export class ProductImageService {
     }
 
     async read(){
-        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'ProductImage/GetListParent'));
+        return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'ProductImage/Read'));
+    }
+    async get(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'ProductImage/get?id=' + id));
     }
 
     async delete(id: number){

@@ -43,7 +43,6 @@ import { AsideComponent } from './supportcomponents/aside/aside.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ListCategoryComponent } from './components/category/listCategory.component';
 import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 import { FooterComponent } from './supportcomponents/footer/footer.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -55,7 +54,7 @@ import { AddVoucherComponent } from './components/voucher/addVoucher.component';
 import { VoucherService } from './Service/voucher.service';
 import { ListAuthorComponent } from './components/author/listAuthor/listAuthor.component';
 import { AddRoleComponent } from './components/role/addRole.component';
-import { EditCategoryComponent } from './components/category/edit/editCategory.component';
+import { EditCategoryComponent } from './components/category/editCategory/editCategory.component';
 import { ListOrderStatusComponent } from './components/orderstatus/listOrdersStatus/listOrderStatus.component';
 import { ListRoleComponent } from './components/role/listRole/listRole.component';
 import { ListVoucherComponent } from './components/voucher/listVoucher/listVoucher.component';
@@ -68,6 +67,17 @@ import { EditVoucherComponent } from './components/voucher/editVoucher/editVouch
 import { EditOrderStatusComponent } from './components/orderstatus/editOrderStatus/editOrderStatus.component';
 import { EditPaymentMethodComponent } from './components/paymentmethod/editPaymentMethod/editPaymentMethod.component';
 import { AddAccountComponent } from './components/account/addAccount/addAccount.component';
+import { ListAccountComponent } from './components/account/listaccount/listAccount.component';
+import { AddAccountComponent } from './components/account//addAccount.component';
+import { AddAddressProfileComponent } from './components/addressprofile/addAdddressProfile/addAddressProfile.component';
+import { AddressProfileService } from './Service/addressprofile.service';
+import { ListAddressProfileComponent } from './components/addressprofile/listAddressProfile/listAddressProfile.component';
+import { EditAddressProfileComponent } from './components/addressprofile/editAddressProfile/editAddressProfile.component';
+import { AddInvoiceComponent } from './components/invoice//addInvoice.component';
+import { EditInvoiceComponent } from './components/invoice/editInvoice/editInvoice.component';
+import { ListInvoiceComponent } from './components/invoice/listInvoice/listInvoice.component';
+import { InvoiceService } from './Service/invoice.service';
+import { ListCategoryComponent } from './components/category/listCategory/listCategory.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +121,15 @@ import { AddAccountComponent } from './components/account/addAccount/addAccount.
     EditAuthorComponent,
     EditOrderStatusComponent,
     EditPaymentMethodComponent,
-    AddAccountComponent
+    AddAccountComponent,
+
+    AddAddressProfileComponent,
+    ListAddressProfileComponent,
+    EditAddressProfileComponent,
+
+    AddInvoiceComponent,
+    EditInvoiceComponent,
+    ListInvoiceComponent,
   ],
 
   imports: [
@@ -146,7 +164,9 @@ import { AddAccountComponent } from './components/account/addAccount/addAccount.
     AccountService,
     OrderStatusService,
     PaymentMethodService,
-    VoucherService
+    VoucherService,
+    AddressProfileService,
+    InvoiceService
   ],
   bootstrap: [AdminComponent]
 })

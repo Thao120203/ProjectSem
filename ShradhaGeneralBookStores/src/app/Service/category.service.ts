@@ -29,9 +29,9 @@ export class CategoryService {
 
     async get(id: number){
       return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Category/get?id=' + id));
-  }
+    }
 
   async readnextid(id: number){
     return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Category/GetAllCategoryByLevelOnlyId?id=' + id));
-}
+  }
 }
