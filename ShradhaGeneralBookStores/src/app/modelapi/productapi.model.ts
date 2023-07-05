@@ -1,4 +1,4 @@
-export class Product {
+export class ProductAPI {
     id: number;
     name: string;
     description: string;
@@ -9,4 +9,6 @@ export class Product {
     hot: boolean;
     publisherId: number;
     publisherYear: string;
+    authorsId: number[];
+    categoriesId: number[];
 }

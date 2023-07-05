@@ -1,111 +1,108 @@
-
-
-<!-- Container-fluid starts-->
-<div class="container-fluid">
+<div class="pagetitle">
+    <h1>Admin</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/']">Admin</a></li>
+        <li class="breadcrumb-item ">List Products</li>
+        <li class="breadcrumb-item active">Add Product</li>
+  
+      </ol>
+    </nav>
+  </div>
+  
+  <section class="section">
     <div class="row">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-header">
-                    <h5>Add Product</h5>
+  
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Add Product</h5>
+  
+          <!-- Multi Columns Form -->
+          <form class="row g-3" [formGroup]="productFormGroup">
+            <div class="col-md-12">
+              <label for="inputName5" class="form-label">Name</label>
+              <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
+              <div *ngIf="productFormGroup.get('name').touched">
+                <div *ngIf="productFormGroup.hasError('required',['name'])">
+                  Name is required
                 </div>
-                <div class="card-body">
-                    <div class="row product-adding">
-                        <div class="col-xl-5">
-                            <div class="add-product">
-                                <div class="row">
-                                    <div class="col-xl-9 xl-50 col-sm-6 col-9">
-                                        <img src="../assets/add/images/pro3/1.jpg" alt="" class="img-fluid image_zoom_1 blur-up lazyloaded">
-                                    </div>
-                                    <div class="col-xl-3 xl-50 col-sm-6 col-3">
-                                        <ul class="file-upload-product">
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                            <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-7">
-                            <form class="needs-validation add-product-form" novalidate="">
-                                <div class="form">
-                                    <div class="form-group mb-3  row">
-                                        <div class="col-xl-3 col-sm-4 mb-0">
-                                            <label for="validationCustom01" >Title :</label>    
-                                        </div>
-                                        <div class="col-xl-8 col-sm-7">
-                                            <input class="form-control " id="validationCustom01" type="text" required="">
-                                            <div class="valid-feedback">Looks good!</div>    
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-3 row">
-                                        <div class="col-xl-3 col-sm-4 mb-0">
-                                            <label for="validationCustom02" >Price :</label>    
-                                        </div>
-                                        <div class="col-xl-8 col-sm-7">
-                                            <input class="form-control " id="validationCustom02" type="text" required="">
-                                            <div class="valid-feedback">Looks good!</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-3 row">
-                                        <div class="col-xl-3 col-sm-4 mb-0">
-                                            <label for="validationCustomUsername" >Product Code :</label>    
-                                        </div>
-                                        
-                                        <div class="col-xl-8 col-sm-7">
-                                            <input class="form-control " id="validationCustomUsername" type="text" required="">
-                                            <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form">
-                                    <div class="form-group row">
-                                        <div class="col-xl-3 col-sm-4 mb-0">
-                                            <label for="exampleFormControlSelect1" >Select Size :</label>    
-                                        </div>
-                                        <div class="col-xl-8 col-sm-7">
-                                            <select class="form-control digits " id="exampleFormControlSelect1">
-                                                <option>Small</option>
-                                                <option>Medium</option>
-                                                <option>Large</option>
-                                                <option>Extra Large</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-xl-3 col-sm-4 mb-0">
-                                            <label>Total Products :</label>    
-                                        </div>
-                                        <div class="col-xl-9 col-xl-8 col-sm-7 pl-0">
-                                            <fieldset class="qty-box ">
-                                                <div class="input-group">
-                                                    <input class="touchspin" type="text" value="1">
-                                                </div>
-                                            </fieldset>    
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-xl-3 col-sm-4">Add Description :</label>
-                                        <div class="col-xl-8 col-sm-7 pl-0 description-sm">
-                                            <textarea id="editor1" name="editor1" cols="10" rows="4"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="offset-xl-3 offset-sm-4">
-                                    <button type="submit" class="btn btn-primary">Add</button>
-                                    <button type="button" class="btn btn-light">Discard</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+
+            <div class="col-md-12">
+                <label for="inputName5" class="form-label">Description</label>
+                <p-editor formControlName="description" [style]="{ width: '100%' }"></p-editor>
+              </div>
+
+            <div class="col-md-12">
+                <label for="inputName5" class="form-label">Quantity</label>
+                <br/>
+                <p-inputNumber formControlName="quantity" ></p-inputNumber>
+                <div *ngIf="productFormGroup.get('quantity').touched">
+                  <div *ngIf="productFormGroup.hasError('required',['quantity'])">
+                    Quantity is required
+                  </div>
+                </div>
+              </div>
+
+            <div class="col-md-12">
+                <label for="inputName5" class="form-label">Price</label>
+                <br/>
+                <p-inputNumber formControlName="price" [min]="0" ></p-inputNumber>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputName5" class="form-label">Cost</label>
+                <br/>
+                <p-inputNumber formControlName="cost"  ></p-inputNumber>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputName5" class="form-label">Status</label>
+                <br/>
+                <p-inputSwitch formControlName="status" (click)="change()" ></p-inputSwitch>             
+             </div>
+
+              <div class="col-md-6">
+                <label for="inputName5" class="form-label">Hot</label>    
+                <br/>           
+                <p-inputSwitch formControlName="hot" ></p-inputSwitch>
+              </div>
+
+              <div class="col-md-12">
+                <label for="inputName5" class="form-label">Publisher</label>
+                <p-dropdown formControlName="publisherId" [options]="publishers"   optionValue="id"  [filter]="true" optionLabel="name" [styleClass]="'w-100'"></p-dropdown>
+              </div>
+
+              <div class="col-md-12">
+                <label for="inputName5" class="form-label">Publishing Year</label>
+                <input type="text" pInputText formControlName="publishingYear" [style]="{'width':'100%'}"/>
+              </div>
+
+              <div class="col-md-12">
+                <label for="inputName5" class="form-label">Author</label>
+                <p-multiSelect [options]="authors" optionLabel="name" optionValue="id" formControlName="authorsId" [styleClass]="'w-100'"></p-multiSelect>
+              </div>
+
+              <div class="col-md-12">
+                <label for="inputName5" class="form-label">Category</label>
+                <p-multiSelect [options]="categories" optionLabel="name" optionValue="id" formControlName="categoriesId" [styleClass]="'w-100'"></p-multiSelect>
+              </div>
+              <div class="col-md-12">
+                <label for="inputName5" class="form-label">Image</label>
+                <p-fileUpload chooseLable="Choose" accept="image/*" (onSelect)="selectFile($event.files)" [showUploadButton]="false" [multiple]="true"></p-fileUpload>
+              </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="productFormGroup.invalid">Submit</button> &nbsp;
+              <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
+            </div>
+          </form><!-- End Multi Columns Form -->
+  
         </div>
+      </div>
+  
+  
     </div>
-</div>
-<!-- Container-fluid Ends-->
-
-
+  </section>
+  

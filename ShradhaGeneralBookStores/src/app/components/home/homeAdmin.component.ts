@@ -18,13 +18,13 @@ export class HomeAdminComponent implements OnInit{
   }
 
     ngOnInit(): void {
-if(localStorage.getItem('email') != null && sessionStorage.getItem('email') == null){
-        sessionStorage.setItem('email',localStorage.getItem('email'));
-      }
+// if(localStorage.getItem('email') != null && sessionStorage.getItem('email') == null){
+//         sessionStorage.setItem('email',localStorage.getItem('email'));
+//       }
 
-      console.log(sessionStorage.getItem('email'));
-        if(sessionStorage.getItem('email') == null) {
-            this.router.navigate(['login']);
-        }
+//       console.log(sessionStorage.getItem('email'));
+//         if(sessionStorage.getItem('email') == null) {
+//             this.router.navigate(['login']);
+//         }
     }
 }

@@ -8,7 +8,7 @@ export class Product {
     status: boolean;
     hot: boolean;
     publisherId: number;
-    publisherYear: string;
+    publishingYear: string;
     createdAt: string;
     updatedAt: string;
 }
