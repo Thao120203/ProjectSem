@@ -4,6 +4,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
 import { Product } from '../models/product.model';
+import { ProductAPI } from '../modelapi/productapi.model';
 
 @Injectable()
 export class ProductService {
@@ -30,5 +31,9 @@ export class ProductService {
 
     async update(product: Product){
       return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Product/update',product));
+    }
+
+    async add(product: ProductAPI){
+      return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'Product/Add',product));
     }
 }

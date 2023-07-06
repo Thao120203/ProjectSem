@@ -50,7 +50,7 @@ export class AddAccountComponent implements OnInit{
         avatar: ['no-avatar.jpg'],
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
-        roleId: [''],
+        roleId: [[]],
       });
     }
 

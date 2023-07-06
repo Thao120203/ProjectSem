@@ -11,8 +11,12 @@ export class ProductImageService {
         private httpclient: HttpClient
     ){}
 
-    async create(productImage: ProductImage){
-      return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'ProductImage/Create',productImage));
+    async create(id: number, photo: File[]){
+      var formdata = new FormData();
+      for (var i = 0; i < photo.length; i++) {
+        formdata.append('photo', photo[i]);
+      };
+      return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'ProductImage/Create/'+id,formdata));
     }
 
     async read(){

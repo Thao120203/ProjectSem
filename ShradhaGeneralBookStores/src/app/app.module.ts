@@ -80,6 +80,8 @@ import { ListInvoiceComponent } from './components/invoice/listInvoice/listInvoi
 import { InvoiceService } from './Service/invoice.service';
 import { ListCategoryComponent } from './components/category/listCategory/listCategory.component';
 import { ProductService } from './Service/product.service';
+import { ProductImageService } from './Service/productimage.service';
+import { EditAccountComponent } from './components/account/editaccount/editAccount.component';
 import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/demoListAuthor/demolistAuthor.component';
 
 @NgModule({
@@ -131,7 +133,7 @@ import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/de
     AddAddressProfileComponent,
     ListAddressProfileComponent,
     EditAddressProfileComponent,
-
+    EditAccountComponent,
     AddInvoiceComponent,
     EditInvoiceComponent,
     ListInvoiceComponent,
@@ -173,7 +175,8 @@ import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/de
     VoucherService,
     AddressProfileService,
     InvoiceService,
-    ProductService
+    ProductService,
+    ProductImageService
   ],
   bootstrap: [AdminComponent]
 })
