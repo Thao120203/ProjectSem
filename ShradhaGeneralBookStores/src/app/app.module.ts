@@ -80,6 +80,7 @@ import { ListInvoiceComponent } from './components/invoice/listInvoice/listInvoi
 import { InvoiceService } from './Service/invoice.service';
 import { ListCategoryComponent } from './components/category/listCategory/listCategory.component';
 import { ProductService } from './Service/product.service';
+import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/demoListAuthor/demolistAuthor.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +100,7 @@ import { ProductService } from './Service/product.service';
     DemoAddPaymentmethodAdminComponent,
     DemoAddRoleAdminComponent,
     DemoAddVoucherAdminComponent,
+    DemoListAuthorComponent,
     HeaderComponent,
     AsideComponent,
     ListCategoryComponent,
