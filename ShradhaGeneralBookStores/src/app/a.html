@@ -1,0 +1,17 @@
+<li class="nav-item">
+  <a class="nav-link collapsed" data-bs-target="#a-nav" data-bs-toggle="collapse" href="#">
+    <i class="bi bi-layout-text-window-reverse"></i><span>Category</span><i class="bi bi-chevron-down ms-auto"></i>
+  </a>
+  <ul id="a-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+    <li>
+      <a [routerLink]="['/listcategory']">
+        <i class="bi bi-circle"></i><span>List Categories</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/addcategory']" >
+        <i class="bi bi-circle"></i><span>Add Category</span>
+      </a>
+    </li>
+  </ul>
+</li><!-- End Tables Nav -->

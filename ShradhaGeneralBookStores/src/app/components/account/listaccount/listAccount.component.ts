@@ -8,6 +8,7 @@ import { Category } from 'src/app/models/category.model';
 import { AccountService } from 'src/app/Service/account.service';
 import { Role } from 'src/app/models/role.model';
 import { RoleService } from 'src/app/Service/role.service';
+import { AccountAPI2 } from 'src/app/modelapi/accountapi2.model';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { RoleService } from 'src/app/Service/role.service';
   templateUrl: './listAccount.component.html',
 })
 export class ListAccountComponent implements OnInit {
-  accounts: Account[];
+  accounts: AccountAPI2[];
   roles: Role[];
   constructor(
     private _accountService: AccountService,
@@ -25,7 +26,7 @@ export class ListAccountComponent implements OnInit {
   ) {}
   ngOnInit() {
     this._accountService.read().then(result=>{
-      this.accounts = result as Account[];
+      this.accounts = result as AccountAPI2[];
       console.log(this.accounts);
     },
     error=>{

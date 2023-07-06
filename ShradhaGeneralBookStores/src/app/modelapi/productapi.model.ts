@@ -8,7 +8,9 @@ export class ProductAPI {
     status: boolean;
     hot: boolean;
     publisherId: number;
-    publisherYear: string;
+    publishingYear: string;
     authorsId: number[];
     categoriesId: number[];
+    createdAt: string;
+    updatedAt: string;
 }

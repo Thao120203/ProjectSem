@@ -10,7 +10,6 @@ import axios, { AxiosResponse, AxiosRequestConfig, ResponseType } from 'axios';
 @Component({
     selector: 'app-root',
     templateUrl: './addAddressProfile.component.html',
-
 })
 
 export class AddAddressProfileComponent implements OnInit{
@@ -28,13 +27,13 @@ export class AddAddressProfileComponent implements OnInit{
         method: "GET",
         responseType: "json" as ResponseType, // Thêm kiểu dữ liệu ResponseType
       };
-    
-            
+
+
       const promise: Promise<AxiosResponse<any>> = axios(Parameter);
       promise.then(function (result: AxiosResponse<any>) {
         renderCity(result.data);
       });
-    
+
       console.dir(this.cities);
 
       this.addressProfileFormGroup = this.formbuilder.group({

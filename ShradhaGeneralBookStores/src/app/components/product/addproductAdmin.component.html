@@ -5,18 +5,18 @@
         <li class="breadcrumb-item"><a [routerLink]="['/']">Admin</a></li>
         <li class="breadcrumb-item ">List Products</li>
         <li class="breadcrumb-item active">Add Product</li>
-  
+
       </ol>
     </nav>
   </div>
-  
+
   <section class="section">
     <div class="row">
-  
+
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Add Product</h5>
-  
+
           <!-- Multi Columns Form -->
           <form class="row g-3" [formGroup]="productFormGroup">
             <div class="col-md-12">
@@ -30,11 +30,16 @@
             </div>
 
             <div class="col-md-12">
+              <label for="inputName5" class="form-label">Category</label>
+              <p-multiSelect [options]="categories" optionLabel="name" optionValue="id" formControlName="categoriesId" [styleClass]="'w-100'"></p-multiSelect>
+            </div>
+
+            <div class="col-md-12">
                 <label for="inputName5" class="form-label">Description</label>
                 <p-editor formControlName="description" [style]="{ width: '100%' }"></p-editor>
               </div>
 
-            <div class="col-md-12">
+            <div class="col-md-4">
                 <label for="inputName5" class="form-label">Quantity</label>
                 <br/>
                 <p-inputNumber formControlName="quantity" ></p-inputNumber>
@@ -45,64 +50,62 @@
                 </div>
               </div>
 
-            <div class="col-md-12">
+            <div class="col-md-4">
                 <label for="inputName5" class="form-label">Price</label>
                 <br/>
                 <p-inputNumber formControlName="price" [min]="0" ></p-inputNumber>
             </div>
 
-            <div class="col-md-12">
+            <div class="col-md-4">
                 <label for="inputName5" class="form-label">Cost</label>
                 <br/>
-                <p-inputNumber formControlName="cost"  ></p-inputNumber>
+                <p-inputNumber formControlName="cost" [min]="0"    ></p-inputNumber>
             </div>
 
-            <div class="col-md-6">
-                <label for="inputName5" class="form-label">Status</label>
-                <br/>
-                <p-inputSwitch formControlName="status" (click)="change()" ></p-inputSwitch>             
-             </div>
 
-              <div class="col-md-6">
-                <label for="inputName5" class="form-label">Hot</label>    
-                <br/>           
-                <p-inputSwitch formControlName="hot" ></p-inputSwitch>
-              </div>
 
-              <div class="col-md-12">
-                <label for="inputName5" class="form-label">Publisher</label>
-                <p-dropdown formControlName="publisherId" [options]="publishers"   optionValue="id"  [filter]="true" optionLabel="name" [styleClass]="'w-100'"></p-dropdown>
-              </div>
+
 
               <div class="col-md-12">
                 <label for="inputName5" class="form-label">Publishing Year</label>
                 <input type="text" pInputText formControlName="publishingYear" [style]="{'width':'100%'}"/>
               </div>
-
-              <div class="col-md-12">
+              <div class="col-md-6">
+                <label for="inputName5" class="form-label">Publisher</label>
+                <p-dropdown formControlName="publisherId" [options]="publishers"   optionValue="id"  [filter]="true" optionLabel="name" [styleClass]="'w-100'"></p-dropdown>
+              </div>
+              <div class="col-md-6">
                 <label for="inputName5" class="form-label">Author</label>
                 <p-multiSelect [options]="authors" optionLabel="name" optionValue="id" formControlName="authorsId" [styleClass]="'w-100'"></p-multiSelect>
               </div>
 
-              <div class="col-md-12">
-                <label for="inputName5" class="form-label">Category</label>
-                <p-multiSelect [options]="categories" optionLabel="name" optionValue="id" formControlName="categoriesId" [styleClass]="'w-100'"></p-multiSelect>
-              </div>
+
               <div class="col-md-12">
                 <label for="inputName5" class="form-label">Image</label>
-                <p-fileUpload chooseLable="Choose" accept="image/*" (onSelect)="selectFile($event.files)" [showUploadButton]="false" [multiple]="true"></p-fileUpload>
+                <p-fileUpload chooseLable="Choose"   accept="image/*" (onSelect)="selectFile($event.files)" [showUploadButton]="false" [multiple]="true"></p-fileUpload>
               </div>
+              <div class="col-md-6">
+                <label for="inputName5" class="form-label">Status</label>
+                <br/>
+                <p-inputSwitch formControlName="status"  (click)="change()" ></p-inputSwitch>
+             </div>
 
+              <div class="col-md-6">
+                <label for="inputName5" class="form-label">Hot</label>
+                <br/>
+                <p-inputSwitch formControlName="hot" ></p-inputSwitch>
+              </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="productFormGroup.invalid">Submit</button> &nbsp;
+              <button type="submit" class="btn btn-primary" (click)="save()" >Submit</button> &nbsp;
               <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
             </div>
+
+
           </form><!-- End Multi Columns Form -->
-  
+
         </div>
       </div>
-  
-  
+
+
     </div>
   </section>
-  

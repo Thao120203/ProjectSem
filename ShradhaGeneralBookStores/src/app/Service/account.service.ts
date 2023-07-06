@@ -25,8 +25,8 @@ export class AccountService {
         return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'Author/Delete?id=' + id));
     }
 
-    async update(account: Account){
-      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Account/update',account));
+    async update(account: AccountAPI){
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Account/Update',account));
     }
 
     async create(account: AccountAPI){
@@ -45,4 +45,7 @@ export class AccountService {
       return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'Account/Read'));
     }
 
+    async get(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'Account/Get?id='+id));
+    }
 }
