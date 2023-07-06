@@ -23,7 +23,7 @@
             <label for="inputName5" class="form-label">Your Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
             <div *ngIf="authorFormGroup.get('name').touched">
-              <div *ngIf="authorFormGroup.hasError('required',['name'])">
+              <div *ngIf="authorFormGroup.hasError('required',['name'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Name is required
               </div>
             </div>
@@ -38,7 +38,7 @@
             <label for="inputName5" class="form-label">YearOfBirth</label>
             <input type="number" pInputText formControlName="yearOfBirth" [style]="{'width':'100%'}"/>
             <div *ngIf="authorFormGroup.get('yearOfBirth').touched">
-              <div *ngIf="authorFormGroup.hasError('required',['yearOfBirth'])">
+              <div *ngIf="authorFormGroup.hasError('required',['yearOfBirth'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Year Of Birth is required
               </div>
             </div>

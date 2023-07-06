@@ -23,7 +23,7 @@
             <label for="inputName5" class="form-label">Publisher Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
             <div *ngIf="publisherFormGroup.get('name').touched">
-              <div *ngIf="publisherFormGroup.hasError('required',['name'])">
+              <div *ngIf="publisherFormGroup.hasError('required',['name'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Name is required
               </div>
             </div>
@@ -33,7 +33,7 @@
             <label for="inputName5" class="form-label">Publisher Short Name</label>
             <input type="text" pInputText formControlName="nameShort" [style]="{'width':'100%'}"/>
             <div *ngIf="publisherFormGroup.get('nameShort').touched">
-              <div *ngIf="publisherFormGroup.hasError('required',['nameShort'])">
+              <div *ngIf="publisherFormGroup.hasError('required',['nameShort'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Name short is required
               </div>
             </div>
@@ -43,7 +43,7 @@
             <label for="inputName5" class="form-label">Location</label>
             <input type="text" pInputText formControlName="location" [style]="{'width':'100%'}"/>
             <div *ngIf="publisherFormGroup.get('location').touched">
-              <div *ngIf="publisherFormGroup.hasError('required',['location'])">
+              <div *ngIf="publisherFormGroup.hasError('required',['location'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Location is required
               </div>
             </div>
@@ -53,10 +53,10 @@
             <label for="inputName5" class="form-label">Contact Number</label>
             <input type="text" pInputText formControlName="contactNumber" [style]="{'width':'100%'}"/>
             <div *ngIf="publisherFormGroup.get('contactNumber').touched">
-              <div *ngIf="publisherFormGroup.hasError('required',['contactNumber'])">
+              <div *ngIf="publisherFormGroup.hasError('required',['contactNumber'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Contact Number is required
               </div>
-              <div *ngIf="publisherFormGroup.hasError('pattern',['contactNumber'])">
+              <div *ngIf="publisherFormGroup.hasError('pattern',['contactNumber'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Contact Number is invalid
               </div>
             </div>

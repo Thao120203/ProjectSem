@@ -23,14 +23,14 @@
             <label for="inputName5" class="form-label">Order Status Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
             <div *ngIf="orderStatusFormGroup.get('name').touched">
-              <div *ngIf="orderStatusFormGroup.hasError('required',['name'])">
+              <div *ngIf="orderStatusFormGroup.hasError('required',['name'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Name is required
               </div>
             </div>
           </div>
 
           <div class="text-center">
-            <button type="submit" class="btn btn-primary" (click)="save()">Submit</button> &nbsp;
+            <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="orderStatusFormGroup.invalid">Submit</button> &nbsp;
             <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
           </div>
         </form><!-- End Multi Columns Form -->
