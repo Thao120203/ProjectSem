@@ -24,13 +24,15 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { PasswordModule } from 'primeng/password';
+import { FileUploadModule } from 'primeng/fileupload';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 // import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
+
 import { EditorModule } from 'primeng/editor';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { FileUploadModule } from 'primeng/fileupload';
 import { DemoAddEventAdminComponent } from './democomponent/event/demoAddEvent/demoaddevent.component';
 import { DemoAddOrderstatusAdminComponent } from './democomponent/orderstatus/demoAddOrderstatus/demo.add.orderstatus.component';
 import { DemoAddPublisherAdminComponent } from './democomponent/publisher/demoAddPublisher/demo.add.publisher.component';
@@ -77,6 +79,7 @@ import { EditInvoiceComponent } from './components/invoice/editInvoice/editInvoi
 import { ListInvoiceComponent } from './components/invoice/listInvoice/listInvoice.component';
 import { InvoiceService } from './Service/invoice.service';
 import { ListCategoryComponent } from './components/category/listCategory/listCategory.component';
+import { ProductService } from './Service/product.service';
 
 @NgModule({
   declarations: [
@@ -152,7 +155,8 @@ import { ListCategoryComponent } from './components/category/listCategory/listCa
     DataViewModule,
     ProgressSpinnerModule,
     MultiSelectModule,
-    PasswordModule
+    PasswordModule,
+    InputSwitchModule
   ],
   providers: [
     CategoryService,
@@ -166,7 +170,8 @@ import { ListCategoryComponent } from './components/category/listCategory/listCa
     PaymentMethodService,
     VoucherService,
     AddressProfileService,
-    InvoiceService
+    InvoiceService,
+    ProductService
   ],
   bootstrap: [AdminComponent]
 })
