@@ -1,0 +1,57 @@
+<div class="pagetitle">
+  <h1>Admin</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/']">Admin</a></li>
+      <li class="breadcrumb-item active">List Catrgories</li>
+
+    </ol>
+  </nav>
+</div>
+
+
+<section class="section">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Category</h5>
+
+        <table class="table table-bordered" *ngIf="products != null;else elseBlock">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Photo</th>
+              <th scope="col" >Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Author</th>
+              <th scope="col">Created At</th>
+              <th scope="col">Updated At</th>
+              <th scope="col" colspan="2">Action</th>
+            </tr>
+          </thead>
+
+          <tbody >
+            <tr *ngFor="let product of products">
+              <td scope="row">{{product.id}}</td>
+              <td><img width="50%" height="50%" src="{{product.photo}}"></td>
+              <td>{{product.name}}</td>
+              <td><b>|</b><b *ngFor="let category of product.categories">{{category}}|</b></td>
+              <td><b>|</b><b *ngFor="let author of product.authors">{{author}}|</b></td>
+
+              <td>{{product.createdAt}}</td>
+              <td>{{product.updatedAt}}</td>
+              <td>
+                <button type="button" class="btn btn-danger" (click)="deleted(product.id)"><i class="bi bi-trash-fill"></i></button> |
+                <a [routerLink]="['/editproduct',{id: product.id}]"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ng-template #elseBlock>
+            <p-progressSpinner [style]="{'display':'flex','width':'10%'}"></p-progressSpinner>
+        </ng-template>
+      </div>
+    </div>
+
+  </div>
+</section>

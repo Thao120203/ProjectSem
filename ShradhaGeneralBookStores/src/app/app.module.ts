@@ -83,6 +83,7 @@ import { ProductService } from './Service/product.service';
 import { ProductImageService } from './Service/productimage.service';
 import { EditAccountComponent } from './components/account/editaccount/editAccount.component';
 import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/demoListAuthor/demolistAuthor.component';
+import { ListProductComponent } from './components/product/listproduct/listProduct.component';
 
 @NgModule({
   declarations: [
@@ -137,6 +138,7 @@ import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/de
     AddInvoiceComponent,
     EditInvoiceComponent,
     ListInvoiceComponent,
+    ListProductComponent
   ],
 
   imports: [
