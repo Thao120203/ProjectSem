@@ -26,6 +26,9 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { PasswordModule } from 'primeng/password';
 import { FileUploadModule } from 'primeng/fileupload';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
 
 // import { ProductAdminComponent } from './components/admin/ProductAdmin.component';
 
@@ -83,6 +86,7 @@ import { ProductService } from './Service/product.service';
 import { ProductImageService } from './Service/productimage.service';
 import { EditAccountComponent } from './components/account/editaccount/editAccount.component';
 import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/demoListAuthor/demolistAuthor.component';
+import { ConfirmationService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -160,7 +164,10 @@ import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/de
     ProgressSpinnerModule,
     MultiSelectModule,
     PasswordModule,
-    InputSwitchModule
+    InputSwitchModule,
+    TableModule,
+    ToastModule,
+    ToolbarModule
   ],
   providers: [
     CategoryService,
@@ -176,7 +183,8 @@ import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/de
     AddressProfileService,
     InvoiceService,
     ProductService,
-    ProductImageService
+    ProductImageService,
+    ConfirmationService
   ],
   bootstrap: [AdminComponent]
 })
