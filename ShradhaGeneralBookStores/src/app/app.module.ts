@@ -87,6 +87,7 @@ import { ProductImageService } from './Service/productimage.service';
 import { EditAccountComponent } from './components/account/editaccount/editAccount.component';
 import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/demoListAuthor/demolistAuthor.component';
 import { ConfirmationService } from 'primeng/api';
+import { ListProductComponent } from './components/product/listproduct/listProduct.component';
 
 @NgModule({
   declarations: [
@@ -141,6 +142,7 @@ import { ConfirmationService } from 'primeng/api';
     AddInvoiceComponent,
     EditInvoiceComponent,
     ListInvoiceComponent,
+    ListProductComponent
   ],
 
   imports: [
