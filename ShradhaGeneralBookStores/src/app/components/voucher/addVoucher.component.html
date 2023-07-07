@@ -23,7 +23,7 @@
             <label for="inputName5" class="form-label">Voucher Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
             <div *ngIf="voucherFormGroup.get('name').touched">
-              <div *ngIf="voucherFormGroup.hasError('required',['name'])">
+              <div *ngIf="voucherFormGroup.hasError('required',['name'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Name is required
               </div>
             </div>
@@ -33,7 +33,7 @@
             <label for="inputName5" class="form-label">Varitycode</label>
             <input type="text" pInputText formControlName="varityCode" [style]="{'width':'100%'}"/>
             <div *ngIf="voucherFormGroup.get('varityCode').touched">
-              <div *ngIf="voucherFormGroup.hasError('required',['varityCode'])">
+              <div *ngIf="voucherFormGroup.hasError('required',['varityCode'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Varitycode is required
               </div>
             </div>
@@ -45,7 +45,7 @@
             <br/>
             <p-inputNumber formControlName="discount" ></p-inputNumber>
             <div *ngIf="voucherFormGroup.get('discount').touched">
-              <div *ngIf="voucherFormGroup.hasError('required',['discount'])">
+              <div *ngIf="voucherFormGroup.hasError('required',['discount'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Discount is required
               </div>
             </div>
@@ -56,7 +56,7 @@
             <br/>
             <p-inputNumber formControlName="condition"></p-inputNumber>
             <div *ngIf="voucherFormGroup.get('condition').touched">
-              <div *ngIf="voucherFormGroup.hasError('required',['condition'])">
+              <div *ngIf="voucherFormGroup.hasError('required',['condition'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Condition is required
               </div>
             </div>
@@ -67,7 +67,7 @@
             <br/>
             <p-inputNumber formControlName="quantity"></p-inputNumber>
             <div *ngIf="voucherFormGroup.get('quantity').touched">
-              <div *ngIf="voucherFormGroup.hasError('required',['quantity'])">
+              <div *ngIf="voucherFormGroup.hasError('required',['quantity'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Quantity is required
               </div>
             </div>
@@ -78,7 +78,7 @@
            
             <p-calendar   formControlName="timeStart"></p-calendar>
             <div *ngIf="voucherFormGroup.get('timeStart').touched">
-              <div *ngIf="voucherFormGroup.hasError('required',['timeStart'])">
+              <div *ngIf="voucherFormGroup.hasError('required',['timeStart'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Time Start is required
               </div>
             </div>
@@ -89,7 +89,7 @@
             
             <p-calendar   formControlName="timeEnd"></p-calendar>
             <div *ngIf="voucherFormGroup.get('timeEnd').touched">
-              <div *ngIf="voucherFormGroup.hasError('required',['timeEnd'])">
+              <div *ngIf="voucherFormGroup.hasError('required',['timeEnd'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Time End is required
               </div>
             </div>

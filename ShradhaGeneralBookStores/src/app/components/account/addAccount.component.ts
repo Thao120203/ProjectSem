@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Component,OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import * as moment from 'moment';
 import { AccountService } from 'src/app/Service/account.service';
 import { RoleService } from 'src/app/Service/role.service';
@@ -30,11 +30,23 @@ export class AddAccountComponent implements OnInit{
         this.roles = result as Role[];
       });
       this.accountFormGroup = this.formbuilder.group({
-        email: [''],
-        password: [''],
-        firstName: [''],
-        lastName: [''],
-        phone: [''],
+        email: ['',[
+          Validators.required,
+          Validators.pattern(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/)
+        ]],
+        password: ['',[
+          Validators.required
+        ]],
+        firstName: ['',[
+          Validators.required
+        ]],
+        lastName: ['',[
+          Validators.required
+        ]],
+        phone: ['',[
+          Validators.required,
+          Validators.pattern(/^[0-9]{10,10}$/)
+        ]],
         avatar: ['no-avatar.jpg'],
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')],

@@ -23,7 +23,7 @@
             <label for="inputName5" class="form-label">Payment Method Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
             <div *ngIf="paymentMethodFormGroup.get('name').touched">
-              <div *ngIf="paymentMethodFormGroup.hasError('required',['name'])">
+              <div *ngIf="paymentMethodFormGroup.hasError('required',['name'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Name is required
               </div>
             </div>

@@ -23,7 +23,7 @@
             <label for="inputName5" class="form-label">Order Status Name</label>
             <input type="text" pInputText formControlName="name" [style]="{'width':'100%'}"/>
             <div *ngIf="orderStatusFormGroup.get('name').touched">
-              <div *ngIf="orderStatusFormGroup.hasError('required',['name'])">
+              <div *ngIf="orderStatusFormGroup.hasError('required',['name'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Name is required
               </div>
             </div>

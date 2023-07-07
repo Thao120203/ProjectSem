@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component,OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import * as moment from 'moment';
 import { AccountService } from 'src/app/Service/account.service';
 import { RoleService } from 'src/app/Service/role.service';
@@ -55,10 +55,17 @@ export class EditAccountComponent implements OnInit{
       this.accountFormGroup = this.formbuilder.group({
         id:[''],
         email: [''],
-        firstName: [''],
-        lastName: [''],
         password: [''],
-        phone: [''],
+        firstName: ['',[
+          Validators.required
+        ]],
+        lastName: ['',[
+          Validators.required
+        ]],
+        phone: ['',[
+          Validators.required,
+          Validators.pattern(/^[0-9]{10,10}$/)
+        ]],
         status: [true],
         SecurityCode: ['00000'],
         avatar: ['no-avatar.jpg'],

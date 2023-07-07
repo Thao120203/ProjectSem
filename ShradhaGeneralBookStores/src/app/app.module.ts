@@ -82,6 +82,7 @@ import { ListCategoryComponent } from './components/category/listCategory/listCa
 import { ProductService } from './Service/product.service';
 import { ProductImageService } from './Service/productimage.service';
 import { EditAccountComponent } from './components/account/editaccount/editAccount.component';
+import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/demoListAuthor/demolistAuthor.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { EditAccountComponent } from './components/account/editaccount/editAccou
     DemoAddPaymentmethodAdminComponent,
     DemoAddRoleAdminComponent,
     DemoAddVoucherAdminComponent,
+    DemoListAuthorComponent,
     HeaderComponent,
     AsideComponent,
     ListCategoryComponent,
