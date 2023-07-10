@@ -69,8 +69,6 @@ export class AddProductAdminComponent implements OnInit{
 
     save(){
       let product = this.productFormGroup.value as ProductAPI;
-
-
       this._productService.add(product).then(result=>{
           this._productImageService.create(result as number,this.photos).then(result=>{
             if(result as boolean){
@@ -78,8 +76,6 @@ export class AddProductAdminComponent implements OnInit{
             }
           })
       })
-      console.log(this.productFormGroup.value);
-      console.dir(this.photos);
     }
 
     reset(){
