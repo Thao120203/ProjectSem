@@ -88,6 +88,8 @@ import { EditAccountComponent } from './components/account/editaccount/editAccou
 import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/demoListAuthor/demolistAuthor.component';
 import { ConfirmationService } from 'primeng/api';
 import { ListProductComponent } from './components/product/listproduct/listProduct.component';
+import { AddOrderComponent } from './components/order/addOrder.component';
+import { OrderService } from './Service/order.service';
 
 @NgModule({
   declarations: [
@@ -142,7 +144,8 @@ import { ListProductComponent } from './components/product/listproduct/listProdu
     AddInvoiceComponent,
     EditInvoiceComponent,
     ListInvoiceComponent,
-    ListProductComponent
+    ListProductComponent,
+    AddOrderComponent
   ],
 
   imports: [
@@ -186,7 +189,8 @@ import { ListProductComponent } from './components/product/listproduct/listProdu
     InvoiceService,
     ProductService,
     ProductImageService,
-    ConfirmationService
+    ConfirmationService,
+    OrderService
   ],
   bootstrap: [AdminComponent]
 })

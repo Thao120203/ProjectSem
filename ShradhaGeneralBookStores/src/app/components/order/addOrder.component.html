@@ -1,0 +1,94 @@
+<div class="pagetitle">
+  <h1>Admin</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/']">Admin</a></li>
+      <li class="breadcrumb-item ">List Orders</li>
+      <li class="breadcrumb-item active">Add Order</li>
+
+    </ol>
+  </nav>
+</div>
+
+<section class="section">
+  <div class="row">
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Add Order</h5>
+
+        <!-- Multi Columns Form -->
+        <form class="row g-3" [formGroup]="OrderFormGroup">
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">Account ID</label>
+            <p-dropdown formControlName="accountId" [options]="cities" optionLabel="name" [styleClass]="'w-100'"></p-dropdown>
+            <div *ngIf="OrderFormGroup.get('accountId').touched">
+              <div *ngIf="OrderFormGroup.hasError('required',['accountId'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                Account ID is required
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">Total Price</label>
+            <input type="number" pInputText formControlName="totalPrice" [style]="{'width':'100%'}"/>
+            <div *ngIf="OrderFormGroup.get('totalPrice').touched">
+              <div *ngIf="OrderFormGroup.hasError('required',['totalPrice'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                Total Price is required
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">Status ID</label>
+            <p-dropdown formControlName="statusId" [options]="cities" optionLabel="name" [styleClass]="'w-100'"></p-dropdown>
+            <div *ngIf="OrderFormGroup.get('statusId').touched">
+              <div *ngIf="OrderFormGroup.hasError('required',['statusId'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                Status ID is required
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">Address ID</label>
+            <p-dropdown formControlName="accountId" [options]="cities" optionLabel="name" [styleClass]="'w-100'"></p-dropdown>
+            <div *ngIf="OrderFormGroup.get('addressId').touched">
+              <div *ngIf="OrderFormGroup.hasError('required',['addressId'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                Address ID is required
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">Voucher ID</label>
+            <p-dropdown formControlName="voucherId" [options]="cities" optionLabel="name" [styleClass]="'w-100'"></p-dropdown>
+            <div *ngIf="OrderFormGroup.get('voucherId').touched">
+              <div *ngIf="OrderFormGroup.hasError('required',['voucherId'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                Voucher ID is required
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <label for="inputName5" class="form-label">Payment Method ID</label>
+            <p-dropdown formControlName="paymentMethodId" [options]="cities" optionLabel="name" [styleClass]="'w-100'"></p-dropdown>
+            <div *ngIf="OrderFormGroup.get('paymentMethodId').touched">
+              <div *ngIf="OrderFormGroup.hasError('required',['paymentMethodId'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                Payment Method ID is required
+              </div>
+            </div>
+          </div>
+
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="OrderFormGroup.invalid">Submit</button> &nbsp;
+            <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
+          </div>
+        </form><!-- End Multi Columns Form -->
+
+      </div>
+    </div>
+
+
+  </div>
+</section>
