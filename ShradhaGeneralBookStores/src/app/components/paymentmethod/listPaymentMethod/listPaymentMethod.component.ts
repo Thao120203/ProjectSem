@@ -8,17 +8,22 @@ import { Author } from 'src/app/models/author.model';
 import { OrderStatusService } from 'src/app/Service/orderstatus.service';
 import { PaymentMethod } from 'src/app/models/paymentmethod.model';
 import { PaymentMethodService } from 'src/app/Service/paymentmethod.service';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 
 @Component({
     selector: 'app-root',
     templateUrl: './listPaymentMethod.component.html',
-
+    providers: [MessageService, ConfirmationService]
 })
 
 export class ListPaymentMethodComponent implements OnInit{
 
   paymentsMethod: PaymentMethod[];
+  first = 0;
+  rows = 10;
+  check: boolean = false;
+  selectedPaymentMethod!: PaymentMethod[] | null;
   constructor(
     private _paymentsMethodService: PaymentMethodService,
     private formbuilder: FormBuilder,
@@ -48,5 +53,23 @@ export class ListPaymentMethodComponent implements OnInit{
       });
     }
 
+  }
+  deleteSelected() {
+    console.log(this.selectedPaymentMethod);
+    if (confirm('Are you sure you want to delete')) {
+      for (let i = 0; i < this.selectedPaymentMethod.length; i++) {
+        this._paymentsMethodService.delete(this.selectedPaymentMethod[i].id).then(result => {
+          if (result as boolean) {
+            this.check = true;
+            this.ngOnInit();
+          }
+          else {
+            alert('Cannot delete');
+          }
+        });
+      }
+      if (this.check)
+        alert('Deleted');
+    }
   }
 }

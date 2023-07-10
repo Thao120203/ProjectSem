@@ -636,7 +636,7 @@ export class AddressService {
       new Address(505,'Huyện Nam Đàn',486),
       new Address(506,'Huyện Thanh Chương',486),
       //
-      
+
       // Ninh Bình
       new Address(507,'Ninh Bình',0),
       new Address(508,'Thành phố Ninh Bình',507),

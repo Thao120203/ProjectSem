@@ -32,7 +32,7 @@ export class AddAccountComponent implements OnInit{
       this.accountFormGroup = this.formbuilder.group({
         email: ['',[
           Validators.required,
-          Validators.pattern(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/)
+          Validators.pattern(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/),
         ]],
         password: ['',[
           Validators.required

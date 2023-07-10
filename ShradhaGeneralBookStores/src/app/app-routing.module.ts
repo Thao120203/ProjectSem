@@ -36,6 +36,7 @@ import { EditInvoiceComponent } from './components/invoice/editInvoice/editInvoi
 import { ListCategoryComponent } from './components/category/listCategory/listCategory.component';
 import { ListAccountComponent } from './components/account/listaccount/listAccount.component';
 import { EditAccountComponent } from './components/account/editaccount/editAccount.component';
+import { ListProductComponent } from './components/product/listproduct/listProduct.component';
 
 
 const routes: Routes =
@@ -43,6 +44,7 @@ const routes: Routes =
   {path: '',component:HomeAdminComponent , children:[
     {path: 'productAdmin',component: ProductAdminComponent },
     {path: 'addproduct',component: AddProductAdminComponent},
+    {path: 'listProduct',component: ListProductComponent},
 
     {path: 'addcategory',component: AddCategoryComponent},
     {path: 'editcategory',component: EditCategoryComponent},

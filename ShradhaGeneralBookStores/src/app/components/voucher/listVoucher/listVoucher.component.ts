@@ -10,17 +10,22 @@ import { Role } from 'src/app/models/role.model';
 import { RoleService } from 'src/app/Service/role.service';
 import { Voucher } from 'src/app/models/voucher.model';
 import { VoucherService } from 'src/app/Service/voucher.service';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 
 @Component({
     selector: 'app-root',
     templateUrl: './listVoucher.component.html',
-
+    providers: [MessageService, ConfirmationService]
 })
 
 export class ListVoucherComponent implements OnInit{
 
   vouchers: Voucher[];
+  first = 0;
+  rows = 10;
+  check: boolean = false;
+  selectedVoucher!: Voucher[] | null;
   constructor(
     private _voucherService: VoucherService,
     private formbuilder: FormBuilder,
@@ -50,5 +55,23 @@ export class ListVoucherComponent implements OnInit{
       });
     }
 
+  }
+  deleteSelected() {
+    console.log(this.selectedVoucher);
+    if (confirm('Are you sure you want to delete')) {
+      for (let i = 0; i < this.selectedVoucher.length; i++) {
+        this._voucherService.delete(this.selectedVoucher[i].id).then(result => {
+          if (result as boolean) {
+            this.check = true;
+            this.ngOnInit();
+          }
+          else {
+            alert('Cannot delete');
+          }
+        });
+      }
+      if (this.check)
+        alert('Deleted');
+    }
   }
 }
