@@ -9,8 +9,8 @@ export class ProductAPI3 {
   hot: boolean;
   publisherId: number | null;
   publishingYear: string | null;
-  authors: string[];
-  categories: string[];
+  authorsId: number[];
+  categoriesId: number[];
   photo: string | null;
   createdAt: Date;
   updatedAt: Date;
