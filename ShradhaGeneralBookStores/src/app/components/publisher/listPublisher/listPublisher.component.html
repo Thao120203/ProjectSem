@@ -50,10 +50,13 @@
                 <p-tableCheckbox [value]="publisher"></p-tableCheckbox>
               </td>
               <th scope="row">{{publisher.id}}</th>
-              <td>{{publisher.name}}</td>
+              <td>
+                <a [routerLink]="['/listProductForPublisher',{id:publisher.id }]"> {{publisher.name}}</a>
+               </td>
               <td>{{publisher.nameShort}}</td>
               <td>{{publisher.location}}</td>
               <td>{{publisher.contactNumber}}</td>
+              
               <td>{{publisher.createdAt}}</td>
               <td>{{publisher.updatedAt}}</td>
               <td>

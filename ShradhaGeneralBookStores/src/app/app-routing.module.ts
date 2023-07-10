@@ -38,6 +38,8 @@ import { ListAccountComponent } from './components/account/listaccount/listAccou
 import { EditAccountComponent } from './components/account/editaccount/editAccount.component';
 import { ListProductComponent } from './components/product/listproduct/listProduct.component';
 import { ListProductForCategoryComponent } from './components/category/listProductForCategory/listProductForCategory.component';
+import { ListProductForAuthorComponent } from './components/author/listProductForAuthor/listProductForAuthor.component';
+import { ListProductForPublisherComponent } from './components/publisher/listProductForPulisher/listProductForPublisher.component';
 
 
 
@@ -56,6 +58,7 @@ const routes: Routes =
     {path: 'addauthor',component: AddAuthorComponent},
     {path: 'listauthor',component: ListAuthorComponent},
     {path: 'editauthor',component: EditAuthorComponent},
+    {path: 'listProductForAuthor',component: ListProductForAuthorComponent},
 
 
     {path: 'addorderstatus',component: AddOrderStatusComponent},
@@ -69,6 +72,8 @@ const routes: Routes =
     {path: 'addpublisher',component: AddPublisherComponent},
     {path: 'listpublisher',component: ListPublisherComponent},
     {path: 'editpublisher',component: EditPublisherComponent},
+    {path: 'listProductForPublisher',component: ListProductForPublisherComponent},
+
 
     {path: 'addrole',component: AddRoleComponent},
     {path: 'listrole',component: ListRoleComponent},

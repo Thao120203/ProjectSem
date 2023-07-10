@@ -89,6 +89,8 @@ import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/de
 import { ConfirmationService } from 'primeng/api';
 import { ListProductComponent } from './components/product/listproduct/listProduct.component';
 import { ListProductForCategoryComponent } from './components/category/listProductForCategory/listProductForCategory.component';
+import { ListProductForAuthorComponent } from './components/author/listProductForAuthor/listProductForAuthor.component';
+import { ListProductForPublisherComponent } from './components/publisher/listProductForPulisher/listProductForPublisher.component';
 
 @NgModule({
   declarations: [
@@ -143,7 +145,9 @@ import { ListProductForCategoryComponent } from './components/category/listProdu
     AddInvoiceComponent,
     EditInvoiceComponent,
     ListInvoiceComponent,
-    ListProductComponent
+    ListProductComponent,
+    ListProductForAuthorComponent,
+    ListProductForPublisherComponent
   ],
 
   imports: [
