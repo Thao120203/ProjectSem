@@ -40,6 +40,7 @@ import { ListProductComponent } from './components/product/listproduct/listProdu
 import { ListProductForCategoryComponent } from './components/category/listProductForCategory/listProductForCategory.component';
 import { ListProductForAuthorComponent } from './components/author/listProductForAuthor/listProductForAuthor.component';
 import { ListProductForPublisherComponent } from './components/publisher/listProductForPulisher/listProductForPublisher.component';
+import { ProfileComponent } from './components/profileAccount/profile.component';
 
 
 
@@ -87,6 +88,7 @@ const routes: Routes =
     {path: 'addaccount',component: AddAccountComponent},
     {path: 'listaccount',component: ListAccountComponent},
     {path: 'editaccount',component: EditAccountComponent},
+    {path :'profile',component: ProfileComponent},
 
     {path: 'addaddressprofile',component: AddAddressProfileComponent},
     {path: 'listaddressprofile',component: ListAddressProfileComponent},

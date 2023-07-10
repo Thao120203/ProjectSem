@@ -91,6 +91,7 @@ import { ListProductComponent } from './components/product/listproduct/listProdu
 import { ListProductForCategoryComponent } from './components/category/listProductForCategory/listProductForCategory.component';
 import { ListProductForAuthorComponent } from './components/author/listProductForAuthor/listProductForAuthor.component';
 import { ListProductForPublisherComponent } from './components/publisher/listProductForPulisher/listProductForPublisher.component';
+import { ProfileComponent } from './components/profileAccount/profile.component';
 
 @NgModule({
   declarations: [
@@ -147,7 +148,8 @@ import { ListProductForPublisherComponent } from './components/publisher/listPro
     ListInvoiceComponent,
     ListProductComponent,
     ListProductForAuthorComponent,
-    ListProductForPublisherComponent
+    ListProductForPublisherComponent,
+    ProfileComponent
   ],
 
   imports: [
