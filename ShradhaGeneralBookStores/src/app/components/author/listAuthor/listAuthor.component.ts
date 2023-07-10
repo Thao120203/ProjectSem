@@ -42,27 +42,28 @@ export class ListAuthorComponent implements OnInit {
   isFirstPage(): boolean {
     return this.authors ? this.first === 0 : true;
   }
+  
   deleteSelected() {
+    let countsuccess = 0;
+    let noti:string = '';
     console.log(this.selectedAuthors);
     if (confirm('Are you sure you want to delete')) {
       for (let i = 0; i < this.selectedAuthors.length; i++) {
-
         this._authorService.delete(this.selectedAuthors[i].id).then(result => {
           if (result as boolean) {
-            this.check = true;
+            countsuccess += 1;
             this.ngOnInit();
           }
           else {
-            alert('Cannot delete');
+            noti+=this.selectedAuthors[i].name+ ' ';
           }
         });
-
-
       }
 
-      if (this.check)
-        alert('Deleted');
+      if(countsuccess != 0)
+        alert('Deleted: '+ countsuccess);
+      if(noti != '')
+        alert('Cannot delete: '+ noti);
     }
-
   }
 }
