@@ -38,6 +38,8 @@ import { ListAccountComponent } from './components/account/listaccount/listAccou
 import { EditAccountComponent } from './components/account/editaccount/editAccount.component';
 import { ListProductComponent } from './components/product/listproduct/listProduct.component';
 import { AddOrderComponent } from './components/order/addOrder.component';
+import { ListProductForCategoryComponent } from './components/category/listProductForCategory/listProductForCategory.component';
+
 
 
 const routes: Routes =
@@ -50,7 +52,7 @@ const routes: Routes =
     {path: 'addcategory',component: AddCategoryComponent},
     {path: 'editcategory',component: EditCategoryComponent},
     {path: 'listcategory',component: ListCategoryComponent},
-
+    {path: 'listProductForCategory',component: ListProductForCategoryComponent},
 
     {path: 'addauthor',component: AddAuthorComponent},
     {path: 'listauthor',component: ListAuthorComponent},

@@ -57,6 +57,7 @@ export class ListOrderStatusComponent implements OnInit {
         this._oderstatusService.delete(this.selectedOrderStatus[i].id).then(result => {
           if (result as boolean) {
             this.check = true;
+            this.selectedOrderStatus = [];
             this.ngOnInit();
           }
           else {

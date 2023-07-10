@@ -2,6 +2,8 @@
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-heading">Home</li>
+
 
       <li class="nav-item">
         <a class="nav-link collapsed">
@@ -9,6 +11,7 @@
           <span>Dashboard</span>
         </a>
       </li>
+      <li class="nav-heading">Account</li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
@@ -29,132 +32,6 @@
       </li><!-- End Tables Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#a-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Category</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="a-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/listcategory']">
-              <i class="bi bi-circle"></i><span>List Categories</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/addcategory']" >
-              <i class="bi bi-circle"></i><span>Add Category</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#b-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Author</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="b-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/listauthor']" >
-              <i class="bi bi-circle"></i><span>List Authors</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/addauthor']" >
-              <i class="bi bi-circle"></i><span>Add Author</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#c-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Event</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="c-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/listevent']">
-              <i class="bi bi-circle"></i><span>List Events</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/addevent']" >
-              <i class="bi bi-circle"></i><span>Add Event</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#k-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Order</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="k-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/listorder']">
-              <i class="bi bi-circle"></i><span>List Orders</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/addorder']" >
-              <i class="bi bi-circle"></i><span>Add Order</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#d-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Order Status</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="d-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/listorderstatus']">
-              <i class="bi bi-circle"></i><span>List Order Status</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/addorderstatus']" >
-              <i class="bi bi-circle"></i><span>Add Order Status</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#e-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Payment Method</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="e-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/listpaymentmethod']">
-              <i class="bi bi-circle"></i><span>List Payment Method</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/addpaymentmethod']">
-              <i class="bi bi-circle"></i><span>Add Payment Method</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#f-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Publisher</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="f-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/listpublisher']" >
-              <i class="bi bi-circle"></i><span>List Publishers</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/addpublisher']">
-              <i class="bi bi-circle"></i><span>Add Publisher</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#g-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-layout-text-window-reverse"></i><span>Role</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -167,24 +44,6 @@
           <li>
             <a [routerLinkActive]="['active']"  [routerLink]="['/addrole']" >
               <i class="bi bi-circle"></i><span>Add Role</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#h-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Voucher</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="h-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/listvoucher']">
-              <i class="bi bi-circle"></i><span>List Vouchers</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/addvoucher']" >
-              <i class="bi bi-circle"></i><span>Add Voucher</span>
             </a>
           </li>
         </ul>
@@ -226,6 +85,80 @@
         </ul>
       </li><!-- End Tables Nav -->
 
+      <li class="nav-heading">Product</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#k-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Order</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="k-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/listorder']">
+              <i class="bi bi-circle"></i><span>List Orders</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/addorder']" >
+              <i class="bi bi-circle"></i><span>Add Order</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#d-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Order Status</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="a-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/listcategory']">
+              <i class="bi bi-circle"></i><span>List Categories</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/addcategory']" >
+              <i class="bi bi-circle"></i><span>Add Category</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#b-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Author</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="b-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/listauthor']" >
+              <i class="bi bi-circle"></i><span>List Authors</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/addauthor']" >
+              <i class="bi bi-circle"></i><span>Add Author</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#f-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Publisher</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="f-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/listpublisher']" >
+              <i class="bi bi-circle"></i><span>List Publishers</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/addpublisher']">
+              <i class="bi bi-circle"></i><span>Add Publisher</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#k-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-layout-text-window-reverse"></i><span>Product</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -243,6 +176,92 @@
           </li>
         </ul>
       </li><!-- End Tables Nav -->
+
+      <li class="nav-heading">Discount</li>
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#c-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Event</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="c-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/listevent']">
+              <i class="bi bi-circle"></i><span>List Events</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/addevent']" >
+              <i class="bi bi-circle"></i><span>Add Event</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#h-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Voucher</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="h-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/listvoucher']">
+              <i class="bi bi-circle"></i><span>List Vouchers</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/addvoucher']" >
+              <i class="bi bi-circle"></i><span>Add Voucher</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+
+      <li class="nav-heading">Order</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#d-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Order Status</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="d-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/listorderstatus']">
+              <i class="bi bi-circle"></i><span>List Order Status</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/addorderstatus']" >
+              <i class="bi bi-circle"></i><span>Add Order Status</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#e-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Payment Method</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="e-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/listpaymentmethod']">
+              <i class="bi bi-circle"></i><span>List Payment Method</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/addpaymentmethod']">
+              <i class="bi bi-circle"></i><span>Add Payment Method</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-heading">Profile</li>
+      <li class="nav-item" (click)="logout()">
+        <a class="nav-link collapsed" >
+          <i class="ri-logout-box-r-line"></i>
+          <span>Logout</span>
+        </a>
+      </li>
+
 
     </ul>
 

@@ -91,7 +91,8 @@ export class EditAccountComponent implements OnInit{
       //   });
       // }
       let account = this.accountFormGroup.value as AccountAPI;
-      account.password = '';
+      if(this.accountFormGroup.get('password').value == null)
+        account.password = '';
       this._accountService.update(account);
 
       console.dir(account);

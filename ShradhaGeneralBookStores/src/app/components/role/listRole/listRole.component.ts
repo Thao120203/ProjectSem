@@ -61,6 +61,7 @@ export class ListRoleComponent implements OnInit{
         this._roleService.delete(this.selectedRole[i].id).then(result => {
           if (result as boolean) {
             this.check = true;
+            this.selectedRole = [];
             this.ngOnInit();
           }
           else {

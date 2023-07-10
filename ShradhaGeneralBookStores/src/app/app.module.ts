@@ -88,6 +88,7 @@ import { EditAccountComponent } from './components/account/editaccount/editAccou
 import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/demoListAuthor/demolistAuthor.component';
 import { ConfirmationService } from 'primeng/api';
 import { ListProductComponent } from './components/product/listproduct/listProduct.component';
+import { ListProductForCategoryComponent } from './components/category/listProductForCategory/listProductForCategory.component';
 import { AddOrderComponent } from './components/order/addOrder.component';
 import { OrderService } from './Service/order.service';
 
@@ -136,7 +137,7 @@ import { OrderService } from './Service/order.service';
     EditPaymentMethodComponent,
     AddAccountComponent,
     ListAccountComponent,
-
+    ListProductForCategoryComponent,
     AddAddressProfileComponent,
     ListAddressProfileComponent,
     EditAddressProfileComponent,

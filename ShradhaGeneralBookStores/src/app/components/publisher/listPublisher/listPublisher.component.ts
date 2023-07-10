@@ -62,6 +62,7 @@ export class ListPublisherComponent implements OnInit{
         this._publisherService.delete(this.selectedPublisher[i].id).then(result => {
           if (result as boolean) {
             this.check = true;
+            this.selectedPublisher = [];
             this.ngOnInit();
           }
           else {
