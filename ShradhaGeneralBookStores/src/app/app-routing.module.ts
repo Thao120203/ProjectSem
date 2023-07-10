@@ -37,6 +37,8 @@ import { ListCategoryComponent } from './components/category/listCategory/listCa
 import { ListAccountComponent } from './components/account/listaccount/listAccount.component';
 import { EditAccountComponent } from './components/account/editaccount/editAccount.component';
 import { ListProductComponent } from './components/product/listproduct/listProduct.component';
+import { ListProductForCategoryComponent } from './components/category/listProductForCategory/listProductForCategory.component';
+
 
 
 const routes: Routes =
@@ -49,7 +51,7 @@ const routes: Routes =
     {path: 'addcategory',component: AddCategoryComponent},
     {path: 'editcategory',component: EditCategoryComponent},
     {path: 'listcategory',component: ListCategoryComponent},
-
+    {path: 'listProductForCategory',component: ListProductForCategoryComponent},
 
     {path: 'addauthor',component: AddAuthorComponent},
     {path: 'listauthor',component: ListAuthorComponent},

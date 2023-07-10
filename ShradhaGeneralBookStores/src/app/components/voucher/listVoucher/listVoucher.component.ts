@@ -63,6 +63,7 @@ export class ListVoucherComponent implements OnInit{
         this._voucherService.delete(this.selectedVoucher[i].id).then(result => {
           if (result as boolean) {
             this.check = true;
+            this.selectedVoucher = [];
             this.ngOnInit();
           }
           else {

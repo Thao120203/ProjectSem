@@ -61,6 +61,7 @@ export class ListPaymentMethodComponent implements OnInit{
         this._paymentsMethodService.delete(this.selectedPaymentMethod[i].id).then(result => {
           if (result as boolean) {
             this.check = true;
+            this.selectedPaymentMethod = [];
             this.ngOnInit();
           }
           else {

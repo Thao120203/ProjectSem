@@ -1,11 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-aside',
-  templateUrl: './aside.component.html'
+  templateUrl: './aside.component.html',
 })
 export class AsideComponent implements OnInit {
-    ngOnInit(): void {
-    }
+  constructor(private router: Router) {}
 
+  ngOnInit(): void {}
+
+  logout() {
+    sessionStorage.clear();
+    localStorage.clear();
+    this.router.navigate(['login']);
+  }
 }

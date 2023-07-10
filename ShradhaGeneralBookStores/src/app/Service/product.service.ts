@@ -36,4 +36,9 @@ export class ProductService {
     async add(product: ProductAPI){
       return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'Product/Add',product));
     }
+
+    async readforcategory(id: string){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadForCategory?idCategory='+id));
+  }
+
 }
