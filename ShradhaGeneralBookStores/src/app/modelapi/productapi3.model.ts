@@ -11,7 +11,7 @@ export class ProductAPI3 {
   publishingYear: string | null;
   authorsId: number[];
   categoriesId: number[];
-  photo: string | null;
+  photos: string[] | null;
   createdAt: Date;
   updatedAt: Date;
 }
