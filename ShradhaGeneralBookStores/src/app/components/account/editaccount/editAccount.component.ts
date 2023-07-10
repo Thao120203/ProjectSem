@@ -32,8 +32,6 @@ export class EditAccountComponent implements OnInit{
       this.activevateRoute.paramMap.subscribe(c=>{
         this._accountService.get(parseInt(c.get('id'))).then(result=>{
           this.account = result as AccountAPI;
-
-
            //set value from
           this.accountFormGroup.get('id').setValue(this.account[0].id);
           this.accountFormGroup.get('email').setValue(this.account[0].email);

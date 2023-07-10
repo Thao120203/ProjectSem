@@ -42,12 +42,7 @@ export class AddVoucherComponent implements OnInit{
         quantity:[0,[
           Validators.required
         ]],
-        timeStart:['',[
-          Validators.required
-        ]],
-        timeEnd:['',[
-          Validators.required
-        ]],
+        time:[[],Validators.required],
         status:false,
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
