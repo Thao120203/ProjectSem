@@ -39,6 +39,10 @@ import { EditAccountComponent } from './components/account/editaccount/editAccou
 import { ListProductComponent } from './components/product/listproduct/listProduct.component';
 import { AddOrderComponent } from './components/order/addOrder.component';
 import { ListProductForCategoryComponent } from './components/category/listProductForCategory/listProductForCategory.component';
+import { ListProductForAuthorComponent } from './components/author/listProductForAuthor/listProductForAuthor.component';
+import { ListProductForPublisherComponent } from './components/publisher/listProductForPulisher/listProductForPublisher.component';
+import { ProfileComponent } from './components/profileAccount/profile.component';
+import { EditProductAdminComponent } from './components/product/editProduct/editProductAdmin.component';
 import { ListOrderComponent } from './components/order/listOrder/listOrder.component';
 
 
@@ -49,6 +53,7 @@ const routes: Routes =
     {path: 'productAdmin',component: ProductAdminComponent },
     {path: 'addproduct',component: AddProductAdminComponent},
     {path: 'listProduct',component: ListProductComponent},
+    {path: 'editproduct',component: EditProductAdminComponent},
 
     {path: 'addcategory',component: AddCategoryComponent},
     {path: 'editcategory',component: EditCategoryComponent},
@@ -58,6 +63,7 @@ const routes: Routes =
     {path: 'addauthor',component: AddAuthorComponent},
     {path: 'listauthor',component: ListAuthorComponent},
     {path: 'editauthor',component: EditAuthorComponent},
+    {path: 'listProductForAuthor',component: ListProductForAuthorComponent},
 
     {path: 'addorder',component: AddOrderComponent},
     {path: 'listorder',component: ListOrderComponent},
@@ -74,6 +80,8 @@ const routes: Routes =
     {path: 'addpublisher',component: AddPublisherComponent},
     {path: 'listpublisher',component: ListPublisherComponent},
     {path: 'editpublisher',component: EditPublisherComponent},
+    {path: 'listProductForPublisher',component: ListProductForPublisherComponent},
+
 
     {path: 'addrole',component: AddRoleComponent},
     {path: 'listrole',component: ListRoleComponent},
@@ -87,6 +95,7 @@ const routes: Routes =
     {path: 'addaccount',component: AddAccountComponent},
     {path: 'listaccount',component: ListAccountComponent},
     {path: 'editaccount',component: EditAccountComponent},
+    {path :'profile',component: ProfileComponent},
 
     {path: 'addaddressprofile',component: AddAddressProfileComponent},
     {path: 'listaddressprofile',component: ListAddressProfileComponent},

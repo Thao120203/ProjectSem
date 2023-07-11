@@ -11,13 +11,12 @@ export class AdminComponent implements OnInit{
         private router: Router
     ){}
     ngOnInit(): void {
-    //   if(localStorage.getItem('email') != null){
-    //     sessionStorage.setItem('email',localStorage.getItem('email'));
-    //   }
-      
-    //   console.log(sessionStorage.getItem('email'));
-    //     if(sessionStorage.getItem('email') == null) {
-    //         this.router.navigate(['login']);
-    //     }
+      if(localStorage.getItem('account') != null && sessionStorage.getItem('account') == null){
+        sessionStorage.setItem('account',localStorage.getItem('account'));
+      }
+
+      if(sessionStorage.getItem('account') == null) {
+        this.router.navigate(['login']);
+      }
     }
 }

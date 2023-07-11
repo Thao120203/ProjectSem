@@ -17,7 +17,7 @@ import { Voucher } from 'src/app/models/voucher.model';
 })
 
 export class AddVoucherComponent implements OnInit{
-
+  minDate: Date = new Date();
   voucherFormGroup: FormGroup;
   constructor(
     private _voucherService: VoucherService,
@@ -42,12 +42,7 @@ export class AddVoucherComponent implements OnInit{
         quantity:[0,[
           Validators.required
         ]],
-        timeStart:['',[
-          Validators.required
-        ]],
-        timeEnd:['',[
-          Validators.required
-        ]],
+        time:[[],Validators.required],
         status:false,
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
@@ -55,14 +50,26 @@ export class AddVoucherComponent implements OnInit{
     }
 
     save(){
-      let voucher = this.voucherFormGroup.value as Voucher;
-      voucher.timeStart = moment(voucher.timeStart).format('DD/MM/YYYY HH:mm:ss');
-      voucher.timeEnd = moment(voucher.timeEnd).format('DD/MM/YYYY HH:mm:ss');
+      let voucher = new Voucher();
+      voucher.name = this.voucherFormGroup.get('name').value;
+      voucher.varityCode = this.voucherFormGroup.get('varityCode').value;
+      voucher.discount = this.voucherFormGroup.get('discount').value;
+      voucher.condition = this.voucherFormGroup.get('condition').value;
+      voucher.quantity = this.voucherFormGroup.get('quantity').value;
+      voucher.timeStart =  moment(this.voucherFormGroup.get('time').value[0]).format('DD/MM/YYYY HH:mm:ss');
+      voucher.timeEnd =  moment(this.voucherFormGroup.get('time').value[this.voucherFormGroup.get('time').value.length - 1]).format('DD/MM/YYYY HH:mm:ss');
+      voucher.status = this.voucherFormGroup.get('status').value;
+      voucher.createdAt = this.voucherFormGroup.get('createdAt').value;
+      voucher.updatedAt = this.voucherFormGroup.get('updatedAt').value;
+
       this._voucherService.create(voucher).then(result=>{
-        if(result as true){
+        if(result){
           alert("THanhf cong");
         }
       })
+      console.log(voucher);
+
+
     }
 
     reset(){

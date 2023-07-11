@@ -1,4 +1,4 @@
-export class ProductAPI2 {
+export class ProductAPI3 {
   id: number;
   name: string;
   description: string | null;
@@ -11,8 +11,7 @@ export class ProductAPI2 {
   publishingYear: string | null;
   authorsId: number[];
   categoriesId: number[];
-  photo: string | null;
+  photos: string[] | null;
   createdAt: Date;
   updatedAt: Date;
-  photos: string[];
 }

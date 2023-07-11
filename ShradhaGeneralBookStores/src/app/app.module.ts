@@ -89,6 +89,10 @@ import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/de
 import { ConfirmationService } from 'primeng/api';
 import { ListProductComponent } from './components/product/listproduct/listProduct.component';
 import { ListProductForCategoryComponent } from './components/category/listProductForCategory/listProductForCategory.component';
+import { ListProductForAuthorComponent } from './components/author/listProductForAuthor/listProductForAuthor.component';
+import { ListProductForPublisherComponent } from './components/publisher/listProductForPulisher/listProductForPublisher.component';
+import { ProfileComponent } from './components/profileAccount/profile.component';
+import { EditProductAdminComponent } from './components/product/editProduct/editProductAdmin.component';
 import { AddOrderComponent } from './components/order/addOrder.component';
 import { OrderService } from './Service/order.service';
 
@@ -145,6 +149,11 @@ import { OrderService } from './Service/order.service';
     AddInvoiceComponent,
     EditInvoiceComponent,
     ListInvoiceComponent,
+    ListProductComponent,
+    ListProductForAuthorComponent,
+    ListProductForPublisherComponent,
+    ProfileComponent,
+    EditProductAdminComponent
     ListProductComponent,
     AddOrderComponent
   ],

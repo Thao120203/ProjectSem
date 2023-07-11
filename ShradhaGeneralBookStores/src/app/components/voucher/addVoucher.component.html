@@ -28,7 +28,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Varitycode</label>
             <input type="text" pInputText formControlName="varityCode" [style]="{'width':'100%'}"/>
@@ -40,7 +40,7 @@
           </div>
 
 
-          <div class="col-md-12">
+          <div class="col-md-4">
             <label for="inputName5" class="form-label">Discount</label>
             <br/>
             <p-inputNumber formControlName="discount" ></p-inputNumber>
@@ -51,7 +51,7 @@
             </div>
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-4">
             <label for="inputName5" class="form-label">Condition</label>
             <br/>
             <p-inputNumber formControlName="condition"></p-inputNumber>
@@ -62,7 +62,7 @@
             </div>
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-4">
             <label for="inputName5" class="form-label">Quantity</label>
             <br/>
             <p-inputNumber formControlName="quantity"></p-inputNumber>
@@ -73,26 +73,26 @@
             </div>
           </div>
 
-          <div class="col-md-12">
+          <!-- <div class="col-md-6">
             <label for="inputName5" class="form-label">Time Start</label>
-           
-            <p-calendar   formControlName="timeStart"></p-calendar>
+            <br>
+            <p-calendar   formControlName="timeStart" [styleClass]="'w-100'" dateFormat="dd/mm/yy" ></p-calendar>
             <div *ngIf="voucherFormGroup.get('timeStart').touched">
               <div *ngIf="voucherFormGroup.hasError('required',['timeStart'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Time Start is required
               </div>
             </div>
-          </div>
+          </div> -->
 
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Time End</label>
-            
-            <p-calendar   formControlName="timeEnd"></p-calendar>
-            <div *ngIf="voucherFormGroup.get('timeEnd').touched">
+            <br>
+            <p-calendar formControlName="time" [minDate]="minDate" [styleClass]="'w-100'"  dateFormat="dd/mm/yy" selectionMode="range" [readonlyInput]="true"></p-calendar>
+            <!-- <div *ngIf="voucherFormGroup.get('timeEnd').touched">
               <div *ngIf="voucherFormGroup.hasError('required',['timeEnd'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Time End is required
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="col-md-12">
@@ -101,7 +101,7 @@
           </div>
 
           <div class="text-center">
-            <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="voucherFormGroup.invalid">Submit</button> &nbsp;
+            <button type="submit" class="btn btn-primary" (click)="save()">Submit</button> &nbsp;
             <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
           </div>
         </form><!-- End Multi Columns Form -->

@@ -3,6 +3,7 @@ import { EmailValidator, FormBuilder, FormGroup, Validators } from "@angular/for
 import { Router } from "@angular/router";
 import * as moment from "moment";
 import { AccountService } from "src/app/Service/account.service";
+import { AccountAPI2 } from "src/app/modelapi/accountapi2.model";
 import { Account } from "src/app/models/account.model";
 
 @Component({
@@ -34,26 +35,33 @@ export class LoginAdminComponent implements OnInit{
     account.password = this.loginFormGroup.controls['password'].value;
     account.createdAt = moment().format('DD/MM/YYYY HH:mm:ss');
     account.updatedAt = moment().format('DD/MM/YYYY HH:mm:ss');
+
     this._accountservice.login(account).then(
       result=>{
         if(result as boolean){
           //làm vào trong lun
-          alert('đăng nhập đúng');
-          if(this.loginFormGroup.controls['rememberme'].value){
-            localStorage.setItem('email',account.email);
-          }
-          sessionStorage.setItem('email',account.email);
-          this._route.navigate(['']);
+          alert('đăng nhập thành công');
+
+          this._accountservice.getbyemail(account.email).then(
+            result => {
+              let acc = result[0] as AccountAPI2;
+              if(this.loginFormGroup.controls['rememberme'].value){
+                localStorage.setItem('account',JSON.stringify(acc));
+              }
+              sessionStorage.setItem('account',JSON.stringify(acc));
+              // console.log(sessionStorage.getItem('account'));
+              // console.dir( JSON.parse(sessionStorage.getItem('account')));
+
+              this._route.navigate(['']);
+            }
+          );
         }else (
           //làm vào trong lun
           alert('đăng nhập sai')
         )
       }
     );
-    console.dir(this.loginFormGroup.controls['rememberme'].value);
-    console.dir(account);
   }
-
   tichxanh(evt:any){
 
   }
