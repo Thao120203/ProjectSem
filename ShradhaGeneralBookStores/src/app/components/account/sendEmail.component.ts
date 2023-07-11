@@ -1,4 +1,7 @@
 import { Component,OnInit } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { Router } from "@angular/router";
+import { AccountService } from "src/app/Service/account.service";
 
 @Component({
     selector: 'app-root',
@@ -6,7 +9,30 @@ import { Component,OnInit } from "@angular/core";
 })
 export class SendEmailComponent implements OnInit{
 
-    ngOnInit(): void {
-      
-    }
+  accountFormGroup: FormGroup;
+  dontexist: boolean = false;
+  constructor(
+    private _accountService: AccountService,
+    private formbuilder: FormBuilder,
+    private router: Router
+  ){}
+
+  ngOnInit(): void {
+    this.accountFormGroup = this.formbuilder.group({
+      email : ['']
+    });
+  }
+
+
+  checkExist(){
+    this._accountService.checkexists(this.accountFormGroup.get('email').value).then(result=>{
+      if(result as boolean){
+        this.dontexist = true;
+        console.log(this.dontexist);
+      }else{
+        this.dontexist = false;
+        console.log(this.dontexist);
+      }
+    });
+  }
 }
