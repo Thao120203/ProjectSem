@@ -92,6 +92,7 @@ import { ListProductForCategoryComponent } from './components/category/listProdu
 import { ListProductForAuthorComponent } from './components/author/listProductForAuthor/listProductForAuthor.component';
 import { ListProductForPublisherComponent } from './components/publisher/listProductForPulisher/listProductForPublisher.component';
 import { ProfileComponent } from './components/profileAccount/profile.component';
+import { EditProductAdminComponent } from './components/product/editProduct/editProductAdmin.component';
 
 @NgModule({
   declarations: [
@@ -149,7 +150,8 @@ import { ProfileComponent } from './components/profileAccount/profile.component'
     ListProductComponent,
     ListProductForAuthorComponent,
     ListProductForPublisherComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditProductAdminComponent
   ],
 
   imports: [

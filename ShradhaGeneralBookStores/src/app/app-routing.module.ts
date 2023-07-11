@@ -41,6 +41,7 @@ import { ListProductForCategoryComponent } from './components/category/listProdu
 import { ListProductForAuthorComponent } from './components/author/listProductForAuthor/listProductForAuthor.component';
 import { ListProductForPublisherComponent } from './components/publisher/listProductForPulisher/listProductForPublisher.component';
 import { ProfileComponent } from './components/profileAccount/profile.component';
+import { EditProductAdminComponent } from './components/product/editProduct/editProductAdmin.component';
 
 
 
@@ -50,6 +51,7 @@ const routes: Routes =
     {path: 'productAdmin',component: ProductAdminComponent },
     {path: 'addproduct',component: AddProductAdminComponent},
     {path: 'listProduct',component: ListProductComponent},
+    {path: 'editproduct',component: EditProductAdminComponent},
 
     {path: 'addcategory',component: AddCategoryComponent},
     {path: 'editcategory',component: EditCategoryComponent},
