@@ -87,41 +87,7 @@
 
       <li class="nav-heading">Product</li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#k-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Order</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="k-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/listorder']">
-              <i class="bi bi-circle"></i><span>List Orders</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/addorder']" >
-              <i class="bi bi-circle"></i><span>Add Order</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#d-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Order Status</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="a-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/listcategory']">
-              <i class="bi bi-circle"></i><span>List Categories</span>
-            </a>
-          </li>
-          <li>
-            <a [routerLinkActive]="['active']"  [routerLink]="['/addcategory']" >
-              <i class="bi bi-circle"></i><span>Add Category</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
+      
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#b-nav" data-bs-toggle="collapse" href="#">
@@ -218,6 +184,25 @@
 
 
       <li class="nav-heading">Order</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#n-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Order</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="n-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/listorder']">
+              <i class="bi bi-circle"></i><span>List Orders</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLinkActive]="['active']"  [routerLink]="['/addorder']" >
+              <i class="bi bi-circle"></i><span>Add Order</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#d-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-layout-text-window-reverse"></i><span>Order Status</span><i class="bi bi-chevron-down ms-auto"></i>

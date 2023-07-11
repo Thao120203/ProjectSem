@@ -39,6 +39,7 @@ import { EditAccountComponent } from './components/account/editaccount/editAccou
 import { ListProductComponent } from './components/product/listproduct/listProduct.component';
 import { AddOrderComponent } from './components/order/addOrder.component';
 import { ListProductForCategoryComponent } from './components/category/listProductForCategory/listProductForCategory.component';
+import { ListOrderComponent } from './components/order/listOrder/listOrder.component';
 
 
 
@@ -59,7 +60,7 @@ const routes: Routes =
     {path: 'editauthor',component: EditAuthorComponent},
 
     {path: 'addorder',component: AddOrderComponent},
-    {path: 'listorder',component: ListOrderStatusComponent},
+    {path: 'listorder',component: ListOrderComponent},
     {path: 'editorder',component: EditOrderStatusComponent},
 
     {path: 'addorderstatus',component: AddOrderStatusComponent},
