@@ -153,7 +153,7 @@ import { OrderService } from './Service/order.service';
     ListProductForAuthorComponent,
     ListProductForPublisherComponent,
     ProfileComponent,
-    EditProductAdminComponent
+    EditProductAdminComponent,
     ListProductComponent,
     AddOrderComponent
   ],
