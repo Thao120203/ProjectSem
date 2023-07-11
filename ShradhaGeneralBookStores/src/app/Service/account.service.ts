@@ -22,7 +22,8 @@ export class AccountService {
     }
 
     async delete(id: number){
-        return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'Author/Delete?id=' + id));
+        let a = {"name": "a"};
+        return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Account/Delete/' + id,a));
     }
 
     async update(account: AccountAPI){

@@ -47,7 +47,14 @@ export class ListAccountComponent implements OnInit {
     })
   }
   deleted(id: number){
-
+    if (confirm('Are you sure you want to delete')) {
+      this._accountService.delete(id).then(
+        result =>{
+          this.ngOnInit();
+          alert('Deleted');
+        }
+      );
+    }
 
   }
   deleteSelected() {
