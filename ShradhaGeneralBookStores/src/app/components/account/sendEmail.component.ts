@@ -22,7 +22,13 @@ export class SendEmailComponent implements OnInit{
       email : ['']
     });
   }
-
+  forget(){
+    if(this.dontexist){
+      this._accountService.ForgetPassword(this.accountFormGroup.get('email').value)
+    }else{
+      alert("Email không tồn tại");
+    }
+  }
 
   checkExist(){
     this._accountService.checkexists(this.accountFormGroup.get('email').value).then(result=>{

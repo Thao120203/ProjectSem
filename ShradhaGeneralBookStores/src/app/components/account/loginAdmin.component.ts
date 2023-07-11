@@ -49,7 +49,7 @@ export class LoginAdminComponent implements OnInit{
                 localStorage.setItem('account',JSON.stringify(acc));
               }
               sessionStorage.setItem('account',JSON.stringify(acc));
-              // console.log(sessionStorage.getItem('account'));
+              console.log(sessionStorage.getItem('account'));
               // console.dir( JSON.parse(sessionStorage.getItem('account')));
 
               this._route.navigate(['']);

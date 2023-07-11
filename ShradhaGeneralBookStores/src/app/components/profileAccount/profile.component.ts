@@ -12,7 +12,7 @@ import { AccountAPI2 } from "src/app/modelapi/accountapi2.model";
 export class ProfileComponent implements OnInit{
   account: AccountAPI2 = new AccountAPI2();
   accountFormGroup: FormGroup;
-  constructor( 
+  constructor(
     private activevateRoute:ActivatedRoute,
     private _accountService:AccountService,
     private formbuilder: FormBuilder,
@@ -20,40 +20,28 @@ export class ProfileComponent implements OnInit{
   ngOnInit(): void {
     this.account = JSON.parse(sessionStorage.getItem('account')) as AccountAPI2;
     this.accountFormGroup  = this.formbuilder.group({
-     
-      firstName:['',[
+
+      firstName:[this.account.firstName,[
         Validators.required
       ]],
-      lastName:['',[
+      lastName:[this.account.lastName,[
         Validators.required
       ]],
-      email:['',[
+      email:[this.account.email,[
         Validators.required,
-        
+
       ]],
-      phone:[0,[
+      phone:[this.account.phone,[
         Validators.required,
         Validators.pattern(/^[0-9]{10,10}$/)
       ]],
-      createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
-      updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
+      createdAt: [this.account.createdAt],
+      updatedAt: [this.account.updatedAt]
     })
-    this.activevateRoute.paramMap.subscribe(c=>{
-      var id = parseInt(c.get('id'));
-      this.account.id = id;
-      this._accountService.get(id).then(result=>{
-        this.account = result[0] as AccountAPI2;
 
-        //set value from
-        this.accountFormGroup.get('id').setValue(this.account.id);
-        this.accountFormGroup.get('firstName').setValue(this.account.firstName);
-        this.accountFormGroup.get('lastName').setValue(this.account.lastName);
-        this.accountFormGroup.get('phone').setValue(this.account.phone);
-        this.accountFormGroup.get('email').setValue(this.account.email);
-      })
-    });
+
   }
   saveChange(){
-   
+
   }
 }

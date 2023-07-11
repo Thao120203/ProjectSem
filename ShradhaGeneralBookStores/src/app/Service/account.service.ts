@@ -54,4 +54,10 @@ export class AccountService {
     async getbyemail(email: string){
       return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'account/GetByEmail?email='+email));
     }
+
+
+    async ForgetPassword(email: string){
+      let a = {"name": "a"};
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() +'Account/ForgetPassword/'+email, a));
+    }
 }
