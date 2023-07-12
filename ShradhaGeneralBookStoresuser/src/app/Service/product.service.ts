@@ -24,6 +24,9 @@ export class ProductService {
   async get(id: number) {
     return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/get?id=' + id));
   }
+  async getuser(id: string) {
+    return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/getUser?id=' + id));
+  }
 
   async delete(id: number) {
     return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'Product/Delete?id=' + id));
