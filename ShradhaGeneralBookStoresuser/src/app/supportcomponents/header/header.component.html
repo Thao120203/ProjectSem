@@ -56,7 +56,7 @@
       </div>
       <!-- Cart Area -->
       <div class="cart-area">
-        <a href="#" id="essenceCartBtn"><img src="./assets/img/core-img/bag.svg" alt=""> <span>3</span></a>
+        <a [routerLink]="[('/cart')]" id="essenceCartBtn"><img src="./assets/img/core-img/bag.svg" alt=""> <span *ngIf="cart != null">{{cart.listItemCart.length}}</span></a>
       </div>
     </div>
 

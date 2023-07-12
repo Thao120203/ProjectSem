@@ -1,9 +1,12 @@
+import { ReloadService } from './../../Service/reload.service';
 import { Component,OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { CartService } from "src/app/Service/cart.service";
 import { CategoryService } from "src/app/Service/category.service";
 import { ProductService } from "src/app/Service/product.service";
 import { ProductAPI2 } from "src/app/modelapi/productapi2.model";
 import { ProductAPI4 } from "src/app/modelapi/productapi4.model";
+import { Cart } from "src/app/models/cart.model";
 import { Category } from "src/app/models/category.model";
 
 @Component({
@@ -13,6 +16,8 @@ import { Category } from "src/app/models/category.model";
 export class ShopComponent implements OnInit{
     products: ProductAPI4[];
     constructor(
+        private reloadService: ReloadService,
+        private _cartService: CartService,
         private _productService :ProductService,
         private activevateRoute:ActivatedRoute
     ){
@@ -28,6 +33,11 @@ export class ShopComponent implements OnInit{
               console.log(error);
             })
           });
-      
+
+    }
+    addcart(product: ProductAPI4){
+      this._cartService.add(product);
+      console.log(JSON.parse(sessionStorage.getItem('cart')) as Cart);
+      this.reloadService.reloadComponentB();
     }
 }

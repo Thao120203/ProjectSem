@@ -14,5 +14,4 @@ export class ProductAPI2 {
   photo: string | null;
   createdAt: Date;
   updatedAt: Date;
-  photos: string[];
 }

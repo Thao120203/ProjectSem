@@ -32,6 +32,8 @@ import { RoleService } from './Service/role.service';
 import { VoucherService } from './Service/voucher.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartService } from './Service/cart.service';
+import { ReloadService } from './Service/reload.service';
 
 
 @NgModule({
@@ -74,7 +76,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductService,
     ProductImageService,
     ConfirmationService,
-    OrderService
+    OrderService,
+    CartService,
+    ReloadService
   ],
   bootstrap: [HomeComponent]
 })
