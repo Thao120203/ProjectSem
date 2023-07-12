@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <div class="title-text">
+    <div class="title login">Register Form</div>
+    <div class="title signup">Signup Form</div>
+  </div>
+  <div class="form-container">
+    <div class="form-inner">
+      <form action="#" class="login">
+        <div class="field">
+          <input type="text" placeholder="First Name" required>
+        </div>
+        <div class="field">
+          <input type="text" placeholder="Last Name" required>
+        </div>
+        <div class="field">
+          <input type="text" placeholder="Phone Number" required>
+        </div>
+        <div class="field">
+          <input type="text" placeholder="Email" required>
+        </div>
+        <div class="field">
+          <input type="password" placeholder="Password" required>
+        </div>
+        <div class="field">
+          <input type="password" placeholder="Confirm Password" required>
+        </div>
+        <div class="field btn">
+          <div class="btn-layer"></div>
+          <input type="submit" value="register">
+        </div>
+        <div class="signup-link">Already have an account? <a [routerLink]="['/login']">Login </a></div>
+      </form>
+    </div>
+  </div>
+</div>

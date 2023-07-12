@@ -1,3 +1,4 @@
+import { ConfirmationService } from 'primeng/api';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -5,18 +6,76 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { LoginComponent } from './components/account/login.component';
+import { RegisterComponent } from './components/account/register.component';
+import { SendEmailComponent } from './components/account/sendEmail.component';
+import { CartsComponent } from './components/cart/cart.component';
+import { UserComponent } from './user.component';
+import { HeaderComponent } from './supportcomponents/header/header.component';
+import { FooterComponent } from './supportcomponents/footer/footer.component';
+import { FirstComponent } from './components/first/first.component';
+import { BaseURLService } from './Service/BaseURL.service';
+import { AccountService } from './Service/account.service';
+import { AddressProfileService } from './Service/addressprofile.service';
+import { AuthorService } from './Service/author.service';
+import { CategoryService } from './Service/category.service';
+import { EventService } from './Service/event.service';
+import { InvoiceService } from './Service/invoice.service';
+import { OrderService } from './Service/order.service';
+import { OrderStatusService } from './Service/orderstatus.service';
+import { PaymentMethodService } from './Service/paymentmethod.service';
+import { ProductService } from './Service/product.service';
+import { ProductImageService } from './Service/productimage.service';
+import { PublisherService } from './Service/publisher.service';
+import { RoleService } from './Service/role.service';
+import { VoucherService } from './Service/voucher.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductComponent
+    ProductComponent,
+    CartsComponent,
+    ShopComponent,
+    LoginComponent,
+    RegisterComponent,
+    SendEmailComponent,
+    UserComponent,
+    HeaderComponent,
+    FooterComponent,
+    FirstComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    CategoryService,
+    BaseURLService,
+    RoleService,
+    PublisherService,
+    EventService,
+    AuthorService,
+    AccountService,
+    OrderStatusService,
+    PaymentMethodService,
+    VoucherService,
+    AddressProfileService,
+    InvoiceService,
+    ProductService,
+    ProductImageService,
+    ConfirmationService,
+    OrderService
+  ],
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }
