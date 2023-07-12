@@ -65,7 +65,7 @@
                 Price is required
               </div>
             </div>
-            
+
           </div>
 
           <div class="col-md-4">
@@ -77,8 +77,8 @@
                 Cost is required
               </div>
             </div>
-           
-            
+
+
           </div>
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Publishing Year</label>
@@ -111,9 +111,10 @@
           </div>
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Old Image</label>
+            <br>
             <ng-container *ngIf="product.photos!=null">
                 <span *ngFor = "let item of product.photos ">
-                  <img src="item">
+                  <img src="{{item}}">|
                 </span>
             </ng-container>
           </div>
@@ -124,7 +125,7 @@
               [showUploadButton]="false" [multiple]="true"></p-fileUpload>
           </div>
 
-          
+
           <div class="col-md-6">
             <label for="inputName5" class="form-label">Status</label>
             <br />
