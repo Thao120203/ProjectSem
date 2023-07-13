@@ -60,7 +60,6 @@ import { SliderModule } from 'primeng/slider';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-
     DataViewModule,
 
     SliderModule
