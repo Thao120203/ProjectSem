@@ -8,6 +8,7 @@ import { OrderStatusService } from 'src/app/Service/orderstatus.service';
 import { OrderStatus } from 'src/app/models/orderstatus.model';
 import { VoucherService } from 'src/app/Service/voucher.service';
 import { Voucher } from 'src/app/models/voucher.model';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class AddVoucherComponent implements OnInit{
   constructor(
     private _voucherService: VoucherService,
     private formbuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private utils : UtilsServiceService
   ) {}
     ngOnInit() {
 
@@ -64,7 +66,8 @@ export class AddVoucherComponent implements OnInit{
 
       this._voucherService.create(voucher).then(result=>{
         if(result){
-          alert("THanhf cong");
+          this.utils.updateToast('Success')
+          this.router.navigate(['listvoucher']);
         }
       })
       console.log(voucher);

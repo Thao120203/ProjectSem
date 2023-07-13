@@ -8,6 +8,7 @@ import { OrderStatusService } from 'src/app/Service/orderstatus.service';
 import { OrderStatus } from 'src/app/models/orderstatus.model';
 import { PaymentMethodService } from 'src/app/Service/paymentmethod.service';
 import { PaymentMethod } from 'src/app/models/paymentmethod.model';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class EditPaymentMethodComponent implements OnInit{
     private _paymentMethodService: PaymentMethodService,
     private activevateRoute:ActivatedRoute,
     private formbuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private utils:UtilsServiceService
   ) {}
     ngOnInit() {
       this.activevateRoute.paramMap.subscribe(c=>{
@@ -55,7 +57,8 @@ export class EditPaymentMethodComponent implements OnInit{
       let paymentMethod = this.paymentMethodFormGroup.value as PaymentMethod;
       this._paymentMethodService.update(paymentMethod).then(result=>{
         if(result as true){
-          alert("THanhf cong");
+          this.utils.updateToast('Success')
+          this.router.navigate(['listpaymentmethod']);
         }
       })
     }

@@ -6,6 +6,7 @@ import * as moment from 'moment';
 import { Author } from 'src/app/models/author.model';
 import { OrderStatusService } from 'src/app/Service/orderstatus.service';
 import { OrderStatus } from 'src/app/models/orderstatus.model';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class EditOrderStatusComponent implements OnInit{
     private _orderStatusService: OrderStatusService,
     private formbuilder: FormBuilder,
     private activevateRoute:ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private utils:UtilsServiceService
   ) {}
     ngOnInit() {
       this.activevateRoute.paramMap.subscribe(c=>{
@@ -53,7 +55,8 @@ export class EditOrderStatusComponent implements OnInit{
       let orderStatus = this.orderStatusFormGroup.value as OrderStatus;
       this._orderStatusService.update(orderStatus).then(result=>{
         if(result as true){
-          alert("THanhf cong");
+          this.utils.updateToast('Success')
+          this.router.navigate(['listorderstatus']);
         }
       })
     }

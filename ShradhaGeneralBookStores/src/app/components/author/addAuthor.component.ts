@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthorService } from 'src/app/Service/author.service';
 import * as moment from 'moment';
 import { Author } from 'src/app/models/author.model';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 
 @Component({
@@ -15,10 +16,12 @@ import { Author } from 'src/app/models/author.model';
 export class AddAuthorComponent implements OnInit{
 
   authorFormGroup: FormGroup;
+
   constructor(
     private _authorService: AuthorService,
     private formbuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private utils: UtilsServiceService
   ) {}
     ngOnInit() {
 
@@ -40,7 +43,8 @@ export class AddAuthorComponent implements OnInit{
       author.yearOfBirth = author.yearOfBirth.toString();
       this._authorService.create(author).then(result=>{
         if(result as true){
-          alert("THanhf cong");
+          this.utils.updateToast('Success')
+          this.router.navigate(['listauthor']);
         }
       })
     }

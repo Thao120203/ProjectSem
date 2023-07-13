@@ -52,5 +52,10 @@ export class ProductService {
   async readforpublisher(id: string) {
     return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadForPublisher?idPublisher=' + id));
   }
-
+  async readforuser() {
+    return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadForUser'));
+  }
+  async readbyprice(min:number,max :number) {
+    return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadByPrice?min='+min+'&max='+max));
+  }
 }

@@ -7,6 +7,7 @@ import { CategoryService } from "src/app/Service/category.service";
 import { ProductService } from "src/app/Service/product.service";
 import { ProductImageService } from "src/app/Service/productimage.service";
 import { PublisherService } from "src/app/Service/publisher.service";
+import { UtilsServiceService } from "src/app/Service/utils-service.service";
 import { ProductAPI } from "src/app/modelapi/productapi.model";
 import { Author } from "src/app/models/author.model";
 import { Category } from "src/app/models/category.model";
@@ -32,7 +33,7 @@ export class AddProductAdminComponent implements OnInit{
     private _productService: ProductService,
     private _publisherService: PublisherService,
     private _productImageService: ProductImageService,
-
+    private utils :UtilsServiceService,
     private formbuilder: FormBuilder,
     private router: Router
   ) {}
@@ -86,7 +87,8 @@ export class AddProductAdminComponent implements OnInit{
       this._productService.add(product).then(result=>{
           this._productImageService.create(result as number,this.photos).then(result=>{
             if(result as boolean){
-              alert('thêm thành thụ');
+              this.utils.updateToast('Success')
+              this.router.navigate(['listProduct']);
             }
           })
       })

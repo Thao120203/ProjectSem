@@ -10,6 +10,7 @@ import { PaymentMethodService } from 'src/app/Service/paymentmethod.service';
 import { PaymentMethod } from 'src/app/models/paymentmethod.model';
 import { RoleService } from 'src/app/Service/role.service';
 import { Role } from 'src/app/models/role.model';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class AddRoleComponent implements OnInit{
   constructor(
     private _roleService: RoleService,
     private formbuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private utils:UtilsServiceService
   ) {}
     ngOnInit() {
 
@@ -41,7 +43,8 @@ export class AddRoleComponent implements OnInit{
       let role = this.roleFormGroup.value as Role;
       this._roleService.create(role).then(result=>{
         if(result as true){
-          alert("THanhf cong");
+          this.utils.updateToast('Success')
+           this.router.navigate(['listrole']);
         }
       })
     }

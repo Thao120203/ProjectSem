@@ -8,6 +8,7 @@ import { Publisher } from 'src/app/models/publisher.model';
 import { PublisherService } from 'src/app/Service/publisher.service';
 import { Role } from 'src/app/models/role.model';
 import { RoleService } from 'src/app/Service/role.service';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class EditRoleComponent implements OnInit{
     private _roleService: RoleService,
     private formbuilder: FormBuilder,
     private activevateRoute:ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private utils:UtilsServiceService
   ) {}
     ngOnInit() {
       //get data for form group
@@ -56,7 +58,8 @@ export class EditRoleComponent implements OnInit{
       let role = this.roleFormGroup.value as Publisher;
       this._roleService.update(role).then(result=>{
         if(result as true){
-          alert("THanhf cong");
+          this.utils.updateToast('Success')
+           this.router.navigate(['listrole']);
         }
       })
     }

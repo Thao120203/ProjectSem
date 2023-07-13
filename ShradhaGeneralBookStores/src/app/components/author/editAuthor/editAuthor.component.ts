@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthorService } from 'src/app/Service/author.service';
 import * as moment from 'moment';
 import { Author } from 'src/app/models/author.model';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class EditAuthorComponent implements OnInit{
     private _authorService: AuthorService,
     private formbuilder: FormBuilder,
     private activevateRoute:ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private utils:UtilsServiceService
   ) {}
     ngOnInit() {
       //get data for form group
@@ -59,7 +61,8 @@ export class EditAuthorComponent implements OnInit{
       author.yearOfBirth = author.yearOfBirth.toString();
       this._authorService.update(author).then(result=>{
         if(result as true){
-          alert("THanhf cong");
+          this.utils.updateToast('Success')
+          this.router.navigate(['listauthor']);
         }
       })
     }

@@ -48,4 +48,7 @@ export class AccountService {
     async get(id: number){
       return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'Account/Get?id='+id));
     }
+    async getbyemail(email: string){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'account/GetByEmail?email='+email));
+    }
 }

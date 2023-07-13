@@ -5,6 +5,7 @@ import * as moment from 'moment';
 
 import { PublisherService } from 'src/app/Service/publisher.service';
 import { Publisher } from 'src/app/models/publisher.model';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 
 @Component({
@@ -16,10 +17,12 @@ import { Publisher } from 'src/app/models/publisher.model';
 export class AddPublisherComponent implements OnInit{
 
   publisherFormGroup: FormGroup;
+ 
   constructor(
     private _publisherService: PublisherService,
     private formbuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private utils:UtilsServiceService
   ) {}
     ngOnInit() {
 
@@ -46,7 +49,8 @@ export class AddPublisherComponent implements OnInit{
       let publisher = this.publisherFormGroup.value as Publisher;
       this._publisherService.create(publisher).then(result=>{
         if(result as true){
-          alert("THanhf cong");
+          this.utils.updateToast('Success')
+           this.router.navigate(['listpublisher']);
         }
       })
     }

@@ -8,6 +8,7 @@ import { OrderStatusService } from 'src/app/Service/orderstatus.service';
 import { OrderStatus } from 'src/app/models/orderstatus.model';
 import { PaymentMethodService } from 'src/app/Service/paymentmethod.service';
 import { PaymentMethod } from 'src/app/models/paymentmethod.model';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class AddPaymentMethodComponent implements OnInit{
   constructor(
     private _paymentMethodService: PaymentMethodService,
     private formbuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private utils:UtilsServiceService
   ) {}
     ngOnInit() {
 
@@ -39,7 +41,8 @@ export class AddPaymentMethodComponent implements OnInit{
       let paymentMethod = this.paymentMethodFormGroup.value as PaymentMethod;
       this._paymentMethodService.create(paymentMethod).then(result=>{
         if(result as true){
-          alert("THanhf cong");
+          this.utils.updateToast('Success')
+          this.router.navigate(['listpaymentmethod']);
         }
       })
     }

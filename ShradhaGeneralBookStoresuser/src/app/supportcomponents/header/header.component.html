@@ -18,7 +18,7 @@
         <!-- Nav Start -->
         <div class="classynav">
           <ul>
-            <li class="megamenu-item"><a href="#">Categories</a>
+            <li class="megamenu-item"><a [routerLink]="['/categories',{id: 0}]">Categories</a>
               <div class="megamenu">
 
                   <ng-container *ngFor="let category of categoriesTitle">

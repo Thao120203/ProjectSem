@@ -7,6 +7,7 @@ import { CategoryService } from "src/app/Service/category.service";
 import { ProductService } from "src/app/Service/product.service";
 import { ProductImageService } from "src/app/Service/productimage.service";
 import { PublisherService } from "src/app/Service/publisher.service";
+import { UtilsServiceService } from "src/app/Service/utils-service.service";
 import { ProductAPI } from "src/app/modelapi/productapi.model";
 import { ProductAPI3 } from "src/app/modelapi/productapi3.model";
 import { Author } from "src/app/models/author.model";
@@ -36,7 +37,8 @@ export class EditProductAdminComponent implements OnInit{
     private _productImageService: ProductImageService,
     private activevateRoute:ActivatedRoute,
     private formbuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private utils:UtilsServiceService
   ) {}
     ngOnInit() {
        //get data for form group
@@ -118,7 +120,8 @@ export class EditProductAdminComponent implements OnInit{
       this._productService.update(product).then(result=>{
           this._productImageService.create(result as number,this.photos).then(result=>{
             if(result as boolean){
-              alert('thêm thành thụ');
+              this.utils.updateToast('Success')
+              this.router.navigate(['listProduct']);
             }
           })
       })

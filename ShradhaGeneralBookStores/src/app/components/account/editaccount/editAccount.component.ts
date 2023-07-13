@@ -53,7 +53,9 @@ export class EditAccountComponent implements OnInit{
       this.accountFormGroup = this.formbuilder.group({
         id:[''],
         email: [''],
-        password: [''],
+        password: ['',[
+          Validators.pattern( /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/)
+        ]],
         firstName: ['',[
           Validators.required
         ]],
@@ -69,30 +71,23 @@ export class EditAccountComponent implements OnInit{
         avatar: ['no-avatar.jpg'],
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
-        roleId: [[]],
+        roleId: ['',[
+          Validators.required
+        ]],
       });
     }
 
     save(){
-      // this._accountService.register(account).then(result=>{
-      //   if(result as true){
-      //     alert("THanhf cong");
-      //   }
-      // })]
-      // if(this.dontexist){
-      //   let account = this.accountFormGroup.value as AccountAPI;
-      //   this._accountService.create(account).then(result=>{
-      //     if(result as boolean){
-      //       this.utils.updateToast('Successfully Added')
-      //       this.router.navigate(['listcategory']);
-      //     }
-      //   });
-      // }
       let account = this.accountFormGroup.value as AccountAPI;
       if(this.accountFormGroup.get('password').value == null)
         account.password = '';
-      this._accountService.update(account);
-
+      this._accountService.update(account).then(result=>{
+        if(result as true){
+          this.utils.updateToast('Success')
+          this.router.navigate(['listaccount']);
+        }
+      });
+        
       console.dir(account);
     }
     checkExist(evt:any){

@@ -8,6 +8,7 @@ import { Publisher } from 'src/app/models/publisher.model';
 import { PublisherService } from 'src/app/Service/publisher.service';
 import { Voucher } from 'src/app/models/voucher.model';
 import { VoucherService } from 'src/app/Service/voucher.service';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class EditVoucherComponent implements OnInit{
     private _voucherService: VoucherService,
     private formbuilder: FormBuilder,
     private activevateRoute:ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private utils:UtilsServiceService
   ) {}
     ngOnInit() {
       //get data for form group
@@ -83,7 +85,8 @@ export class EditVoucherComponent implements OnInit{
       voucher.timeEnd = moment(voucher.timeEnd).format('DD/MM/YYYY HH:mm:ss');
       this._voucherService.update(voucher).then(result=>{
         if(result as true){
-          alert("THanhf cong");
+          this.utils.updateToast('Success')
+          this.router.navigate(['listvoucher']);
         }
       })
     }

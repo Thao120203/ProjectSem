@@ -6,6 +6,7 @@ import * as moment from 'moment';
 import { Author } from 'src/app/models/author.model';
 import { OrderStatusService } from 'src/app/Service/orderstatus.service';
 import { OrderStatus } from 'src/app/models/orderstatus.model';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class AddOrderStatusComponent implements OnInit{
   constructor(
     private _orderStatusService: OrderStatusService,
     private formbuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private utils:UtilsServiceService
   ) {}
     ngOnInit() {
 
@@ -37,7 +39,8 @@ export class AddOrderStatusComponent implements OnInit{
       let orderStatus = this.orderStatusFormGroup.value as OrderStatus;
       this._orderStatusService.create(orderStatus).then(result=>{
         if(result as true){
-          alert("THanhf cong");
+          this.utils.updateToast('Success')
+          this.router.navigate(['listorderstatus']);
         }
       })
     }

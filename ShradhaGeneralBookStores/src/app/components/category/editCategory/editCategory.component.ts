@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { CategoryService } from 'src/app/Service/category.service';
+import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 import { Category } from 'src/app/models/category.model';
 
 
@@ -20,6 +21,7 @@ export class EditCategoryComponent implements OnInit {
     private _categoryService: CategoryService,
     private formbuilder: FormBuilder,
     private activevateRoute:ActivatedRoute,
+    private utils: UtilsServiceService,
     private router: Router
   ) {}
   ngOnInit() {
@@ -68,7 +70,8 @@ export class EditCategoryComponent implements OnInit {
     this.category = this.editCategoryForm.value as Category;
     this._categoryService.update(this.category).then(result=>{
       if(result as true){
-        alert("THanhf cong");
+        this.utils.updateToast('Success')
+        this.router.navigate(['listcategory']);
       }
     })
     console.dir(this.category);

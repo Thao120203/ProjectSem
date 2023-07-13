@@ -54,7 +54,7 @@ export class AddCategoryComponent implements OnInit {
     this._categoryService.create(category).then(result=>{
       if(result as true){
         // alert("THanhf cong");
-        this.utils.updateToast('dit me may them thanh cong r nhe')
+        this.utils.updateToast('Success')
         this.router.navigate(['listcategory']);
       }
     })

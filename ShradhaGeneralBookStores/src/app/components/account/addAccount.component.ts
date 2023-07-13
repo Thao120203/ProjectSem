@@ -35,7 +35,8 @@ export class AddAccountComponent implements OnInit{
           Validators.pattern(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/),
         ]],
         password: ['',[
-          Validators.required
+          Validators.required,
+          Validators.pattern( /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/)
         ]],
         firstName: ['',[
           Validators.required
@@ -50,7 +51,9 @@ export class AddAccountComponent implements OnInit{
         avatar: ['no-avatar.jpg'],
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
-        roleId: [[]],
+        roleId: ['',[
+          Validators.required
+        ]],
       });
     }
 

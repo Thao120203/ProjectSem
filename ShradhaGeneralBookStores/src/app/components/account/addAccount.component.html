@@ -44,11 +44,11 @@
             <label for="inputName5" class="form-label">Role</label>
             <p-multiSelect [options]="roles" optionLabel="name" optionValue="id" formControlName="roleId" [styleClass]="'w-100'"></p-multiSelect>
           </div>
-          <!-- <div *ngIf="accountFormGroup.get('role').touched">
-            <div *ngIf="accountFormGroup.hasError('required',['role'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+          <div *ngIf="accountFormGroup.get('roleId').touched">
+            <div *ngIf="accountFormGroup.hasError('required',['roleId'])" style="color: rgb(255, 0, 0); font-size: 80%;">
               Role is required
             </div>
-          </div> -->
+          </div>
 
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Email</label>
@@ -66,11 +66,16 @@
           </div>
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Password</label>
-            <p-password [(ngModel)]="password" formControlName="password" [toggleMask]="true" [styleClass]="'w-100'" [inputStyle]="{'width':'100%','display':'block'}"></p-password>
+            <p-password [(ngModel)]="password" formControlName="password" [toggleMask]="true" [feedback]="false" [styleClass]="'w-100'" [inputStyle]="{'width':'100%','display':'block'}"></p-password>
           </div>
           <div *ngIf="accountFormGroup.get('password').touched">
             <div *ngIf="accountFormGroup.hasError('required',['password'])" style="color: rgb(255, 0, 0); font-size: 80%;">
               Password is required
+            </div>
+          </div>
+          <div *ngIf="accountFormGroup.get('password').touched">
+            <div *ngIf="accountFormGroup.hasError('pattern',['password'])"  style="color: rgb(255, 0, 0); font-size: 80%;">
+              A strong level password that has at least one lowercase letter, one uppercase letter, one digit, one special character, and is at least eight characters long, max is 30.
             </div>
           </div>
           <div class="col-md-12">

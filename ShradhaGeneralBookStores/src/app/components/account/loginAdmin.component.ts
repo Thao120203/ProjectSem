@@ -3,6 +3,7 @@ import { EmailValidator, FormBuilder, FormGroup, Validators } from "@angular/for
 import { Router } from "@angular/router";
 import * as moment from "moment";
 import { AccountService } from "src/app/Service/account.service";
+import { UtilsServiceService } from "src/app/Service/utils-service.service";
 import { AccountAPI2 } from "src/app/modelapi/accountapi2.model";
 import { Account } from "src/app/models/account.model";
 
@@ -15,13 +16,16 @@ export class LoginAdminComponent implements OnInit{
   constructor(
     private _accountservice: AccountService,
     private _route: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private utils:UtilsServiceService,
+    private router:Router
   ){}
   ngOnInit(): void {
     this.loginFormGroup = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
-      rememberme: [false]
+      rememberme: [false],
+
     })
   }
 
@@ -40,7 +44,7 @@ export class LoginAdminComponent implements OnInit{
       result=>{
         if(result as boolean){
           //làm vào trong lun
-          alert('đăng nhập thành công');
+          this.utils.updateToast('login Success')
 
           this._accountservice.getbyemail(account.email).then(
             result => {
@@ -49,12 +53,13 @@ export class LoginAdminComponent implements OnInit{
                 localStorage.setItem('account',JSON.stringify(acc));
               }
               sessionStorage.setItem('account',JSON.stringify(acc));
-              console.log(sessionStorage.getItem('account'));
+              this.router.navigate(['']);
+
               // console.dir( JSON.parse(sessionStorage.getItem('account')));
 
-              this._route.navigate(['']);
             }
           );
+
         }else (
           //làm vào trong lun
           alert('đăng nhập sai')
