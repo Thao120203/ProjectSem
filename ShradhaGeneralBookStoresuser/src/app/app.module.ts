@@ -32,8 +32,10 @@ import { RoleService } from './Service/role.service';
 import { VoucherService } from './Service/voucher.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartService } from './Service/cart.service';
+import { ReloadService } from './Service/reload.service';
+import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 import { SliderModule } from 'primeng/slider';
-
 
 @NgModule({
   declarations: [
@@ -58,6 +60,9 @@ import { SliderModule } from 'primeng/slider';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+
+    DataViewModule,
+
     SliderModule
   ],
   providers: [
@@ -76,7 +81,9 @@ import { SliderModule } from 'primeng/slider';
     ProductService,
     ProductImageService,
     ConfirmationService,
-    OrderService
+    OrderService,
+    CartService,
+    ReloadService
   ],
   bootstrap: [HomeComponent]
 })

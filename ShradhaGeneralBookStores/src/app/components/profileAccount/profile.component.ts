@@ -12,6 +12,7 @@ import { AccountAPI2 } from "src/app/modelapi/accountapi2.model";
 export class ProfileComponent implements OnInit{
   account: AccountAPI2 = new AccountAPI2();
   accountFormGroup: FormGroup;
+  avatar: File;
   constructor(
     private activevateRoute:ActivatedRoute,
     private _accountService:AccountService,
@@ -43,5 +44,8 @@ export class ProfileComponent implements OnInit{
   }
   saveChange(){
 
+  }
+  selectFile($event){
+    
   }
 }
