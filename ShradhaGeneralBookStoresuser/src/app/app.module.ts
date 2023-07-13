@@ -32,6 +32,7 @@ import { RoleService } from './Service/role.service';
 import { VoucherService } from './Service/voucher.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SliderModule } from 'primeng/slider';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    SliderModule
   ],
   providers: [
     CategoryService,

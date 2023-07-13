@@ -25,44 +25,25 @@
                                         <li><a href="#">Pants &amp; Leggings</a></li>
                                         <li><a href="#">Rompers &amp; Jumpsuits</a></li>
                                         <li><a href="#">Shirts &amp; Blouses</a></li>
-                                        <li><a href="#">Shirts</a></li>
+                                        <li><a href="#">Shirts</a></li>t
                                         <li><a href="#">Sweaters &amp; Knits</a></li>
                                     </ul>
                                 </li>
                                 <!-- Single Item -->
-                                <li data-toggle="collapse" data-target="#shoes" class="collapsed" aria-expanded="false">
-                                    <a href="#">shoes</a>
-                                    <ul class="sub-menu collapse" id="shoes">
-                                        <li><a href="#">All</a></li>
-                                        <li><a href="#">Bodysuits</a></li>
-                                        <li><a href="#">Dresses</a></li>
-                                        <li><a href="#">Hoodies &amp; Sweats</a></li>
-                                        <li><a href="#">Jackets &amp; Coats</a></li>
-                                        <li><a href="#">Jeans</a></li>
-                                        <li><a href="#">Pants &amp; Leggings</a></li>
-                                        <li><a href="#">Rompers &amp; Jumpsuits</a></li>
-                                        <li><a href="#">Shirts &amp; Blouses</a></li>
-                                        <li><a href="#">Shirts</a></li>
-                                        <li><a href="#">Sweaters &amp; Knits</a></li>
-                                    </ul>
+                                <li data-toggle="collapse" data-target="#category" class="collapsed" aria-expanded="false">
+                                    <ng-container *ngFor="let category of categoriesTitle">
+                                        <ul class="single-mega cn-col-4">
+                                          <li class="title" ><a [routerLink]="['/categories',{id: category.category.id}]">{{ category.category.name }}</a></li>
+                                          <ng-container  *ngFor="let categorysub of categoriesTitleSub">
+                                          
+                                                <li *ngIf="categorysub.indexParent == category.index"  id="category"><a [routerLink]="['/categories',{id: categorysub.category.id}]">{{categorysub.category.name}}</a></li>
+                                    
+                                          </ng-container>
+                                        </ul>
+                                    </ng-container>
                                 </li>
                                 <!-- Single Item -->
-                                <li data-toggle="collapse" data-target="#accessories" class="collapsed" aria-expanded="false">
-                                    <a href="#">accessories</a>
-                                    <ul class="sub-menu collapse" id="accessories" >
-                                        <li><a href="#">All</a></li>
-                                        <li><a href="#">Bodysuits</a></li>
-                                        <li><a href="#">Dresses</a></li>
-                                        <li><a href="#">Hoodies &amp; Sweats</a></li>
-                                        <li><a href="#">Jackets &amp; Coats</a></li>
-                                        <li><a href="#">Jeans</a></li>
-                                        <li><a href="#">Pants &amp; Leggings</a></li>
-                                        <li><a href="#">Rompers &amp; Jumpsuits</a></li>
-                                        <li><a href="#">Shirts &amp; Blouses</a></li>
-                                        <li><a href="#">Shirts</a></li>
-                                        <li><a href="#">Sweaters &amp; Knits</a></li>
-                                    </ul>
-                                </li>
+                               
                             </ul>
                         </div>
                     </div>
@@ -76,11 +57,11 @@
 
                         <div class="widget-desc">
                             <div class="slider-range">
-                                <div data-min="49" data-max="360" data-unit="$" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="49" data-value-max="360" data-label-result="Range:">
-                                    <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
-                                    <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span>
-                                    <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span>
-                                <div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div></div>
+                                <div data-min="49" data-max="2000" data-unit="$" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="49" data-value-max="360" data-label-result="Range:">
+                                    <div class="card flex justify-content-center">
+                                        <p-slider [(ngModel)]="rangeValues" [range]="true"></p-slider>
+                                    </div>
+                                </div>
                                 <div class="range-price">Range: $49.00 - $360.00</div>
                             </div>
                         </div>
