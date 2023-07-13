@@ -24,12 +24,7 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private reloadService: ReloadService
   ){
-    this.reloadSubscription = this.reloadService
-      .getReloadObservable()
-      .subscribe(() => {
-        // Thực hiện reload ở đây
-        window.location.reload();
-      });
+
   }
 
   ngOnInit(): void {
@@ -50,10 +45,20 @@ export class HeaderComponent implements OnInit {
         }
       }
     });
+    this.reloadSubscription = this.reloadService
+    .getReloadObservable()
+    .subscribe(() => {
+      // Thực hiện reload ở đây
+      window.location.reload();
+    });
   }
 
   getCategoriesSub(): Category[] {
     return null;
   }
 
+  ngOnDestroy() {
+    // Hủy đăng ký khi component bị hủy
+    this.reloadSubscription.unsubscribe();
+  }
 }

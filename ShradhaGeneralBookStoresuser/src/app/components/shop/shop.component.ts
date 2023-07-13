@@ -15,6 +15,7 @@ import { Category } from "src/app/models/category.model";
 })
 export class ShopComponent implements OnInit{
     products: ProductAPI4[];
+    layout: string = 'grid';
     constructor(
         private reloadService: ReloadService,
         private _cartService: CartService,
@@ -35,9 +36,24 @@ export class ShopComponent implements OnInit{
           });
 
     }
+
+    // performAction() {
+    //   // Thực hiện action ở đây
+
+    //   // Gọi phương thức reloadComponentB() từ ReloadService để thông báo cho component B reload
+    //   this.reloadService.reloadComponentB();
+    // }
     addcart(product: ProductAPI4){
       this._cartService.add(product);
       console.log(JSON.parse(sessionStorage.getItem('cart')) as Cart);
       this.reloadService.reloadComponentB();
+      return false;
+    }
+
+    sortbyoder(evt:any){
+      let value = evt.target.value;
+
+      console.log(value);
+
     }
 }

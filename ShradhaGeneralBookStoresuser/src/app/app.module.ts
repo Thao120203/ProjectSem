@@ -34,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartService } from './Service/cart.service';
 import { ReloadService } from './Service/reload.service';
-
+import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 
 @NgModule({
   declarations: [
@@ -59,6 +59,9 @@ import { ReloadService } from './Service/reload.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+
+    DataViewModule,
+
   ],
   providers: [
     CategoryService,
