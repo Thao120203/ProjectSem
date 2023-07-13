@@ -59,7 +59,6 @@ import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-
     DataViewModule,
 
   ],

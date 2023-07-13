@@ -55,6 +55,13 @@ export class AccountService {
       return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'account/GetByEmail?email='+email));
     }
 
+    async updateProfile(formData: FormData){
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() +'account/UpdateProfile',formData));
+    }
+
+    async updateProfilenoavatar(formData: FormData){
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() +'account/UpdateProfileNoAvatar',formData));
+    }
 
     async ForgetPassword(email: string){
       let a = {"name": "a"};
