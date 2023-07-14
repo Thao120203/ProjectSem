@@ -95,6 +95,8 @@ import { ProfileComponent } from './components/profileAccount/profile.component'
 import { EditProductAdminComponent } from './components/product/editProduct/editProductAdmin.component';
 import { AddOrderComponent } from './components/order/addOrder.component';
 import { OrderService } from './Service/order.service';
+import { DisAccountComponent  } from './components/account/disabledaccount/disListAccount.component';
+import {  DisProductComponent } from './components/product/dislistproduct/disListProduct.component';
 
 @NgModule({
   declarations: [
@@ -155,7 +157,9 @@ import { OrderService } from './Service/order.service';
     ProfileComponent,
     EditProductAdminComponent,
     ListProductComponent,
-    AddOrderComponent
+    AddOrderComponent,
+    DisAccountComponent,
+    DisProductComponent
   ],
 
   imports: [

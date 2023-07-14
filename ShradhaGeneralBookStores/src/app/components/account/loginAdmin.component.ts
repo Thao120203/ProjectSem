@@ -44,7 +44,7 @@ export class LoginAdminComponent implements OnInit{
       result=>{
         if(result as boolean){
           //làm vào trong lun
-          this.utils.updateToast('login Success')
+          this.utils.updateToast('Login Success')
 
           this._accountservice.getbyemail(account.email).then(
             result => {
