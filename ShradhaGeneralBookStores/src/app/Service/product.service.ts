@@ -29,7 +29,7 @@ export class ProductService {
     return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'Product/Delete?id=' + id));
   }
 
-  async update(product: Product) {
+  async update(product: ProductAPI) {
     return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Product/update', product));
   }
 

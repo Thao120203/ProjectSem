@@ -30,7 +30,11 @@ export class ProductImageService {
         return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'ProductImage/Delete?id=' + id));
     }
 
-    async update(productImage: ProductImage){
-      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'ProductImage/update',productImage));
+    async update(id: number, photo: File[]){
+      var formdata = new FormData();
+      for (var i = 0; i < photo.length; i++) {
+        formdata.append('photo', photo[i]);
+      };
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'ProductImage/Update/'+id,formdata));
     }
 }

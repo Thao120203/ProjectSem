@@ -48,7 +48,7 @@ export class EditProductAdminComponent implements OnInit{
         this._productService.get(id).then(result=>{
           this.product = result[0] as ProductAPI3;
           console.log(this.productFormGroup)
-          console.log(this.product.photos)
+          console.log(this.product)
           //set value from
           this.productFormGroup.get('id').setValue(this.product.id);
           this.productFormGroup.get('name').setValue(this.product.name);
@@ -116,17 +116,21 @@ export class EditProductAdminComponent implements OnInit{
     save(){
       let product = this.productFormGroup.value as ProductAPI;
 
-
       this._productService.update(product).then(result=>{
-          this._productImageService.create(result as number,this.photos).then(result=>{
+        if(this.photos != null){
+          this._productImageService.update(result as number,this.photos).then(result=>{
             if(result as boolean){
-              this.utils.updateToast('Success')
+              this.utils.updateToast('Edit Successfully')
               this.router.navigate(['listProduct']);
             }
           })
+        }else{
+          this.utils.updateToast('Edit Successfully')
+              this.router.navigate(['listProduct']);
+        };
+
       })
       console.log(this.productFormGroup.value);
-      console.dir(this.photos);
     }
 
     reset(){
@@ -137,7 +141,6 @@ export class EditProductAdminComponent implements OnInit{
       this.photos = [];
       for(let i = 0; i < event.length; i++){
         this.photos.push(event[i]);
-
       }
     }
     change(){
