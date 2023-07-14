@@ -67,4 +67,11 @@ export class AccountService {
       let a = {"name": "a"};
       return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() +'Account/ForgetPassword/'+email, a));
     }
+    async enable(id: number) {
+      let a = {"name": "a"};
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Account/EnableAccount/'+id, a));
+    }
+    async readdisable() {
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Account/ReadDisable'));
+    }
 }

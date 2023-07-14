@@ -44,6 +44,9 @@ import { ListProductForPublisherComponent } from './components/publisher/listPro
 import { ProfileComponent } from './components/profileAccount/profile.component';
 import { EditProductAdminComponent } from './components/product/editProduct/editProductAdmin.component';
 import { ListOrderComponent } from './components/order/listOrder/listOrder.component';
+import { DisAccountComponent } from './components/account/disabledaccount/disListAccount.component';
+import { DisProductComponent } from './components/product/dislistproduct/disListProduct.component';
+
 
 
 
@@ -54,6 +57,7 @@ const routes: Routes =
     {path: 'addproduct',component: AddProductAdminComponent},
     {path: 'listProduct',component: ListProductComponent},
     {path: 'editproduct',component: EditProductAdminComponent},
+    {path: 'dislistproduct',component: DisProductComponent},
 
     {path: 'addcategory',component: AddCategoryComponent},
     {path: 'editcategory',component: EditCategoryComponent},
@@ -64,6 +68,7 @@ const routes: Routes =
     {path: 'listauthor',component: ListAuthorComponent},
     {path: 'editauthor',component: EditAuthorComponent},
     {path: 'listProductForAuthor',component: ListProductForAuthorComponent},
+    {path: 'dislistaccount',component: DisAccountComponent},
 
     {path: 'addorder',component: AddOrderComponent},
     {path: 'listorder',component: ListOrderComponent},
@@ -96,6 +101,8 @@ const routes: Routes =
     {path: 'listaccount',component: ListAccountComponent},
     {path: 'editaccount',component: EditAccountComponent},
     {path :'profile',component: ProfileComponent},
+    
+   
 
     {path: 'addaddressprofile',component: AddAddressProfileComponent},
     {path: 'listaddressprofile',component: ListAddressProfileComponent},

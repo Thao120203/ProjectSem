@@ -9,56 +9,53 @@ import { AccountService } from 'src/app/Service/account.service';
 import { Role } from 'src/app/models/role.model';
 import { RoleService } from 'src/app/Service/role.service';
 import { AccountAPI2 } from 'src/app/modelapi/accountapi2.model';
-import { ProductAPI2 } from 'src/app/modelapi/productapi2.model';
-import { ProductService } from 'src/app/Service/product.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { Product } from 'src/app/models/product.model';
 
 
 @Component({
   selector: 'app-root',
-  templateUrl: './listProduct.component.html',
+  templateUrl: './disListAccount.component.html',
   providers: [MessageService, ConfirmationService]
 })
-export class ListProductComponent implements OnInit {
-  products: ProductAPI2[];
+export class DisAccountComponent implements OnInit {
+  accounts: AccountAPI2[];
+  roles: Role[];
   first = 0;
   rows = 10;
   check: boolean = false;
-  selectedProduct!: Product[] | null;
+  selectedAccount!: Account[] | null;
   constructor(
-    private _productService: ProductService,
+    private _accountService: AccountService,
     private formbuilder: FormBuilder,
     private router: Router,
     private _roleService: RoleService,
   ) {}
   ngOnInit() {
-    this._productService.read().then(result=>{
-      this.products = result as ProductAPI2[];
-      console.log(this.products);
+    this._accountService.readdisable().then(result=>{
+      this.accounts = result as AccountAPI2[];
+      console.log(this.accounts);
     },
     error=>{
-      console.log(error);
+    })
+
+    this._roleService.read().then(result=>{
+      this.roles = result as Role[];
+      console.log(this.roles);
+
+    },
+    error=>{
     })
   }
-  deleted(id: number){
-    if (confirm('Are you sure you want to delete')) {
-      this._productService.delete(id).then(
-        result =>{
-          this.ngOnInit();
-          alert('Deleted');
-        }
-      );
-    }
-  }
-  deleteSelected() {
-    console.log(this.selectedProduct);
-    if (confirm('Are you sure you want to delete')) {
-      for (let i = 0; i < this.selectedProduct.length; i++) {
-        this._productService.delete(this.selectedProduct[i].id).then(result => {
+ 
+  
+  active() {
+    console.log(this.selectedAccount);
+    if (confirm('Are you sure you want to roll back')) {
+      for (let i = 0; i < this.selectedAccount.length; i++) {
+        this._accountService.enable(this.selectedAccount[i].id).then(result => {
           if (result as boolean) {
             this.check = true;
-            this.selectedProduct = [];
+            this.selectedAccount = [];
             this.ngOnInit();
           }
           else {

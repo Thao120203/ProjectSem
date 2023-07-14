@@ -20,13 +20,17 @@ export class ProductService {
   async read() {
     return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/Read'));
   }
+  async readdisable() {
+    return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadDisable'));
+  }
 
   async get(id: number) {
     return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/get?id=' + id));
   }
 
-  async delete(id: number) {
-    return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'Product/Delete?id=' + id));
+  async delete(id: number,) {
+    let a = {"name": "a"};
+    return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Product/Deleted/' + id,a));
   }
 
   async update(product: ProductAPI) {
@@ -46,5 +50,8 @@ export class ProductService {
   async readforpublisher(id: string) {
     return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadForPublisher?idPublisher=' + id));
   }
-
+  async enable(id: number) {
+    let a = {"name": "a"};
+    return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Product/EnableProduct/'+id, a));
+  }
 }
