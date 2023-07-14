@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { LoginComponent } from './components/account/login.component';
-import { RegisterComponent } from './components/account/register.component';
+
 import { SendEmailComponent } from './components/account/sendEmail.component';
 import { CartsComponent } from './components/cart/cart.component';
 import { UserComponent } from './user.component';
@@ -36,6 +36,11 @@ import { CartService } from './Service/cart.service';
 import { ReloadService } from './Service/reload.service';
 import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 import { SliderModule } from 'primeng/slider';
+import { ProfileComponent } from './components/profile/profile.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { AddressComponent } from './components/address/address.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { RegisterComponent } from './components/account/register.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,11 @@ import { SliderModule } from 'primeng/slider';
     UserComponent,
     HeaderComponent,
     FooterComponent,
-    FirstComponent
+    FirstComponent,
+    ProfileComponent,
+    CheckoutComponent,
+    AddressComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

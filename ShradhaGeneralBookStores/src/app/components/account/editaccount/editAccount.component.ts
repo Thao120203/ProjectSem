@@ -87,7 +87,6 @@ export class EditAccountComponent implements OnInit{
           this.router.navigate(['listaccount']);
         }
       });
-
       console.dir(account);
     }
     checkExist(evt:any){
