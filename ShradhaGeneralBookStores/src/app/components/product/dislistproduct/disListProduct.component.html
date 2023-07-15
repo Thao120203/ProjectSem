@@ -18,9 +18,10 @@
           <p-toast></p-toast>
           <p-toolbar styleClass="mb-4 gap-2">
             <ng-template pTemplate="left">
-              <button pButton pRipple icon="pi pi-trash" class="p-button-danger" (click)="active()"
+              <button pButton pRipple icon="pi pi-undo" class="p-button-success" (click)="active()"
                 [disabled]="!selectedProduct || !selectedProduct.length"></button>
             </ng-template>
+            
           </p-toolbar>
           <p-table class="table table-bordered" *ngIf="products != null;else elseBlock" [value]="products"
           [paginator]="true" [rows]="10" [showCurrentPageReport]="true" [tableStyle]="{ 'min-width': '50rem' }"

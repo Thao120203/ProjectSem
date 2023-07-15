@@ -21,6 +21,9 @@
             <button pButton pRipple icon="pi pi-trash" class="p-button-danger" (click)="deleteSelected()"
               [disabled]="!selectedAccount || !selectedAccount.length"></button>
           </ng-template>
+          <ng-template pTemplate="right">
+            <button pButton pRipple [routerLink]="['/addaccount']" icon="pi pi-plus-circle" class="p-button-info"></button>
+          </ng-template>
         </p-toolbar>
 
         <p-table class="table table-bordered" *ngIf="accounts != null;else elseBlock" [value]="accounts"

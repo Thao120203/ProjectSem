@@ -21,6 +21,9 @@
             <button pButton pRipple icon="pi pi-trash" class="p-button-danger" (click)="deleteSelected()"
               [disabled]="!selectedProduct || !selectedProduct.length"></button>
           </ng-template>
+          <ng-template pTemplate="right">
+            <button pButton pRipple [routerLink]="['/addproduct']" icon="pi pi-plus-circle" class="p-button-info"></button>
+          </ng-template>
         </p-toolbar>
         <p-table class="table table-bordered" *ngIf="products != null;else elseBlock" [value]="products"
         [paginator]="true" [rows]="10" [showCurrentPageReport]="true" [tableStyle]="{ 'min-width': '50rem' }"

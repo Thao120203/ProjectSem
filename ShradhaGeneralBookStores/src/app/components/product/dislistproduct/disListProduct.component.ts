@@ -50,6 +50,7 @@ export class DisProductComponent implements OnInit {
           if (result as boolean) {
             this.check = true;
             this.selectedProduct = [];
+           
             this.ngOnInit();
           }
           else {
@@ -57,8 +58,7 @@ export class DisProductComponent implements OnInit {
           }
         });
       }
-      if (this.check)
-        alert('Deleted');
+      alert('Success');
     }
   }
 }

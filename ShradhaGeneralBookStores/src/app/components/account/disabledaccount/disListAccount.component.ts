@@ -56,6 +56,7 @@ export class DisAccountComponent implements OnInit {
           if (result as boolean) {
             this.check = true;
             this.selectedAccount = [];
+            
             this.ngOnInit();
           }
           else {
@@ -63,8 +64,7 @@ export class DisAccountComponent implements OnInit {
           }
         });
       }
-      if (this.check)
-        alert('Deleted');
+      alert('Success');
     }
   }
 }
