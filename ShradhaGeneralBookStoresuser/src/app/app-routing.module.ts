@@ -23,6 +23,8 @@ const routes: Routes =[
   {path : 'cart',component:CartsComponent},
   {path : 'categories',component:ShopComponent},
   {path : 'authors',component:ProductForPublisherComponent},
+  {path : 'publishers',component:ProductForPublisherComponent},
+
 
   {path : '',component:FirstComponent},
   {path : 'first',component:FirstComponent},

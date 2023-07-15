@@ -33,6 +33,26 @@
               <span class="dd-trigger"></span><span class="dd-arrow"></span>
             </li>
 
+
+            <li class="cn-dropdown-item has-down pr12" ><a href="#">Authors</a>
+               <ul class="dropdown" style="width: 300%;">
+                <ng-container *ngFor="let author of authors">
+                  <li><a [routerLink]="['/authors',{id:author.id}]">{{author.name}}</a></li>
+                </ng-container>
+              </ul>
+              <span class="dd-trigger"></span>
+              <span class="dd-arrow"></span>
+            </li>
+
+            <li class="cn-dropdown-item has-down pr12"><a href="#">Publishers</a>
+              <ul class="dropdown" style="width: 200%;" >
+               <ng-container *ngFor="let publisher of publishers">
+                 <li><a [routerLink]="['/publishers',{id:publisher.id}]">{{publisher.name}}</a></li>
+               </ng-container>
+             </ul>
+             <span class="dd-trigger"></span>
+             <span class="dd-arrow"></span>
+           </li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>

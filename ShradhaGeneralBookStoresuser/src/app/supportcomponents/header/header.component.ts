@@ -9,6 +9,10 @@ import { CategoryMenuParent } from 'src/app/models/categoryMenuParent.model';
 import { CategoryMenuSub } from 'src/app/models/categoryMenuSub.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SendService } from 'src/app/Service/send.service';
+import { Author } from 'src/app/models/author.model';
+import { AuthorService } from 'src/app/Service/author.service';
+import { Publisher } from 'src/app/models/publisher.model';
+import { PublisherService } from 'src/app/Service/publisher.service';
 
 
 @Component({
@@ -18,6 +22,8 @@ import { SendService } from 'src/app/Service/send.service';
 export class HeaderComponent implements OnInit {
   account: AccountAPI2;
   categories:Category[] = [];
+  authors: Author[];
+  publishers: Publisher[];
   categoriesTitle: CategoryMenuParent[] = [];
   categoriesTitleSub: CategoryMenuSub[] = [];
   cart: Cart;
@@ -25,6 +31,8 @@ export class HeaderComponent implements OnInit {
   private reloadSubscription: Subscription;
   constructor(
     private _categoryService: CategoryService,
+    private _authorService:AuthorService,
+    private _publisherService:PublisherService,
     private router: Router,
     private reloadService: ReloadService,
     private sendService: SendService
@@ -54,6 +62,19 @@ export class HeaderComponent implements OnInit {
         }
       }
     });
+
+    this._authorService.readfomenu().then(
+      result=>{
+        this.authors = result as Author[];
+      }
+    );
+
+    this._publisherService.readformenu().then(
+      result=>{
+        this.publishers = result as Publisher[];
+      }
+    )
+
     this.reloadSubscription = this.reloadService
     .getReloadObservable()
     .subscribe(() => {

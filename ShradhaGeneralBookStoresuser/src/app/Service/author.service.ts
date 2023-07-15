@@ -19,6 +19,10 @@ export class AuthorService {
         return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Author/Read'));
     }
 
+    async readfomenu(){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Author/ReadForMenu'));
+  }
+
     async get(id: number){
       return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Author/get?id=' + id));
     }
