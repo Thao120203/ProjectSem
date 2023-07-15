@@ -13,6 +13,7 @@ import { AddressComponent } from './components/address/address.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { RegisterComponent } from './components/account/register.component';
 import { HistoryCartsComponent } from './components/historyCart/historyCart.component';
+import { ProductForPublisherComponent } from './components/productShow/forPublisher/productForPublisher.component';
 
 
 const routes: Routes =[
@@ -21,6 +22,8 @@ const routes: Routes =[
   {path : 'product',component: ProductComponent},
   {path : 'cart',component:CartsComponent},
   {path : 'categories',component:ShopComponent},
+  {path : 'authors',component:ProductForPublisherComponent},
+
   {path : '',component:FirstComponent},
   {path : 'first',component:FirstComponent},
 

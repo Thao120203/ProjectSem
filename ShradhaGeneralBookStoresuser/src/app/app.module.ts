@@ -43,6 +43,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { RegisterComponent } from './components/account/register.component';
 import { HistoryCartsComponent } from './components/historyCart/historyCart.component';
 import { SendService } from './Service/send.service';
+import { ProductForPublisherComponent } from './components/productShow/forPublisher/productForPublisher.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { SendService } from './Service/send.service';
     CheckoutComponent,
     AddressComponent,
     ContactComponent,
-    HistoryCartsComponent
+    HistoryCartsComponent,
+    ProductForPublisherComponent
   ],
   imports: [
     BrowserModule,

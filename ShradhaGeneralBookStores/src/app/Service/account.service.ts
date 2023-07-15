@@ -5,6 +5,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
 import { Account } from '../models/account.model';
+import { ChangePassword } from '../modelapi/changepassword.model';
 
 @Injectable()
 export class AccountService {
@@ -73,5 +74,8 @@ export class AccountService {
     }
     async readdisable() {
       return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Account/ReadDisable'));
+    }
+    async changePassword(newPassword: ChangePassword){
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Account/ChangePassword',newPassword));
     }
 }

@@ -5,6 +5,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
 import { Account } from '../models/account.model';
+import { ChangePassword } from '../modelapi/changepassword.model';
 
 @Injectable()
 export class AccountService {
@@ -50,5 +51,14 @@ export class AccountService {
     }
     async getbyemail(email: string){
       return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'account/GetByEmail?email='+email));
+    }
+    async updateProfilenoavatar(formData: FormData){
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() +'account/UpdateProfileNoAvatar',formData));
+    }
+    async updateProfile(formData: FormData){
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() +'account/UpdateProfile',formData));
+    }
+    async changePassword(newPassword: ChangePassword){
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Account/ChangePassword',newPassword));
     }
 }

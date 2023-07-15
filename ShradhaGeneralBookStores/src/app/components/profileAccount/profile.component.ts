@@ -7,6 +7,7 @@ import { UtilsServiceService } from "src/app/Service/utils-service.service";
 import { AccountAPI2 } from "src/app/modelapi/accountapi2.model";
 import { Profile } from "src/app/modelapi/profile.model";
 import { Location } from '@angular/common';
+import { ChangePassword } from "src/app/modelapi/changepassword.model";
 
 
 @Component({
@@ -16,6 +17,10 @@ import { Location } from '@angular/common';
 export class ProfileComponent implements OnInit {
   account: AccountAPI2 = new AccountAPI2();
   accountFormGroup: FormGroup;
+  changepassFormGruop: FormGroup;
+  comfirmpass: string;
+  check:boolean = true;
+
   imageUrl: string;
   avatar: File = null;
   constructor(
@@ -43,7 +48,17 @@ export class ProfileComponent implements OnInit {
         Validators.pattern(/^[0-9]{10,10}$/)
       ]],
     })
-
+    this.changepassFormGruop = this.formbuilder.group({
+      id: [this.account.id],
+      oldpassword: ['',[
+        Validators.required
+      ]
+    ],
+      newpassword: ['',[
+        Validators.required,
+        Validators.pattern( /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/)
+      ]]
+    })
 
   }
   saveChange() {
@@ -119,4 +134,26 @@ export class ProfileComponent implements OnInit {
       reader.readAsDataURL(this.avatar);
     }
   }
+
+  checkpassword(){
+    if(this.comfirmpass == this.changepassFormGruop.get('newpassword').value){
+      this.check = false;
+    }else 
+    {
+      this.check = true;
+    }
+  }
+
+  savePass(){
+    this._accountService.changePassword(this.changepassFormGruop.value as ChangePassword).then(result=>{
+      if(result as boolean){
+        alert("Updated password successfully");
+        window.location.reload();
+      }else{
+        alert("Currend password InValid");
+
+      }
+    })
+  }
+  
 }

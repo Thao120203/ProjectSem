@@ -49,8 +49,16 @@ export class ProductService {
   async readforauthor(id: string) {
     return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadForAuthor?idAuthor=' + id));
   }
+
+  async readforauthorforUser(id: string) {
+    return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadForAuthorUser?idAuthor=' + id));
+  }
+
   async readforpublisher(id: string) {
     return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadForPublisher?idPublisher=' + id));
+  }
+  async readforpublisherforUser(id: string) {
+    return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadForPublisherUser?idPublisher=' + id));
   }
   async readforuser() {
     return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadForUser'));
