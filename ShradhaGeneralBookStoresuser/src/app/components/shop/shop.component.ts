@@ -86,7 +86,6 @@ export class ShopComponent implements OnInit{
     addcart(product: ProductAPI4){
       this._cartService.add(product);
       console.log(JSON.parse(sessionStorage.getItem('cart')) as Cart);
-      this.reloadService.reloadComponentB();
       return false;
     }
 

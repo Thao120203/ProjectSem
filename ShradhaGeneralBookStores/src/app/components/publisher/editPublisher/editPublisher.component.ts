@@ -59,8 +59,7 @@ export class EditPublisherComponent implements OnInit {
         Validators.required
       ]],
       contactNumber: [0, [
-        Validators.required,
-        Validators.pattern(/^[0-9]{10,10}$/)
+        Validators.required
       ]],
       createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
       updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]

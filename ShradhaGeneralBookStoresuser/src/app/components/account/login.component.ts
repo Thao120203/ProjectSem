@@ -1,8 +1,9 @@
-import { Component,OnInit } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import * as moment from "moment";
 import { AccountService } from "src/app/Service/account.service";
+import { SendService } from 'src/app/Service/send.service';
 import { AccountAPI2 } from "src/app/modelapi/accountapi2.model";
 import { Account } from "src/app/models/account.model";
 
@@ -11,14 +12,16 @@ import { Account } from "src/app/models/account.model";
     templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit{
-  
+
   loginFormGroup: FormGroup;
   constructor(
     private _accountservice: AccountService,
     private _route: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private sendService: SendService
   ){}
   ngOnInit(): void {
+
     this.loginFormGroup = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -51,9 +54,10 @@ export class LoginComponent implements OnInit{
               }
               sessionStorage.setItem('account',JSON.stringify(acc));
               console.log(sessionStorage.getItem('account'));
-              // console.dir( JSON.parse(sessionStorage.getItem('account')));
+              console.dir( JSON.parse(sessionStorage.getItem('account')));
+              this.sendService.changeData(acc);
+              this._route.navigate(['first']);
 
-              this._route.navigate(['']);
             }
           );
         }else (

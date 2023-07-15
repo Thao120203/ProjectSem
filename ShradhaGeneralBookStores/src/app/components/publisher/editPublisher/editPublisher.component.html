@@ -28,7 +28,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Publisher Short Name</label>
             <input type="text" pInputText formControlName="nameShort" [style]="{'width':'100%'}"/>
@@ -56,9 +56,7 @@
               <div *ngIf="publisherFormGroup.hasError('required',['contactNumber'])" style="color: rgb(255, 0, 0); font-size: 80%;">
                 Contact Number is required
               </div>
-              <div *ngIf="publisherFormGroup.hasError('pattern',['contactNumber'])" style="color: rgb(255, 0, 0); font-size: 80%;">
-                Contact Number is invalid
-              </div>
+              
             </div>
           </div>
 
