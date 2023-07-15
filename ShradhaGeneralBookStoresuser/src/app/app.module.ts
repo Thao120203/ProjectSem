@@ -41,6 +41,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AddressComponent } from './components/address/address.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { RegisterComponent } from './components/account/register.component';
+import { HistoryCartsComponent } from './components/historyCart/historyCart.component';
+import { SendService } from './Service/send.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { RegisterComponent } from './components/account/register.component';
     ProfileComponent,
     CheckoutComponent,
     AddressComponent,
-    ContactComponent
+    ContactComponent,
+    HistoryCartsComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,8 @@ import { RegisterComponent } from './components/account/register.component';
     ConfirmationService,
     OrderService,
     CartService,
-    ReloadService
+    ReloadService,
+    SendService
   ],
   bootstrap: [HomeComponent]
 })

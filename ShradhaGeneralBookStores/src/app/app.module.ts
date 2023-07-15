@@ -1,5 +1,5 @@
 import { PaymentMethodService } from './Service/paymentmethod.service';
-import { DemoAddAuthorAdminComponent } from './democomponent/author/demoaddauthor/demoaddauthor.component';
+
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,12 +36,7 @@ import { EditorModule } from 'primeng/editor';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { DemoAddEventAdminComponent } from './democomponent/event/demoAddEvent/demoaddevent.component';
-import { DemoAddOrderstatusAdminComponent } from './democomponent/orderstatus/demoAddOrderstatus/demo.add.orderstatus.component';
-import { DemoAddPublisherAdminComponent } from './democomponent/publisher/demoAddPublisher/demo.add.publisher.component';
-import { DemoAddPaymentmethodAdminComponent } from './democomponent/paymentmethod/demoAddPaymentMethod/demo.add.paymentmethod.component';
-import { DemoAddRoleAdminComponent } from './democomponent/role/demoAddRole/demo.add.role.component';
-import { DemoAddVoucherAdminComponent } from './democomponent/voucher/demoAddVoucher/demo.add.voucher.component';
+
 import { OrderStatusService } from './Service/orderstatus.service';
 import { HeaderComponent } from './supportcomponents/header/header.component';
 import { AsideComponent } from './supportcomponents/aside/aside.component';
@@ -85,7 +80,7 @@ import { ListCategoryComponent } from './components/category/listCategory/listCa
 import { ProductService } from './Service/product.service';
 import { ProductImageService } from './Service/productimage.service';
 import { EditAccountComponent } from './components/account/editaccount/editAccount.component';
-import { DemoListAuthorComponent } from './democomponent/author/demoaddauthor/demoListAuthor/demolistAuthor.component';
+
 import { ConfirmationService } from 'primeng/api';
 import { ListProductComponent } from './components/product/listproduct/listProduct.component';
 import { ListProductForCategoryComponent } from './components/category/listProductForCategory/listProductForCategory.component';
@@ -109,14 +104,7 @@ import {  DisProductComponent } from './components/product/dislistproduct/disLis
     AdminComponent,
     SendEmailComponent,
     AddCategoryComponent,
-    DemoAddAuthorAdminComponent,
-    DemoAddEventAdminComponent,
-    DemoAddOrderstatusAdminComponent,
-    DemoAddPublisherAdminComponent,
-    DemoAddPaymentmethodAdminComponent,
-    DemoAddRoleAdminComponent,
-    DemoAddVoucherAdminComponent,
-    DemoListAuthorComponent,
+
     HeaderComponent,
     AsideComponent,
     ListCategoryComponent,

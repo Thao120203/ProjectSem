@@ -37,6 +37,13 @@
             <li class="nav-item" role="presentation">
               <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password" aria-selected="false" tabindex="-1" role="tab">Change Password</button>
             </li>
+
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings" aria-selected="false" tabindex="-1" role="tab">Address </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-history" aria-selected="false" tabindex="-1" role="tab">History</button>
+            </li>
           </ul>
           <div class="tab-content pt-2">
 
@@ -191,6 +198,39 @@
 
             <div class="tab-pane fade pt-3" id="profile-settings" role="tabpanel">
 
+              <div class="cart-page-heading mb-30">
+                <h5>Billing Address</h5>
+              </div>
+
+                <form >
+                <div class="order-details-confirmation">
+                    <div class="row g-3">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Full Name</label>
+                      <div class="col-sm-10">
+                        <span>thanh thao</span>
+                      </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Phone Number</label>
+                        <div class="col-sm-10">
+                          <span>09763427135</span>
+                        </div>
+                      </div>
+                      <div class="row g-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Address</label>
+                        <div class="col-sm-10">
+                          <span>duong d5 ,binh thanh, hcm</span>
+                        </div>
+                      </div>
+
+                      <div class="pt-2">
+                        <a href="#" class="btn btn-primary btn-sm" title="Edit new profile image"><i class="fa fa-pencil"></i></a>
+                        <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="fa fa-trash-o"></i></a>
+                      </div>
+                  </div>
+                  </form>
+
             </div>
 
             <div class="tab-pane fade pt-3" id="profile-change-password" role="tabpanel">
@@ -224,7 +264,36 @@
               </form><!-- End Change Password Form -->
 
 
-                      
+
+
+            </div>
+
+            <div class="tab-pane fade profile-history" id="profile-history" role="tabpanel">
+              <h5 class="card-title">History </h5>
+
+                <!-- Table with hoverable rows -->
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Code Orders</th>
+                      <th scope="col">Total</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Payment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>515723</td>
+                      <td>854</td>
+                      <td>received</td>
+                      <td>Paypal</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- End Table with hoverable rows -->
+
 
             </div>
 

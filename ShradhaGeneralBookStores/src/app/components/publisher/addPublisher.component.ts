@@ -17,7 +17,7 @@ import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 export class AddPublisherComponent implements OnInit{
 
   publisherFormGroup: FormGroup;
- 
+
   constructor(
     private _publisherService: PublisherService,
     private formbuilder: FormBuilder,
@@ -37,8 +37,8 @@ export class AddPublisherComponent implements OnInit{
           Validators.required
         ]],
         contactNumber:['',[
-          Validators.required,
-          Validators.pattern(/^[0-9]{10,10}$/)
+          Validators.required
+
         ]],
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]
@@ -48,7 +48,7 @@ export class AddPublisherComponent implements OnInit{
     save(){
       let publisher = this.publisherFormGroup.value as Publisher;
       this._publisherService.create(publisher).then(result=>{
-        if(result as true){
+        if(result){
           this.utils.updateToast('Success')
            this.router.navigate(['listpublisher']);
         }

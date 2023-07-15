@@ -12,6 +12,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AddressComponent } from './components/address/address.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { RegisterComponent } from './components/account/register.component';
+import { HistoryCartsComponent } from './components/historyCart/historyCart.component';
 
 
 const routes: Routes =[
@@ -21,6 +22,8 @@ const routes: Routes =[
   {path : 'cart',component:CartsComponent},
   {path : 'categories',component:ShopComponent},
   {path : '',component:FirstComponent},
+  {path : 'first',component:FirstComponent},
+
   {path : 'profile',component:ProfileComponent},
   {path : 'checkout',component:CheckoutComponent},
   {path : 'address',component:AddressComponent},
@@ -28,6 +31,7 @@ const routes: Routes =[
   {path: 'login',component:LoginComponent},
   {path: 'sendemail',component:SendEmailComponent},
   {path: 'register',component:RegisterComponent},
+  {path: 'historycart',component:HistoryCartsComponent},
 
 ];
 
