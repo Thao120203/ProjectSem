@@ -92,6 +92,8 @@ import { AddOrderComponent } from './components/order/addOrder.component';
 import { OrderService } from './Service/order.service';
 import { DisAccountComponent  } from './components/account/disabledaccount/disListAccount.component';
 import {  DisProductComponent } from './components/product/dislistproduct/disListProduct.component';
+import { CardModule } from 'primeng/card';
+
 
 @NgModule({
   declarations: [
@@ -174,7 +176,8 @@ import {  DisProductComponent } from './components/product/dislistproduct/disLis
     InputSwitchModule,
     TableModule,
     ToastModule,
-    ToolbarModule
+    ToolbarModule,
+    CardModule
   ],
   providers: [
     CategoryService,

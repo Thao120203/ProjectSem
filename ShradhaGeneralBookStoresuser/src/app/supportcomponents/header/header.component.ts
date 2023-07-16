@@ -13,6 +13,7 @@ import { Author } from 'src/app/models/author.model';
 import { AuthorService } from 'src/app/Service/author.service';
 import { Publisher } from 'src/app/models/publisher.model';
 import { PublisherService } from 'src/app/Service/publisher.service';
+import { SendDataCartService } from 'src/app/Service/senddatacart.service';
 
 
 @Component({
@@ -35,7 +36,8 @@ export class HeaderComponent implements OnInit {
     private _publisherService:PublisherService,
     private router: Router,
     private reloadService: ReloadService,
-    private sendService: SendService
+    private sendService: SendService,
+    private sendDataCartService: SendDataCartService
   ){
 
   }
@@ -44,8 +46,19 @@ export class HeaderComponent implements OnInit {
     this.sendService.data$.subscribe(newData => {
       this.account = newData;
     });
+    if(this.account == null){
+      this.account = JSON.parse(sessionStorage.getItem('account')) as AccountAPI2;
+    }
+
+    this.sendDataCartService.data$.subscribe(newData => {
+      this.cart = newData;
+    });
+    if(this.cart == null){
+      this.cart = JSON.parse(sessionStorage.getItem('cart')) as Cart;
+    }
+
     let parent = 0;
-    this.cart = JSON.parse(sessionStorage.getItem('cart')) as Cart;
+    // this.cart = JSON.parse(sessionStorage.getItem('cart')) as Cart;
 
     // this.account = JSON.parse(sessionStorage.getItem('account')) as AccountAPI2;
     //set menu
@@ -75,12 +88,7 @@ export class HeaderComponent implements OnInit {
       }
     )
 
-    this.reloadSubscription = this.reloadService
-    .getReloadObservable()
-    .subscribe(() => {
-      // Thực hiện reload ở đây
-      window.location.reload();
-    });
+
   }
 
   getCategoriesSub(): Category[] {

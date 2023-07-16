@@ -1,16 +1,16 @@
 <div class="cart_area section_padding_100 clearfix">
   <div class="container">
-    <div class="cart-page-heading" style="margin-left: 40%">
-      <h5>Publishers</h5>
+    <div class="cart-page-heading" style="margin-left: 45%">
+      <h5>Authors</h5>
       <p>The Details</p>
     </div>
-    <div class="card">
+    <div class="card" title="Authors">
       <div class="card-body">
         <div class="row">
           <p-table
             #dt1
             class="table table-bordered"
-            [value]="publishers"
+            [value]="authors"
             [paginator]="true"
             [rows]="10"
             [showCurrentPageReport]="true"
@@ -21,19 +21,19 @@
             <ng-template pTemplate="header">
               <tr>
                 <td>Name</td>
-                <td>Phone Number</td>
+                <td>Born</td>
                 <td>Number</td>
               </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-publisher>
+            <ng-template pTemplate="body" let-author>
               <tr>
                 <td>
-                  <a [routerLink]="['/publishers', { id: publisher.id }]">{{
-                    publisher.name
+                  <a [routerLink]="['/authors', { id: author.id }]">{{
+                    author.name
                   }}</a>
                 </td>
-                <td>{{ publisher.contactNumber }}</td>
-                <td>{{ countProduct(publisher.id) }}</td>
+                <td>{{ author.yearOfBirth }}</td>
+                <td>{{ countProduct(author.name) }}</td>
               </tr>
             </ng-template>
           </p-table>

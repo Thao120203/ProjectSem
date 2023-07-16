@@ -7,8 +7,8 @@ export class ProductAPI4 {
     cost: number;
     status: boolean;
     hot: boolean;
-    publisherId: number | null;
-    publishingYear: string | null;
+    publisherId: number ;
+    publishingYear: string ;
     authors: string[];
     categories: string[];
     createdAt: Date;

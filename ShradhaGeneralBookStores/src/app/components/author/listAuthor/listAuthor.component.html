@@ -20,7 +20,7 @@
               [disabled]="!selectedAuthors || !selectedAuthors.length"></button>
           </ng-template>
         </p-toolbar>
-
+        
         <p-table #dt1 class="table table-bordered" *ngIf="authors != null;else elseBlock" [value]="authors"
           [paginator]="true" [rows]="10" [showCurrentPageReport]="true" [tableStyle]="{ 'min-width': '50rem' }"
           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"

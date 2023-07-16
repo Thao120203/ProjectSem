@@ -14,6 +14,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { RegisterComponent } from './components/account/register.component';
 import { HistoryCartsComponent } from './components/historyCart/historyCart.component';
 import { ProductForPublisherComponent } from './components/productShow/forPublisher/productForPublisher.component';
+import { ProductForAuthorComponent } from './components/productShow/forAuthor/productForAuthor.component';
+import { ListAuthorComponent } from './components/author/listAuthor.component';
+import { ListPublisherComponent } from './components/publisher/listpublisher.component';
 
 
 const routes: Routes =[
@@ -22,8 +25,11 @@ const routes: Routes =[
   {path : 'product',component: ProductComponent},
   {path : 'cart',component:CartsComponent},
   {path : 'categories',component:ShopComponent},
-  {path : 'authors',component:ProductForPublisherComponent},
+  {path : 'authors',component:ProductForAuthorComponent},
   {path : 'publishers',component:ProductForPublisherComponent},
+  {path : 'listpublisher',component:ListPublisherComponent},
+  {path : 'authors',component:ProductForAuthorComponent},
+  {path : 'listauthor',component:ListAuthorComponent},
 
 
   {path : '',component:FirstComponent},

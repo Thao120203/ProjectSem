@@ -44,6 +44,17 @@ import { RegisterComponent } from './components/account/register.component';
 import { HistoryCartsComponent } from './components/historyCart/historyCart.component';
 import { SendService } from './Service/send.service';
 import { ProductForPublisherComponent } from './components/productShow/forPublisher/productForPublisher.component';
+import { ProductForAuthorComponent } from './components/productShow/forAuthor/productForAuthor.component';
+import { CardModule } from 'primeng/card';
+import { ListAuthorComponent } from './components/author/listAuthor.component';
+import { TableModule } from 'primeng/table';
+import { ListPublisherComponent } from './components/publisher/listpublisher.component';
+import { SendDataCartService } from './Service/senddatacart.service';
+import { AddressService } from './Service/address.service';
+import { DropdownModule } from 'primeng/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -64,7 +75,10 @@ import { ProductForPublisherComponent } from './components/productShow/forPublis
     AddressComponent,
     ContactComponent,
     HistoryCartsComponent,
-    ProductForPublisherComponent
+    ProductForPublisherComponent,
+    ProductForAuthorComponent,
+    ListAuthorComponent,
+    ListPublisherComponent
   ],
   imports: [
     BrowserModule,
@@ -75,8 +89,13 @@ import { ProductForPublisherComponent } from './components/productShow/forPublis
     ReactiveFormsModule,
     HttpClientModule,
     DataViewModule,
-
-    SliderModule
+    CardModule,
+    SliderModule,
+    TableModule,
+    DropdownModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    InputTextModule
   ],
   providers: [
     CategoryService,
@@ -97,7 +116,9 @@ import { ProductForPublisherComponent } from './components/productShow/forPublis
     OrderService,
     CartService,
     ReloadService,
-    SendService
+    SendService,
+    SendDataCartService,
+    AddressService
   ],
   bootstrap: [HomeComponent]
 })
