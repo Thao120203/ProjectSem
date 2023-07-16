@@ -1,51 +1,43 @@
 <div class="checkout_area section-padding-80">
 	<div class="container">
 		<div class="row" >
-
-			<div class="col-12 ">
+      <p-card style="margin-left: 15%;">
+        <div class="col-12 ">
 				<div class="checkout_details_area mt-50 clearfix">
 
 					<div class="cart-page-heading mb-30">
 						<h5>Add Address</h5>
 					</div>
 
-					<form action="#" method="post">
+					<form [formGroup]="addressForm" (submit)="save()">
 						<div class="row">
-							<div class="col-12 mb-3">
-								<label for="country">City</label>
-								<select class="w-100" id="country" style="display: none;">
-									<option value="usa">United States</option>
-									<option value="uk">United Kingdom</option>
-									<option value="ger">Germany</option>
-									<option value="fra">France</option>
-									<option value="ind">India</option>
-									<option value="aus">Australia</option>
-									<option value="bra">Brazil</option>
-									<option value="cana">Canada</option>
-								</select><div class="nice-select w-100" tabindex="0"><span class="current">United States</span><ul class="list"><li data-value="usa" class="option selected">United States</li><li data-value="uk" class="option">United Kingdom</li><li data-value="ger" class="option">Germany</li><li data-value="fra" class="option">France</li><li data-value="ind" class="option">India</li><li data-value="aus" class="option">Australia</li><li data-value="bra" class="option">Brazil</li><li data-value="cana" class="option">Canada</li></ul></div>
+							<div class="col-6 mb-3">
+								<label for="country">City <span>*</span></label>
+                <div class="card">
+                  <p-dropdown class="w-100" (onChange)="changeDistrict()" formControlName="city" [style]="{'width':'100%'}" [options]="cities"  [filter]="true" placeholder="Select a City" [editable]="true" optionLabel="name"></p-dropdown>
+                </div>
 							</div>
-							<div class="col-12 mb-3">
-								<label for="country">District</label>
-								<select class="w-100" id="country" style="display: none;">
-									<option value="usa">United States</option>
-									<option value="uk">United Kingdom</option>
-									<option value="ger">Germany</option>
-									<option value="fra">France</option>
-									<option value="ind">India</option>
-									<option value="aus">Australia</option>
-									<option value="bra">Brazil</option>
-									<option value="cana">Canada</option>
-								</select><div class="nice-select w-100" tabindex="0"><span class="current">United States</span><ul class="list"><li data-value="usa" class="option selected">United States</li><li data-value="uk" class="option">United Kingdom</li><li data-value="ger" class="option">Germany</li><li data-value="fra" class="option">France</li><li data-value="ind" class="option">India</li><li data-value="aus" class="option">Australia</li><li data-value="bra" class="option">Brazil</li><li data-value="cana" class="option">Canada</li></ul></div>
+							<div class="col-6 mb-3">
+								<label for="country">District <span>*</span></label>
+								<div class="card">
+                  <p-dropdown class="w-100" formControlName="district"  [style]="{'width':'100%'}" [options]="districts"  [filter]="true" placeholder="Select a District" [editable]="true" optionLabel="name"></p-dropdown>
+                </div>
 							</div>
-							
+
 							<div class="col-12 mb-3">
 								<label for="street_address">Address <span>*</span></label>
-								<input type="text" class="form-control mb-3" id="street_address" value="">
+                <input type="text" pInputText formControlName="street"  [style]="{'width':'100%'}"/>
 							</div>
 						</div>
+
+            <div>
+              <button type="submit">Add</button>
+            </div>
 					</form>
 				</div>
 			</div>
+      </p-card>
+
 		</div>
 	</div>
 </div>

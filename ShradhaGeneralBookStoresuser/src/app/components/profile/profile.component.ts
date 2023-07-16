@@ -11,7 +11,7 @@ import { Profile } from "src/app/modelapi/profile.model";
     templateUrl: './profile.component.html'
 })
 export class ProfileComponent implements OnInit{
- 
+
   account: AccountAPI2 = new AccountAPI2();
   accountFormGroup: FormGroup;
   changepassFormGruop: FormGroup;
@@ -29,6 +29,9 @@ export class ProfileComponent implements OnInit{
 
   ) { }
   ngOnInit(): void {
+    if(sessionStorage.getItem('account')== null){
+      this.router.navigate(['login']);
+    }
     this.account = JSON.parse(sessionStorage.getItem('account')) as AccountAPI2;
     this.accountFormGroup = this.formbuilder.group({
       firstName: [this.account.firstName, [
@@ -135,7 +138,7 @@ export class ProfileComponent implements OnInit{
   checkpassword(){
     if(this.comfirmpass == this.changepassFormGruop.get('newpassword').value){
       this.check = false;
-    }else 
+    }else
     {
       this.check = true;
     }
@@ -152,6 +155,6 @@ export class ProfileComponent implements OnInit{
       }
     })
   }
-  
-  
+
+
 }

@@ -1,60 +1,95 @@
 <!-- ##### Header Area Start ##### -->
 <header class="header_area">
-  <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
+  <div
+    class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between"
+  >
     <!-- Classy Menu -->
     <nav class="classy-navbar" id="essenceNav">
       <!-- Logo -->
-      <a class="nav-brand" href="index.html"><img src="./assets/img/Shradha.png" alt=""></a>
+      <a class="nav-brand" [routerLink]="['/']"
+        ><img src="./assets/img/Shradha.png" alt=""
+      /></a>
       <!-- Navbar Toggler -->
       <div class="classy-navbar-toggler">
-        <span class="navbarToggler"><span></span><span></span><span></span></span>
+        <span class="navbarToggler"
+          ><span></span><span></span><span></span
+        ></span>
       </div>
       <!-- Menu -->
       <div class="classy-menu">
         <!-- close btn -->
         <div class="classycloseIcon">
-          <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+          <div class="cross-wrap">
+            <span class="top"></span><span class="bottom"></span>
+          </div>
         </div>
         <!-- Nav Start -->
         <div class="classynav">
           <ul>
-            <li class="megamenu-item"><a [routerLink]="['/categories',{id: 0}]">Categories</a>
+            <li class="megamenu-item">
+              <a [routerLink]="['/categories', { id: 0 }]">Categories</a>
               <div class="megamenu">
-
-                  <ng-container *ngFor="let category of categoriesTitle">
-                    <ul class="single-mega cn-col-4">
-                      <li class="title"><a [routerLink]="['/categories',{id: category.category.id}]">{{ category.category.name }}</a></li>
-                      <ng-container  *ngFor="let categorysub of categoriesTitleSub">
-                        <li *ngIf="categorysub.indexParent == category.index"><a [routerLink]="['/categories',{id: categorysub.category.id}]">{{categorysub.category.name}}</a></li>
-                      </ng-container>
-                    </ul>
-                  </ng-container>
+                <ng-container *ngFor="let category of categoriesTitle">
+                  <ul class="single-mega cn-col-4">
+                    <li class="title">
+                      <a
+                        [routerLink]="[
+                          '/categories',
+                          { id: category.category.id }
+                        ]"
+                        >{{ category.category.name }}</a
+                      >
+                    </li>
+                    <ng-container
+                      *ngFor="let categorysub of categoriesTitleSub"
+                    >
+                      <li *ngIf="categorysub.indexParent == category.index">
+                        <a
+                          [routerLink]="[
+                            '/categories',
+                            { id: categorysub.category.id }
+                          ]"
+                          >{{ categorysub.category.name }}</a
+                        >
+                      </li>
+                    </ng-container>
+                  </ul>
+                </ng-container>
               </div>
               <span class="dd-trigger"></span><span class="dd-arrow"></span>
             </li>
 
-
-            <li class="cn-dropdown-item has-down pr12" ><a href="#">Authors</a>
-               <ul class="dropdown" style="width: 300%;">
+            <li class="cn-dropdown-item has-down pr12">
+              <a [routerLink]="['/listauthor']">Authors</a>
+              <ul class="dropdown" style="width: 300%">
                 <ng-container *ngFor="let author of authors">
-                  <li><a [routerLink]="['/authors',{id:author.id}]">{{author.name}}</a></li>
+                  <li>
+                    <a [routerLink]="['/authors', { id: author.id }]">{{
+                      author.name
+                    }}</a>
+                  </li>
                 </ng-container>
               </ul>
               <span class="dd-trigger"></span>
               <span class="dd-arrow"></span>
             </li>
 
-            <li class="cn-dropdown-item has-down pr12"><a href="#">Publishers</a>
-              <ul class="dropdown" style="width: 200%;" >
-               <ng-container *ngFor="let publisher of publishers">
-                 <li><a [routerLink]="['/publishers',{id:publisher.id}]">{{publisher.name}}</a></li>
-               </ng-container>
-             </ul>
-             <span class="dd-trigger"></span>
-             <span class="dd-arrow"></span>
-           </li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li class="cn-dropdown-item has-down pr12">
+              <a [routerLink]="['/listpublisher']">Publishers</a>
+              <ul class="dropdown" style="width: 200%">
+                <ng-container *ngFor="let publisher of publishers">
+                  <li>
+                    <a [routerLink]="['/publishers', { id: publisher.id }]">{{
+                      publisher.name
+                    }}</a>
+                  </li>
+                </ng-container>
+              </ul>
+              <span class="dd-trigger"></span>
+              <span class="dd-arrow"></span>
+            </li>
+            <!-- <li><a href="blog.html">Blog</a></li> -->
+            <li><a [routerLink]="['/contact']">Contact</a></li>
           </ul>
         </div>
         <!-- Nav End -->
@@ -66,69 +101,84 @@
       <!-- Search Area -->
       <div class="search-area">
         <form action="#" method="post">
-          <input type="search" name="search" id="headerSearch" placeholder="Type for search">
-          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <input
+            type="search"
+            name="search"
+            id="headerSearch"
+            placeholder="Type for search"
+          />
+          <button type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
         </form>
       </div>
       <ng-container *ngIf="account != null">
         <ul class="d-flex align-items-center">
-
-
-
           <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span class="d-none d-md-block dropdown-toggle ps-2">{{
+                account.lastName + " " + account.firstName
+              }}</span> </a
+            ><!-- End Profile Iamge Icon -->
 
-            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <span class="d-none d-md-block dropdown-toggle ps-2">{{account.lastName + " "+account.firstName}}</span>
-            </a><!-- End Profile Iamge Icon -->
-
-
-
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" >
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
+            >
               <li class="dropdown-header">
-                <h6>{{account.lastName + " "+account.firstName}}</h6>
+                <h6>{{ account.lastName + " " + account.firstName }}</h6>
               </li>
 
-
               <li>
-                <a [routerLink]="[('/profile')]" class="dropdown-item d-flex align-items-center" >
+                <a
+                  [routerLink]="['/profile']"
+                  class="dropdown-item d-flex align-items-center"
+                >
                   <i class="bi bi-person"></i>
                   <span>My Profile</span>
                 </a>
               </li>
               <li>
-                <hr class="dropdown-divider">
+                <hr class="dropdown-divider" />
               </li>
 
-
-              <li >
-                <a (click)="logout()" class="dropdown-item d-flex align-items-center" href="#">
+              <li>
+                <a
+                  (click)="logout()"
+                  class="dropdown-item d-flex align-items-center"
+                  href="#"
+                >
                   <i class="bi bi-box-arrow-right"></i>
                   <span>Sign Out</span>
                 </a>
               </li>
-
-            </ul><!-- End Profile Dropdown Items -->
-          </li><!-- End Profile Nav -->
-
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
         </ul>
       </ng-container>
 
       <div class="cart-area">
-        <a [routerLink]="[('/cart')]" id="essenceCartBtn"><img src="./assets/img/core-img/bag.svg" alt=""> <span *ngIf="cart != null">{{cart.listItemCart.length}}</span></a>
+        <a [routerLink]="['/cart']" id="essenceCartBtn"
+          ><img src="./assets/img/core-img/bag.svg" alt="" />
+          <span *ngIf="cart != null">{{ cart.listItemCart.length }}</span></a
+        >
       </div>
 
       <ng-container *ngIf="account == null">
         <div class="favourite-area">
-          <a [routerLink]="[('/login')]"><img src="./assets/img/login.svg" alt=""></a>
-      </div>
+          <a [routerLink]="['/login']"
+            ><img src="./assets/img/login.svg" alt=""
+          /></a>
+        </div>
       </ng-container>
       <!-- Cart Area -->
-
-
-
-
     </div>
-
   </div>
 </header>
 <!-- ##### Header Area End ##### -->

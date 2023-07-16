@@ -21,7 +21,7 @@ export class CartService {
     sessionStorage.setItem('cart', JSON.stringify(cart));
   }
 
-  public add(product: ProductAPI4){
+  public add(product: ProductAPI4): Cart{
     let cart =  JSON.parse(sessionStorage.getItem('cart')) as Cart;
     if(cart == null){
       this.create();
@@ -39,6 +39,7 @@ export class CartService {
       cart.listItemCart.find(p=>p.id == product.id).quantity +=1;
     }
     sessionStorage.setItem('cart', JSON.stringify(cart));
+    return cart;
   }
 
 
