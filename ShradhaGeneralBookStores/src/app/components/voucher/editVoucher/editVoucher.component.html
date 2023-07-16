@@ -28,7 +28,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Varitycode</label>
             <input type="text" pInputText formControlName="varityCode" [style]="{'width':'100%'}"/>
@@ -70,7 +70,7 @@
             </div>
           </div>
 
-          <div class="col-md-12">
+          <!-- <div class="col-md-12">
             <label for="inputName5" class="form-label">Time Start</label>
             <p-calendar   formControlName="timeStart"></p-calendar>
             <div *ngIf="voucherFormGroup.get('timeStart').touched">
@@ -78,9 +78,18 @@
                 Time Start is required
               </div>
             </div>
-          </div>
-
+          </div> -->
           <div class="col-md-12">
+            <label for="inputName5" class="form-label">Time End</label>
+            <br>
+            <p-calendar formControlName="time" [minDate]="minDate" [styleClass]="'w-100'"  dateFormat="dd/mm/yy" selectionMode="range" [readonlyInput]="true"></p-calendar>
+            <!-- <div *ngIf="voucherFormGroup.get('timeEnd').touched">
+              <div *ngIf="voucherFormGroup.hasError('required',['timeEnd'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                Time End is required
+              </div>
+            </div> -->
+          </div>
+          <!-- <div class="col-md-12">
             <label for="inputName5" class="form-label">Time End</label>
             <p-calendar   formControlName="timeEnd"></p-calendar>
             <div *ngIf="voucherFormGroup.get('timeEnd').touched">
@@ -88,7 +97,7 @@
                 Time End is required
               </div>
             </div>
-          </div>
+          </div> -->
 
           <div class="col-md-12">
             <label for="inputName5" class="form-label">Status</label>

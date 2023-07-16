@@ -17,6 +17,7 @@ import { ProductForPublisherComponent } from './components/productShow/forPublis
 import { ProductForAuthorComponent } from './components/productShow/forAuthor/productForAuthor.component';
 import { ListAuthorComponent } from './components/author/listAuthor.component';
 import { ListPublisherComponent } from './components/publisher/listpublisher.component';
+import { CheckOutPayComponent } from './components/checkoutpay/checkoutpay.component';
 
 
 const routes: Routes =[
@@ -37,6 +38,8 @@ const routes: Routes =[
 
   {path : 'profile',component:ProfileComponent},
   {path : 'checkout',component:CheckoutComponent},
+  {path : 'checkoutpay',component:CheckOutPayComponent},
+
   {path : 'address',component:AddressComponent},
   {path : 'contact',component:ContactComponent},
   {path: 'login',component:LoginComponent},

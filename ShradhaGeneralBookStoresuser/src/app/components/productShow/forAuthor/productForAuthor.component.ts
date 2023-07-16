@@ -102,6 +102,6 @@ export class ProductForAuthorComponent implements OnInit {
     let value = evt.target.value;
   }
   rangePrice() {
-    this.productshow = this.productshow.filter(p => p.cost >= this.rangeValues[0] &&  this.rangeValues[1]);
+    this.productshow = this.products.filter(p => p.cost >= this.rangeValues[0] &&  this.rangeValues[1]);
   }
 }

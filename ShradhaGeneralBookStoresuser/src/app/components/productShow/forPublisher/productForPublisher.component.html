@@ -3,12 +3,12 @@
         <div class="row">
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="shop_sidebar_area">
-  
+
                     <!-- ##### Single Widget ##### -->
                     <div class="widget catagory mb-50">
                         <!-- Widget Title -->
                         <a [routerLink]="['/categories',{id: 0}]"><h6 class="widget-title mb-30">Catagories</h6></a>
-  
+
                           <!--  Catagories  -->
                           <div class="catagories-menu">
                               <ul id="menu-content2" class="menu-content collapse show">
@@ -35,26 +35,26 @@
                                           <ul class="single-mega cn-col-4">
                                             <li class="title" ><a [routerLink]="['/categories',{id: category.category.id}]">{{ category.category.name }}</a></li>
                                             <ng-container  *ngFor="let categorysub of categoriesTitleSub">
-                                            
+
                                                   <li *ngIf="categorysub.indexParent == category.index"  id="category"><a [routerLink]="['/categories',{id: categorysub.category.id}]">{{categorysub.category.name}}</a></li>
-                                      
+
                                             </ng-container>
                                           </ul>
                                       </ng-container>
                                   </li>
                                   <!-- Single Item -->
-                                 
+
                               </ul>
                           </div>
                       </div>
-  
+
                     <!-- ##### Single Widget ##### -->
                     <div class="widget price mb-50">
                         <!-- Widget Title -->
                         <h6 class="widget-title mb-30">Filter by</h6>
                         <!-- Widget Title 2 -->
                         <p class="widget-title2 mb-30">Price</p>
-  
+
                           <div class="widget-desc">
                               <div class="slider-range">
                                   <div data-min="49" data-max="2000" data-unit="$" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="49" data-value-max="360" data-label-result="Range:">
@@ -68,97 +68,141 @@
                       </div>
                       <div class="widget brands mb-50">
                           <!-- Widget Title 2 -->
-                          <p class="widget-title2 mb-30">Authors</p>
+                          <p class="widget-title2 mb-30">Publishers</p>
                           <div class="widget-desc">
-                              <ul *ngFor="let author of authors">
-                                  <li><a href="#">{{author.name}}</a></li>
+                              <ul *ngFor="let publisher of publishers">
+                                  <li><a href="#">{{publisher.name}}</a></li>
                               </ul>
                           </div>
                       </div>
                   </div>
               </div>
-  
-            <div class="col-12 col-md-8 col-lg-9">
+
+              <div class="col-12 col-md-12 col-lg-9">
                 <div class="shop_grid_product_area">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="product-topbar d-flex align-items-center justify-content-between">
-                                <!-- Total Products -->
-                                <div class="total-products">
-                                    <p><span>186</span> products found</p>
-                                </div>
-                                <!-- Sorting -->
-                                <div class="product-sorting d-flex">
-                                    <p>Sort by:</p>
-                                      <select name="select" id="sortByselect" style="display: none;">
-                                          <option value="1">Highest Rated</option>
-                                          <option value="2">Newest</option>
-                                          <option value="3">Price: $$ - $</option>
-                                          <option value="4">Price: $ - $$</option>
-                                      </select>
-                                        <div class="nice-select" tabindex="0">
-                                        <span class="current">Highest Rated</span>
-                                        <ul class="list">
-                                          <li data-value="value" class="option selected">Highest Rated</li>
-                                          <li data-value="value" class="option">Newest</li>
-                                          <li data-value="value" class="option">Price: $$ - $</li>
-                                          <li data-value="value" class="option">Price: $ - $$</li>
-                                        </ul>
-                                      </div>
-                                      <input type="submit" class="d-none" value="">
-                                </div>
+                  <div class="row">
+                    <ng-container *ngIf="publisher != null">
+                      <p-card class="col-12 col-md-12">
+                        <div class="col-12 col-md-12">
+                        <div class="checkout_details_area mt-50 clearfix">
+                          <div class="cart-page-heading mb-30">
+                            <h5>Publisher Address</h5>
+                          </div>
+                            <div class="row">
+                              <div class="col-6 mb-3">
+                                <label for="phone_number">Publisher's Name:</label>
+                                &nbsp;
+                                <b>
+                                  <span>{{publisher.name}}</span>
+                                </b>
+                              </div>
+                              <div class="col-6 mb-3">
+                                <label for="phone_number">Contact Number</label>
+                                &nbsp;
+                                <b>
+                                  <span>{{publisher.contactNumber}}</span>
+                                </b>
+                              </div>
+                              <div class="col-12 mb-3">
+                                <label for="state">Location </label>
+                                <p-card>
+                                  <iframe width="100%" [src]="safe(publisher.location)" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </p-card>
+                              </div>
                             </div>
                         </div>
-                    </div>
-  
-                    <div class="row">
-  
-                        <!-- Single Product -->
-                        <div class="col-12 col-sm-6 col-lg-4" *ngFor="let product of products">
-                            <div class="single-product-wrapper">
-                                <!-- Product Image -->
-                                <div class="product-img" >
-                                    <img width="50%" height="50%" src="{{product.photos[0]}}">
-                                    <!-- Hover Thumb -->
-                                    <img class="hover-img" src="{{product.photos[1]}}" alt="">
-                                </div>
-  
-  
-                                <!-- Product Description -->
-                                <div class="product-description" >
-                                    <span>{{product.authors[0]}}</span>
-                                    <a [routerLink]="['/product',{id: product.id}]">
-                                        <h6>{{product.name}}</h6>
-                                    </a>
-                                    <p class="product-price">${{product.cost}}</p>
-                                    <!-- Hover Content -->
-                                    <div class="hover-content">
-                                        <!-- Add to Cart -->
-                                        <div class="add-to-cart-btn" (click)="addcart(product)">
-                                            <a href="#" class="btn essence-btn">Add to Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                      </div>
+                      </p-card>
+
+                    </ng-container>
+                    <div class="col-12">
+                      <div
+                        class="product-topbar d-flex align-items-center justify-content-between"
+                      >
+                        <!-- Total Products -->
+                        <div class="total-products" *ngIf="products != null">
+                          <p>
+                            <span>{{ productshow.length }}</span> products found
+                          </p>
                         </div>
-  
-  
+                        <!-- Sorting -->
+                        <!-- <div class="product-sorting d-flex">
+                          <p>Sort by:</p>
+                          <select name="select" id="sortByselect" style="display: none">
+                            <option value="1">Highest Rated</option>
+                            <option value="2">Newest</option>
+                            <option value="3">Price: $$ - $</option>
+                            <option value="4">Price: $ - $$</option>
+                          </select>
+                          <div class="nice-select" tabindex="0">
+                            <span class="current">Highest Rated</span>
+                            <ul class="list">
+                              <li data-value="value" class="option selected">
+                                Highest Rated
+                              </li>
+                              <li data-value="value" class="option">Newest</li>
+                              <li data-value="value" class="option">Price: $$ - $</li>
+                              <li data-value="value" class="option">Price: $ - $$</li>
+                            </ul>
+                          </div>
+                          <input type="submit" class="d-none" value="" />
+                        </div> -->
+                      </div>
                     </div>
+                  </div>
+
+                  <div class="row">
+                    <!-- Single Product -->
+                    <div
+                      class="col-12 col-sm-6 col-lg-4"
+                      *ngFor="let product of productshow"
+                    >
+                      <div class="single-product-wrapper">
+                        <!-- Product Image -->
+                        <div class="product-img">
+                          <img width="50%" height="50%" src="{{ product.photos[0] }}" />
+                          <!-- Hover Thumb -->
+                          <img class="hover-img" src="{{ product.photos[1] }}" alt="" />
+                        </div>
+
+                        <!-- Product Description -->
+                        <div class="product-description">
+                          <span>{{ product.authors[0] }}</span>
+                          <a [routerLink]="['/product', { id: product.id }]">
+                            <h6>{{ product.name }}</h6>
+                          </a>
+                          <p class="product-price">${{ product.cost }}</p>
+                          <!-- Hover Content -->
+                          <div class="hover-content">
+                            <!-- Add to Cart -->
+                            <div class="add-to-cart-btn" (click)="addcart(product)">
+                              <button href="#" class="btn essence-btn">Add to Cart</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <!-- Pagination -->
                 <nav aria-label="navigation">
-                    <ul class="pagination mt-50 mb-70">
-                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">...</a></li>
-                        <li class="page-item"><a class="page-link" href="#">21</a></li>
-                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
-                    </ul>
+                  <ul class="pagination mt-50 mb-70">
+                    <li class="page-item">
+                      <a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#">21</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#"
+                        ><i class="fa fa-angle-right"></i
+                      ></a>
+                    </li>
+                  </ul>
                 </nav>
-            </div>
+              </div>
         </div>
     </div>
   </section>
-  

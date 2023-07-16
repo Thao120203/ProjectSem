@@ -6,9 +6,9 @@
           <!-- ##### Single Widget ##### -->
           <div class="widget catagory mb-50">
             <!-- Widget Title -->
-            <a [routerLink]="['/categories', { id: 0 }]"
-              ><h6 class="widget-title mb-30">Catagories</h6></a
-            >
+            <a [routerLink]="['/categories', { id: 0 }]">
+              <h6 class="widget-title mb-30">Catagories</h6>
+            </a>
 
             <!--  Catagories  -->
             <div class="catagories-menu">
@@ -16,37 +16,21 @@
                 <!-- Single Item -->
 
                 <!-- Single Item -->
-                <li
-                  data-toggle="collapse"
-                  data-target="#category"
-                  class="collapsed"
-                  aria-expanded="false"
-                >
+                <li data-toggle="collapse" data-target="#category" class="collapsed" aria-expanded="false">
                   <ng-container *ngFor="let category of categoriesTitle">
                     <ul class="single-mega cn-col-4">
                       <li class="title">
-                        <a
-                          [routerLink]="[
+                        <a [routerLink]="[
                             '/categories',
                             { id: category.category.id }
-                          ]"
-                          >{{ category.category.name }}</a
-                        >
+                          ]">{{ category.category.name }}</a>
                       </li>
-                      <ng-container
-                        *ngFor="let categorysub of categoriesTitleSub"
-                      >
-                        <li
-                          *ngIf="categorysub.indexParent == category.index"
-                          id="category"
-                        >
-                          <a
-                            [routerLink]="[
+                      <ng-container *ngFor="let categorysub of categoriesTitleSub">
+                        <li *ngIf="categorysub.indexParent == category.index" id="category">
+                          <a [routerLink]="[
                               '/categories',
                               { id: categorysub.category.id }
-                            ]"
-                            >{{ categorysub.category.name }}</a
-                          >
+                            ]">{{ categorysub.category.name }}</a>
                         </li>
                       </ng-container>
                     </ul>
@@ -67,16 +51,10 @@
             <div class="widget-desc">
               <div class="slider-range">
                 <div
-                  class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-                >
+                  class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
                   <div class="card flex justify-content-center">
-                    <p-slider
-                      [(ngModel)]="rangeValues"
-                      (ngModelChange)="rangePrice()"
-                      [min]="0"
-                      [max]="1000"
-                      [range]="true"
-                    ></p-slider>
+                    <p-slider [(ngModel)]="rangeValues" (ngModelChange)="rangePrice()" [min]="0" [max]="1000"
+                      [range]="true"></p-slider>
                   </div>
                 </div>
                 <div class="range-price">
@@ -94,23 +72,23 @@
             <ng-container *ngIf="author != null">
               <p-card class="col-12 col-md-12">
                 <div class="col-12 col-md-12">
-                <div class="checkout_details_area mt-50 clearfix">
-                  <div class="cart-page-heading mb-30">
-                    <h5>Author Profile</h5>
-                  </div>
+                  <div class="checkout_details_area mt-50 clearfix">
+                    <div class="cart-page-heading mb-30">
+                      <h5>Author Profile</h5>
+                    </div>
                     <div class="row">
                       <div class="col-6 mb-3">
                         <label for="phone_number">Author's Name:</label>
                         &nbsp;
                         <b>
-                          <span>{{author.name}}</span>
+                          <span>{{ author.name }}</span>
                         </b>
                       </div>
                       <div class="col-6 mb-3">
                         <label for="phone_number">Year of Birth:</label>
                         &nbsp;
                         <b>
-                          <span>{{author.yearOfBirth}}</span>
+                          <span>{{ author.yearOfBirth }}</span>
                         </b>
                       </div>
                       <div class="col-12 mb-3">
@@ -120,19 +98,16 @@
                         </p-card>
                       </div>
                     </div>
+                  </div>
                 </div>
-              </div>
               </p-card>
-
             </ng-container>
             <div class="col-12">
-              <div
-                class="product-topbar d-flex align-items-center justify-content-between"
-              >
+              <div class="product-topbar d-flex align-items-center justify-content-between">
                 <!-- Total Products -->
                 <div class="total-products" *ngIf="products != null">
                   <p>
-                    <span>{{ products.length }}</span> products found
+                    <span>{{ productshow.length }}</span> products found
                   </p>
                 </div>
                 <!-- Sorting -->
@@ -163,10 +138,7 @@
 
           <div class="row">
             <!-- Single Product -->
-            <div
-              class="col-12 col-sm-6 col-lg-4"
-              *ngFor="let product of productshow"
-            >
+            <div class="col-12 col-sm-6 col-lg-4" *ngFor="let product of productshow">
               <div class="single-product-wrapper">
                 <!-- Product Image -->
                 <div class="product-img">
@@ -186,7 +158,9 @@
                   <div class="hover-content">
                     <!-- Add to Cart -->
                     <div class="add-to-cart-btn" (click)="addcart(product)">
-                      <button href="#" class="btn essence-btn">Add to Cart</button>
+                      <button href="#" class="btn essence-btn">
+                        Add to Cart
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -206,9 +180,7 @@
             <li class="page-item"><a class="page-link" href="#">...</a></li>
             <li class="page-item"><a class="page-link" href="#">21</a></li>
             <li class="page-item">
-              <a class="page-link" href="#"
-                ><i class="fa fa-angle-right"></i
-              ></a>
+              <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
             </li>
           </ul>
         </nav>
@@ -216,6 +188,3 @@
     </div>
   </div>
 </section>
-
-
-

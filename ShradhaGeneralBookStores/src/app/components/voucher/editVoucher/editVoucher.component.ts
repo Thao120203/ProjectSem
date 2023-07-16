@@ -19,6 +19,7 @@ import { UtilsServiceService } from 'src/app/Service/utils-service.service';
 
 export class EditVoucherComponent implements OnInit{
   voucher: Voucher = new Voucher();
+  minDate: Date = new Date();
   voucherFormGroup: FormGroup;
   constructor(
     private _voucherService: VoucherService,
@@ -42,8 +43,12 @@ export class EditVoucherComponent implements OnInit{
           this.voucherFormGroup.get('discount').setValue(this.voucher.discount);
           this.voucherFormGroup.get('condition').setValue(this.voucher.condition);
           this.voucherFormGroup.get('quantity').setValue(this.voucher.quantity);
-          this.voucherFormGroup.get('timeStart').setValue(this.voucher.timeStart);
-          this.voucherFormGroup.get('timeEnd').setValue(this.voucher.timeEnd);
+
+          let a = [];
+          a.push(moment(this.voucher.timeStart, 'DD/MM/YYYY HH:mm:ss').format('DD/MM/YYYY'));
+          a.push(moment(this.voucher.timeEnd, 'DD/MM/YYYY HH:mm:ss').format('DD/MM/YYYY'));
+          console.log(a);
+
           this.voucherFormGroup.get('createdAt').setValue(this.voucher.createdAt);
         })
       });
@@ -67,12 +72,9 @@ export class EditVoucherComponent implements OnInit{
         quantity:[0,[
           Validators.required
         ]],
-        timeStart:['',[
+        time:[[],
           Validators.required
-        ]],
-        timeEnd:['',[
-          Validators.required
-        ]],
+        ],
         status:false,
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
         updatedAt: [moment().format('DD/MM/YYYY HH:mm:ss')]

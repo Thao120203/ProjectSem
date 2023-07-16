@@ -55,6 +55,11 @@ import { DropdownModule } from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule } from 'primeng/inputtext';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { CheckOutPayComponent } from './components/checkoutpay/checkoutpay.component';
+
+
 
 @NgModule({
   declarations: [
@@ -78,7 +83,8 @@ import { InputTextModule } from 'primeng/inputtext';
     ProductForPublisherComponent,
     ProductForAuthorComponent,
     ListAuthorComponent,
-    ListPublisherComponent
+    ListPublisherComponent,
+    CheckOutPayComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +101,9 @@ import { InputTextModule } from 'primeng/inputtext';
     DropdownModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    InputTextModule
+    InputTextModule,
+    RadioButtonModule,
+    NgxPayPalModule
   ],
   providers: [
     CategoryService,

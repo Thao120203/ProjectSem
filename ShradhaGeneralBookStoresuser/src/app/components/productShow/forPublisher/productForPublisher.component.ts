@@ -4,6 +4,8 @@ import { AuthorService } from 'src/app/Service/author.service';
 import { CartService } from "src/app/Service/cart.service";
 import { CategoryService } from "src/app/Service/category.service";
 import { ProductService } from "src/app/Service/product.service";
+import { PublisherService } from "src/app/Service/publisher.service";
+import { SendDataCartService } from "src/app/Service/senddatacart.service";
 import { ProductAPI2 } from "src/app/modelapi/productapi2.model";
 import { ProductAPI4 } from "src/app/modelapi/productapi4.model";
 import { Author } from 'src/app/models/author.model';
@@ -11,6 +13,8 @@ import { Cart } from "src/app/models/cart.model";
 import { Category } from "src/app/models/category.model";
 import { CategoryMenuParent } from "src/app/models/categoryMenuParent.model";
 import { CategoryMenuSub } from "src/app/models/categoryMenuSub.model";
+import { Publisher } from "src/app/models/publisher.model";
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-root',
@@ -18,30 +22,40 @@ import { CategoryMenuSub } from "src/app/models/categoryMenuSub.model";
 })
 export class ProductForPublisherComponent implements OnInit{
     products: ProductAPI4[];
-    authors:Author[];
+    publishers:Publisher[];
+    publisher:Publisher;
+    productshow: ProductAPI4[];
     categories:Category[] = [];
     categoriesTitle: CategoryMenuParent[] = [];
     categoriesTitleSub: CategoryMenuSub[] = [];
     rangeValues: number[] = [0, 1000];
     constructor(
+        private sanitizer: DomSanitizer,
         private _cartService: CartService,
         private _productService :ProductService,
         private activevateRoute:ActivatedRoute,
         private _categoryService: CategoryService,
-        private _authorService:AuthorService
+        private _publisherService:PublisherService,
+        private sendDataCartService: SendDataCartService
     ){
 
     }
     ngOnInit(): void {
+      this.productshow = [];
         this.activevateRoute.paramMap.subscribe(c=>{
           if(c.get('id')!="0"){
             this._productService.readforpublisherforUser(c.get('id')).then(result=>{
               this.products = result as ProductAPI4[];
+              this.productshow = this.products;
               console.log(this.products);
             },
             error=>{
               console.log(error);
             })
+            this._publisherService.get(parseInt(c.get('id'))).then((result) => {
+              this.publisher = result[0] as Publisher;
+              console.log(this.publisher);
+            });
           }else{
             this._productService.readforuser().then(result=>{
               this.products = result as ProductAPI4[];
@@ -51,14 +65,15 @@ export class ProductForPublisherComponent implements OnInit{
               console.log(error);
             })
           }
-          this._authorService.read().then(result=>{
-            this.authors = result as Author[];
-            console.log(this.authors);
+          this._publisherService.read().then(result=>{
+            this.publishers = result as Publisher[];
+            console.log(this.publishers);
           },
           error=>{
-            console.log(this.authors);
+            console.log(this.publishers);
           })
           });
+
           let parent = 0;
           this._categoryService.read().then(result => {
             this.categories = result as Category[];
@@ -82,9 +97,7 @@ export class ProductForPublisherComponent implements OnInit{
     //   this.reloadService.reloadComponentB();
     // }
     addcart(product: ProductAPI4){
-      this._cartService.add(product);
-      console.log(JSON.parse(sessionStorage.getItem('cart')) as Cart);
-      return false;
+      this.sendDataCartService.changeData(this._cartService.add(product) as Cart)
     }
 
     sortbyoder(evt:any){
@@ -93,17 +106,10 @@ export class ProductForPublisherComponent implements OnInit{
       console.log(value);
 
     }
-    rangePrice(){
-      this.activevateRoute.paramMap.subscribe(c=>{
-        this._productService.readbyprice(this.rangeValues[0],this.rangeValues[1]).then(result=>{
-          this.products = result as ProductAPI4[];
-        },
-        error=>{
-          console.log(error);
-        })
-      });
+    rangePrice() {
+      this.productshow = this.productshow.filter(p => p.cost >= this.rangeValues[0] &&  this.rangeValues[1]);
     }
-    cate_0(){
-
+    safe(url: string):SafeResourceUrl{
+      return this.sanitizer.bypassSecurityTrustResourceUrl(url);
     }
 }

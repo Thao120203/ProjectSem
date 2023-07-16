@@ -2,10 +2,12 @@ import { Component,OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AccountService } from "src/app/Service/account.service";
+import { AddressProfileService } from "src/app/Service/addressprofile.service";
 import { UtilsServiceService } from "src/app/Service/utils-service.service";
 import { AccountAPI2 } from "src/app/modelapi/accountapi2.model";
 import { ChangePassword } from "src/app/modelapi/changepassword.model";
 import { Profile } from "src/app/modelapi/profile.model";
+import { AddressProfile } from "src/app/models/addressprofile.model";
 @Component({
 
     templateUrl: './profile.component.html'
@@ -17,6 +19,7 @@ export class ProfileComponent implements OnInit{
   changepassFormGruop: FormGroup;
   comfirmpass: string;
   check:boolean = true;
+  address: AddressProfile[];
 
   imageUrl: string;
   avatar: File = null;
@@ -25,14 +28,21 @@ export class ProfileComponent implements OnInit{
     private _accountService: AccountService,
     private formbuilder: FormBuilder,
     private utils:UtilsServiceService,
-    private router:Router
-
+    private router:Router,
+    private addressProfileService: AddressProfileService
   ) { }
   ngOnInit(): void {
     if(sessionStorage.getItem('account')== null){
       this.router.navigate(['login']);
     }
     this.account = JSON.parse(sessionStorage.getItem('account')) as AccountAPI2;
+    this.addressProfileService.read().then(
+      result=>{
+        this.address = result as AddressProfile[];
+        this.address = this.address.filter(a=>a.accountId == this.account.id);
+      }
+    );
+
     this.accountFormGroup = this.formbuilder.group({
       firstName: [this.account.firstName, [
         Validators.required
