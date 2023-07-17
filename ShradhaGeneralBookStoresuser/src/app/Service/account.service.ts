@@ -14,7 +14,7 @@ export class AccountService {
         private httpclient: HttpClient
     ){}
 
-    async register(account: Account){
+    async register(account: AccountAPI){
       return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'Account/Register',account));
     }
 
@@ -32,6 +32,10 @@ export class AccountService {
 
     async create(account: AccountAPI){
       return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'Account/Create',account));
+    }
+
+    async active(email: string,securityCode: string){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'Account/Active?email=' + email+"&securitycode='" + securityCode));
     }
 
     async checkexists(email: string){
