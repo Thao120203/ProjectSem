@@ -59,6 +59,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { CheckOutPayComponent } from './components/checkoutpay/checkoutpay.component';
 import { OrderServiceDetail } from './Service/orderdetail.service';
+import { ActiveComponent } from './components/account/active/active.component';
 
 
 
@@ -86,7 +87,7 @@ import { OrderServiceDetail } from './Service/orderdetail.service';
     ListAuthorComponent,
     ListPublisherComponent,
     CheckOutPayComponent,
-    
+    ActiveComponent
   ],
   imports: [
     BrowserModule,

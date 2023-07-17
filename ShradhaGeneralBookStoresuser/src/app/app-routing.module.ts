@@ -18,6 +18,7 @@ import { ProductForAuthorComponent } from './components/productShow/forAuthor/pr
 import { ListAuthorComponent } from './components/author/listAuthor.component';
 import { ListPublisherComponent } from './components/publisher/listpublisher.component';
 import { CheckOutPayComponent } from './components/checkoutpay/checkoutpay.component';
+import { ActiveComponent } from './components/account/active/active.component';
 
 
 const routes: Routes =[
@@ -46,6 +47,7 @@ const routes: Routes =[
   {path: 'sendemail',component:SendEmailComponent},
   {path: 'register',component:RegisterComponent},
   {path: 'historycart',component:HistoryCartsComponent},
+  {path: 'Active',component:ActiveComponent},
 
 ];
 
