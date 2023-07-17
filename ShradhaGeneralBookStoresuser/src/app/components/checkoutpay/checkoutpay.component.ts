@@ -23,54 +23,56 @@ export class CheckOutPayComponent implements OnInit {
     private router: Router,
     private _orderService: OrderService,
     private _orderDetailService: OrderServiceDetail
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.activevateRoute.paramMap.subscribe((c) => {
       this._orderService.getByOrderId(parseInt(c.get('id'))).then(
-        result=>{
+        result => {
           this.order = result[0] as OrderApi2;
           console.log(this.order)
         }
       )
       this._orderDetailService.get(parseInt(c.get('id'))).then(
-        result=>{
+        result => {
           this.listorderDetail = result as OrderDetailAPI[];
           for (let i = 0; i < this.listorderDetail.length; i++) {
-            this.total+= this.listorderDetail[i].price * this.listorderDetail[i].quantity;
-            let a:ITransactionItem = {
+            this.total += this.listorderDetail[i].price * this.listorderDetail[i].quantity;
+            let a: ITransactionItem = {
               name: this.listorderDetail[i].name,
-              quantity:  this.listorderDetail[i].quantity.toString(),
-              unit_amount:{
+              quantity: this.listorderDetail[i].quantity.toString(),
+              unit_amount: {
                 currency_code: 'USD',
                 value: (this.listorderDetail[i].price * this.listorderDetail[i].quantity).toString()
               }
             };
             this.items.push(a);
             console.log(a);
+            console.log((this.order.totalPrice));
+
           }
-          if(Number.isInteger(this.order.totalPrice - this.total)){
-            let a:ITransactionItem = {
-              name: 'shipt & vat',
-                quantity:  '1',
-                unit_amount:{
-                  currency_code: 'USD',
-                  value: (this.order.totalPrice - this.total).toString()
-                }
-            };
-            this.items.push(a);
-            console.log(this.items);
-          }else{
-            let a:ITransactionItem = {
-              name: 'shipt & vat',
-                quantity:  '1',
-                unit_amount:{
-                  currency_code: 'USD',
-                  value: (this.order.totalPrice - this.total).toFixed(1).toString()
-                }
-            };
-            this.items.push(a);
-            console.log(this.items);
-          }
+          // if(Number.isInteger(this.order.totalPrice - this.total)){
+          let a: ITransactionItem = {
+            name: 'shipt',
+            quantity: '1',
+            unit_amount: {
+              currency_code: 'USD',
+              value: (this.order.totalPrice - this.total).toString()
+            }
+          };
+          this.items.push(a);
+          console.log(this.items);
+          // }else{
+          //   let a:ITransactionItem = {
+          //     name: 'shipt & vat',
+          //       quantity:  '1',
+          //       unit_amount:{
+          //         currency_code: 'USD',
+          //         value: (this.order.totalPrice - this.total).toFixed(1).toString()
+          //       }
+          //   };
+          //   this.items.push(a);
+          //   console.log(this.items);
+          // }
         }
       );
     })
@@ -96,7 +98,17 @@ export class CheckOutPayComponent implements OnInit {
                   },
                 },
               },
-              items: this.items,
+              items: [
+                {
+                  name: 'Enterprise Subscription',
+                  quantity: '1',
+                  category: 'DIGITAL_GOODS',
+                  unit_amount: {
+                    currency_code: 'USD',
+                    value:  this.order.totalPrice.toString(),
+                  },
+                }
+              ],
             },
           ],
         },
@@ -155,3 +167,6 @@ export class CheckOutPayComponent implements OnInit {
 //     value: string,
 //   }
 // }
+
+
+

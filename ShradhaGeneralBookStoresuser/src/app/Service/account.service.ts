@@ -65,4 +65,8 @@ export class AccountService {
     async changePassword(newPassword: ChangePassword){
       return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() + 'Account/ChangePassword',newPassword));
     }
+    async ForgetPassword(email: string){
+      let a = {"name": "a"};
+      return await lastValueFrom(this.httpclient.put(this.baseUrlservice.baseUrl() +'Account/ForgetPassword/'+email, a));
+    }
 }

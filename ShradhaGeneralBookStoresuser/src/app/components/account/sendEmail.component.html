@@ -11,16 +11,16 @@
               <div class="pt-4 pb-2">
                 <h5 class="card-title text-center pb-0 fs-4">Forget Password</h5>
               </div>
-              <form class="row g-3 needs-validation" novalidate="">
+              <form class="row g-3 needs-validation" novalidate=""  [formGroup]="accountFormGroup">
                 <div class="col-12">
                   <label for="yourUsername" class="form-label">Email</label>
                   <div class="input-group has-validation">
                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                    <input type="text" name="username" formControlName="email" class="form-control" id="yourUsername" required="">
+                    <input type="text" name="username" formControlName="email" class="form-control" id="yourUsername" (change)="checkExist()" required="">
                   </div>
                 </div>
                 <div class="col-12">
-                  <button class="btn btn-primary w-100" type="submit" >Send</button>
+                  <button class="btn btn-primary w-100" type="submit"  (click)="forget()" >Send</button>
                 </div>
                 <div class="col-12">
                   <p class="small mb-0">Don't have account? <a [routerLink]="['/login']" href>Create an account</a></p>
