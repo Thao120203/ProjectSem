@@ -61,19 +61,7 @@
 		</div>
 
 		<!-- Cart Summary -->
-		<div class="cart-amount-summary">
 
-			<h2>Summary</h2>
-			<ul class="summary-table">
-				<li><span>subtotal:</span> <span>$274.00</span></li>
-				<li><span>delivery:</span> <span>Free</span></li>
-				<li><span>discount:</span> <span>-15%</span></li>
-				<li><span>total:</span> <span>$232.00</span></li>
-			</ul>
-			<div class="checkout-btn mt-100">
-				<a href="checkout.html" class="btn essence-btn">check out</a>
-			</div>
-		</div>
 	<div id="ascrail2001" class="nicescroll-rails nicescroll-rails-vr" style="width: 8px; z-index: 10; cursor: default; position: absolute; top: 0px; left: 182px; height: 722px; touch-action: none; opacity: 0; display: block;"><div class="nicescroll-cursors" style="position: relative; top: 0px; float: right; width: 6px; height: 671px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px; touch-action: none;"></div></div><div id="ascrail2001-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 8px; z-index: 10; top: 714px; left: 0px; position: absolute; cursor: default; display: none; width: 182px; opacity: 0;"><div class="nicescroll-cursors" style="position: absolute; top: 0px; height: 6px; width: 190px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px; left: 0px;"></div></div></div>
 <div id="ascrail2000" class="nicescroll-rails nicescroll-rails-vr" style="width: 8px; z-index: 1; cursor: default; position: absolute; top: 0px; left: 662px; height: 722px; touch-action: none; display: none;"><div class="nicescroll-cursors" style="position: relative; top: 0px; float: right; width: 6px; height: 0px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px; touch-action: none;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 8px; z-index: 1; top: 714px; left: 0px; position: absolute; cursor: default; display: none;"><div class="nicescroll-cursors" style="position: absolute; top: 0px; height: 6px; width: 0px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div></div></div>
 
@@ -82,9 +70,9 @@
 	<!-- Single Product Thumb
 	<div class="single_product_thumb clearfix">
 		<div class="product_thumbnail_slides owl-carousel owl-theme owl-loaded">
-			
-			
-			
+
+
+
 		<div class="owl-stage-outer">
 			<div class="owl-stage" style="transform: translate3d(-1644px, 0px, 0px); transition: all 1s ease 0s; width: 3836px;">
 				<div class="owl-item cloned" style="width: 548px; margin-right: 0px;">
@@ -151,7 +139,7 @@
 			  </div>
 			</div>
 
-			
+
 		  </div>
 		</div>
 	  </div>
@@ -186,14 +174,14 @@
 			<!-- Cart & Favourite Box -->
 			<div class="cart-fav-box d-flex align-items-center">
 				<!-- Cart -->
-				<button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
+				<button (click)="addcart(product)" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
 			</div>
 		</form>
 	</div>
 </section>
 
-<section class="product_description_area">
-	<div class="container">	
+<!-- <section class="product_description_area">
+	<div class="container">
 	  <div class="tab-content" id="myTabContent">
 		<div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
 		  <div class="row">
@@ -370,7 +358,7 @@
 		</div>
 	  </div>
 	</div>
-  </section>
+  </section> -->
 
   <section class="new_arrivals_area section-padding-80 clearfix">
 	<div class="container">
@@ -416,7 +404,7 @@
 							<img src="./assets/img/product-img/product-2.jpg" alt="">
 							<!-- Hover Thumb -->
 							<img class="hover-img" src="./assets/img/product-img/product-3.jpg" alt="">
-						   
+
 						</div>
 						<!-- Product Description -->
 						<div class="product-description">
@@ -446,8 +434,8 @@
 								<span>-30%</span>
 							</div>
 
-							
-							
+
+
 						</div>
 						<!-- Product Description -->
 						<div class="product-description">
@@ -499,7 +487,7 @@
 							<img src="./assets/img/product-img/product-1.jpg" alt="">
 							<!-- Hover Thumb -->
 							<img class="hover-img" src="./assets/img/product-img/product-2.jpg" alt="">
-							
+
 						</div>
 						<!-- Product Description -->
 						<div class="product-description">
@@ -523,7 +511,7 @@
 							<img src="./assets/img/product-img/product-2.jpg" alt="">
 							<!-- Hover Thumb -->
 							<img class="hover-img" src="./assets/img/product-img/product-3.jpg" alt="">
-							
+
 
 						</div>
 						<!-- Product Description -->
@@ -554,7 +542,7 @@
 								<span>-30%</span>
 							</div>
 
-							
+
 
 						</div>
 						<!-- Product Description -->
@@ -585,7 +573,7 @@
 								<span>New</span>
 							</div>
 
-							
+
 
 						</div>
 						<!-- Product Description -->
@@ -610,7 +598,7 @@
 							<img src="./assets/img/product-img/product-1.jpg" alt="">
 							<!-- Hover Thumb -->
 							<img class="hover-img" src="./assets/img/product-img/product-2.jpg" alt="">
-							
+
 
 						</div>
 						<!-- Product Description -->
@@ -635,7 +623,7 @@
 							<img src="./assets/img/product-img/product-2.jpg" alt="">
 							<!-- Hover Thumb -->
 							<img class="hover-img" src="./assets/img/product-img/product-3.jpg" alt="">
-							
+
 
 						</div>
 						<!-- Product Description -->
@@ -666,7 +654,7 @@
 								<span>-30%</span>
 							</div>
 
-							
+
 						</div>
 						<!-- Product Description -->
 						<div class="product-description">

@@ -78,14 +78,6 @@
               </ul>
             </div>
           </div>
-
-          <ng-container *ngIf="paymentmethod==2">
-            <div>
-              <ngx-paypal [config]="payPalConfig"></ngx-paypal>
-            </div>
-          </ng-container>
-
-
           <a (click)="save()" class="btn essence-btn">Place Order</a>
         </div>
       </div>

@@ -7,8 +7,10 @@ import * as moment from 'moment';
 import { Author } from 'src/app/models/author.model';
 import { OrderStatusService } from 'src/app/Service/orderstatus.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { Order } from 'src/app/modelapi/orderapi.model';
 import { OrderService } from 'src/app/Service/order.service';
+import { Order } from 'src/app/models/order.model';
+import { OrderApi } from 'src/app/modelapi/orderapi.model';
+import { OrderApi2 } from 'src/app/modelapi/orderapi2.model';
 
 
 @Component({
@@ -18,8 +20,7 @@ import { OrderService } from 'src/app/Service/order.service';
 })
 
 export class ListOrderComponent implements OnInit {
-
-  orders: Order[];
+  orders: OrderApi2[];
   first = 0;
   rows = 10;
   check: boolean = false;
@@ -31,7 +32,7 @@ export class ListOrderComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this._oderService.read().then(result => {
-      this.orders = result as Order[];
+      this.orders = result as OrderApi2[];
     },
       error => {
 

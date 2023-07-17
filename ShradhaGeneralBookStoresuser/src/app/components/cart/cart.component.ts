@@ -1,6 +1,8 @@
+import { SendDataCartService } from 'src/app/Service/senddatacart.service';
 import { Component,OnInit } from "@angular/core";
 import { CartService } from "src/app/Service/cart.service";
 import { Cart } from "src/app/models/cart.model";
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -11,7 +13,9 @@ export class CartsComponent implements OnInit{
     cart: Cart = new Cart();
 
     constructor(
-      private cartService:CartService
+      private cartService:CartService,
+      private _sendDataCartService: SendDataCartService,
+      private router:Router
     ){}
 
     ngOnInit(): void {
@@ -51,7 +55,16 @@ export class CartsComponent implements OnInit{
     }
     clearcart(){
       this.cartService.clear();
-      console.log(this.cart);
+      this._sendDataCartService.changeData(null)
       this.ngOnInit();
+    }
+
+    checkout(){
+      if(this.total > 0){
+        this.router.navigate(['checkout']);
+      }
+      else{
+        alert("Cart is null")
+      }
     }
 }

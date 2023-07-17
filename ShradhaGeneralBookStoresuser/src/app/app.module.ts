@@ -58,6 +58,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { CheckOutPayComponent } from './components/checkoutpay/checkoutpay.component';
+import { OrderServiceDetail } from './Service/orderdetail.service';
 
 
 
@@ -103,7 +104,7 @@ import { CheckOutPayComponent } from './components/checkoutpay/checkoutpay.compo
     NoopAnimationsModule,
     InputTextModule,
     RadioButtonModule,
-    NgxPayPalModule
+    NgxPayPalModule,
   ],
   providers: [
     CategoryService,
@@ -126,7 +127,8 @@ import { CheckOutPayComponent } from './components/checkoutpay/checkoutpay.compo
     ReloadService,
     SendService,
     SendDataCartService,
-    AddressService
+    AddressService,
+    OrderServiceDetail
   ],
   bootstrap: [HomeComponent]
 })

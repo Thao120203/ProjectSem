@@ -233,19 +233,21 @@
                   <thead>
                     <tr>
                       <th scope="col">Id</th>
-                      <th scope="col">Code Orders</th>
+                      <th scope="col">Adress</th>
                       <th scope="col">Total</th>
                       <th scope="col">Status</th>
                       <th scope="col">Payment</th>
+                      <th>Details</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>515723</td>
-                      <td>854</td>
-                      <td>received</td>
-                      <td>Paypal</td>
+                    <tr *ngFor="let item of orders">
+                      <th scope="row">{{item.id}}</th>
+                      <td>{{item.address}}</td>
+                      <td>{{item.totalPrice}}</td>
+                      <td>{{item.statusPayment}}</td>
+                      <td>{{item.paymentMethod}}</td>
+                      <td><a [routerLink]="['/historycart',{id: item.id}]">Details</a></td>
                     </tr>
                   </tbody>
                 </table>

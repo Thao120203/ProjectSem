@@ -5,6 +5,7 @@ import { AuthorService } from 'src/app/Service/author.service';
 import { CartService } from "src/app/Service/cart.service";
 import { CategoryService } from "src/app/Service/category.service";
 import { ProductService } from "src/app/Service/product.service";
+import { SendDataCartService } from 'src/app/Service/senddatacart.service';
 import { ProductAPI2 } from "src/app/modelapi/productapi2.model";
 import { ProductAPI4 } from "src/app/modelapi/productapi4.model";
 import { Author } from 'src/app/models/author.model';
@@ -30,7 +31,8 @@ export class ShopComponent implements OnInit{
         private _productService :ProductService,
         private activevateRoute:ActivatedRoute,
         private _categoryService: CategoryService,
-        private _authorService:AuthorService
+        private _authorService:AuthorService,
+        private sendDataCartService: SendDataCartService,
     ){
 
     }
@@ -84,9 +86,7 @@ export class ShopComponent implements OnInit{
     //   this.reloadService.reloadComponentB();
     // }
     addcart(product: ProductAPI4){
-      this._cartService.add(product);
-      console.log(JSON.parse(sessionStorage.getItem('cart')) as Cart);
-      return false;
+      this.sendDataCartService.changeData(this._cartService.add(product) as Cart)
     }
 
     sortbyoder(evt:any){

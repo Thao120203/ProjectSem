@@ -13,14 +13,16 @@
 
                 <ul class="order-details-form mb-4">
                     <li><span>Product</span> <span>Total</span></li>
-                    <li><span>Cocktail Yellow dress</span> <span>$59.90</span></li>
-                    <li><span>Subtotal</span> <span>$59.90</span></li>
-                    <li><span>Shipping</span> <span>Free</span></li>
-                    <li><span>Total</span> <span>$59.90</span></li>
+                    <li *ngFor="let item of listorderDetail"><span>{{item.quantity+" x"+ item.name}}</span> <span>${{item.quantity * item.price}}</span></li>
+                    <li *ngIf="total != null"><span>Subtotal</span> <span>${{total}}</span></li>
+                    <li *ngIf="order != null"><span>Shipping</span> <span>${{order.totalPrice - total*10/100 - total}}</span></li>
+                    <li *ngIf="total != null"><span>VAT</span> <span>${{total*10/100}}</span></li>
+                    <li *ngIf="order != null"><span>Total</span> <span>${{order.totalPrice}}</span></li>
+                    <li *ngIf="order != null"><span>Order Status</span> <span>{{order.statusPayment}}</span></li>
                 </ul>
                 </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12 order-details-confirmation">
                 <div class="cart-table clearfix">
                     <table class="table table-responsive">
@@ -32,7 +34,7 @@
                                 <th>Total</th>
                             </tr>
                         </thead>
-                        <tbody>   
+                        <tbody>
                             <tr>
                                 <td class="cart_product_img d-flex align-items-center">
                                     <a href="#"><img src="./assets/img/product-img/product-5.jpg" alt="Product"></a>
@@ -53,8 +55,8 @@
                 </div>
 
             </div>
-        </div>
+        </div> -->
 
-        
+
     </div>
 </div>

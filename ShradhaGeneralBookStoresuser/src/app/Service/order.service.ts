@@ -24,6 +24,18 @@ export class OrderService {
       return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Order/get?id=' + id));
     }
 
+    async paid(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Order/Paid?id=' + id));
+    }
+
+    async getByAccountId(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Order/GetByAccountId?id=' + id));
+    }
+
+    async getByOrderId(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Order/GetById?id=' + id));
+    }
+
     async delete(id: number){
         return await lastValueFrom(this.httpclient.delete(this.baseUrlservice.baseUrl() + 'Order/Delete?id=' + id));
     }

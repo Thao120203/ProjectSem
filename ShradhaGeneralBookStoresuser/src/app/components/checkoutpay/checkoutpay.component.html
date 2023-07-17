@@ -1,12 +1,15 @@
 <div class="cart_area section_padding_100 clearfix">
   <div class="container">
-    <div class="cart-page-heading" style="margin-left: 45%">
-      <h5>Publishers</h5>
-      <p>The Details</p>
+    <div class="cart-page-heading" >
+      <h5 style="margin-left: 48%">Pay</h5>
+      <p style="margin-left: 46%">The Details</p>
     </div>
     <div class="card">
       <div class="card-body">
         <div class="row">
+          <p-card lass="container" style="margin-left: 39%" *ngIf="order != null && listorderDetail!= null">
+            <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+          </p-card>
         </div>
       </div>
     </div>

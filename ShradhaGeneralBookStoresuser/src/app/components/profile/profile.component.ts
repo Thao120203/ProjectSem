@@ -3,9 +3,11 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AccountService } from "src/app/Service/account.service";
 import { AddressProfileService } from "src/app/Service/addressprofile.service";
+import { OrderService } from "src/app/Service/order.service";
 import { UtilsServiceService } from "src/app/Service/utils-service.service";
 import { AccountAPI2 } from "src/app/modelapi/accountapi2.model";
 import { ChangePassword } from "src/app/modelapi/changepassword.model";
+import { OrderApi2 } from "src/app/modelapi/orderapi2.model";
 import { Profile } from "src/app/modelapi/profile.model";
 import { AddressProfile } from "src/app/models/addressprofile.model";
 @Component({
@@ -20,6 +22,7 @@ export class ProfileComponent implements OnInit{
   comfirmpass: string;
   check:boolean = true;
   address: AddressProfile[];
+  orders: OrderApi2[];
 
   imageUrl: string;
   avatar: File = null;
@@ -29,7 +32,8 @@ export class ProfileComponent implements OnInit{
     private formbuilder: FormBuilder,
     private utils:UtilsServiceService,
     private router:Router,
-    private addressProfileService: AddressProfileService
+    private addressProfileService: AddressProfileService,
+    private _oderService: OrderService
   ) { }
   ngOnInit(): void {
     if(sessionStorage.getItem('account')== null){
@@ -42,6 +46,12 @@ export class ProfileComponent implements OnInit{
         this.address = this.address.filter(a=>a.accountId == this.account.id);
       }
     );
+
+    this._oderService.getByAccountId(this.account.id).then(
+      result =>{
+        this.orders = result as OrderApi2[];
+      }
+    )
 
     this.accountFormGroup = this.formbuilder.group({
       firstName: [this.account.firstName, [
@@ -69,6 +79,7 @@ export class ProfileComponent implements OnInit{
         Validators.pattern( /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/)
       ]]
     })
+
 
   }
   saveChange() {

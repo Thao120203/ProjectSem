@@ -3,6 +3,7 @@ import { BaseURLService } from './BaseURL.service';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
+import { OrderApi } from '../modelapi/orderapi.model';
 
 @Injectable()
 export class OrderService {
@@ -11,8 +12,8 @@ export class OrderService {
         private httpclient: HttpClient
     ){}
 
-    async create(order: Order){
-      return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'Order/Create',order));
+    async create(orderapi: OrderApi){
+      return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'Order/Create',orderapi));
     }
 
     async read(){
@@ -21,6 +22,18 @@ export class OrderService {
 
     async get(id: number){
       return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Order/get?id=' + id));
+    }
+
+    async paid(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Order/Paid?id=' + id));
+    }
+
+    async getByAccountId(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Order/GetByAccountId?id=' + id));
+    }
+
+    async getByOrderId(id: number){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Order/GetById?id=' + id));
     }
 
     async delete(id: number){
