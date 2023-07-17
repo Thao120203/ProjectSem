@@ -104,4 +104,10 @@ export class ProductForAuthorComponent implements OnInit {
   rangePrice() {
     this.productshow = this.products.filter(p => p.cost >= this.rangeValues[0] &&  this.rangeValues[1]);
   }
+  search(keyword: any) {
+
+    let value = keyword.target.value;
+    this.productshow = [];
+    this.productshow = this.products.filter(p=> p.name.includes(value));
+    }
 }

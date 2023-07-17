@@ -1,3 +1,4 @@
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ConfirmationService } from 'primeng/api';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -87,7 +88,8 @@ import { ActiveComponent } from './components/account/active/active.component';
     ListAuthorComponent,
     ListPublisherComponent,
     CheckOutPayComponent,
-    ActiveComponent
+    ActiveComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -107,6 +109,7 @@ import { ActiveComponent } from './components/account/active/active.component';
     InputTextModule,
     RadioButtonModule,
     NgxPayPalModule,
+
   ],
   providers: [
     CategoryService,

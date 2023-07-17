@@ -6,6 +6,8 @@
 
                   <!-- ##### Single Widget ##### -->
                   <div class="widget catagory mb-50">
+                      <h5>Search:<input  pInputText (keyup)="search($event)" type="text"></h5>
+
                       <!-- Widget Title -->
                       <a [routerLink]="['/categories',{id: 0}]"><h6 class="widget-title mb-30">Catagories</h6></a>
                         <!--  Catagories  -->
@@ -60,7 +62,7 @@
                           <div class="product-topbar d-flex align-items-center justify-content-between">
                               <!-- Total Products -->
                               <div class="total-products">
-                                  <p><span>186</span> products found</p>
+                                  <p><span>{{productShow.length}}</span> products found</p>
                               </div>
                           </div>
                       </div>
@@ -69,7 +71,7 @@
                   <div class="row">
 
                       <!-- Single Product -->
-                      <div class="col-12 col-sm-6 col-lg-4" *ngFor="let product of products">
+                      <div class="col-12 col-sm-6 col-lg-4" *ngFor="let product of productShow">
                           <div class="single-product-wrapper">
                               <!-- Product Image -->
                               <div class="product-img" >
