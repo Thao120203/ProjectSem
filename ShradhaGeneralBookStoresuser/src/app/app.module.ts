@@ -85,7 +85,8 @@ import { OrderServiceDetail } from './Service/orderdetail.service';
     ProductForAuthorComponent,
     ListAuthorComponent,
     ListPublisherComponent,
-    CheckOutPayComponent
+    CheckOutPayComponent,
+    
   ],
   imports: [
     BrowserModule,

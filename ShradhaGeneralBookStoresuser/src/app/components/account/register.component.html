@@ -16,46 +16,99 @@
                 <!-- <p class="text-center small">Enter your username &amp; password to login</p> -->
               </div>
 
-              <form class="row g-3 needs-validation" novalidate="">
+              <form class="row g-3 needs-validation" [formGroup]="registerFormGroup">
 
                   <div class="col-12">
                       <label for="yourUsername" class="form-label">First Name</label>
                       <div class="input-group has-validation">
-                          <input type="text" name="username" formControlName="firstname" class="form-control" id="yourUsername" required="">
+                          <input type="text" name="username" formControlName="firstName" class="form-control"  >
+                      </div>
+                      <div *ngIf="registerFormGroup.get('firstName').touched">
+                        <div *ngIf="registerFormGroup.hasError('required',['firstName'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                          First name ame is required
+                        </div>
                       </div>
                   </div>
                   <div class="col-12">
                       <label for="yourUsername" class="form-label">Last Name</label>
                       <div class="input-group has-validation">
-                          <input type="text" name="username" formControlName="lastname" class="form-control" id="yourUsername" required="">
+                          <input type="text" name="username" formControlName="lastName" class="form-control"  >
+                      </div>
+                      <div *ngIf="registerFormGroup.get('lastName').touched">
+                        <div *ngIf="registerFormGroup.hasError('required',['lastName'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                          Last name is required
+                        </div>
                       </div>
                   </div>
                 <div class="col-12">
                   <label for="yourUsername" class="form-label">Email</label>
                   <div class="input-group has-validation">
                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                    <input type="text" name="username" formControlName="email" class="form-control" id="yourUsername" required="">
+                    <input type="text" name="username" formControlName="email" class="form-control" (change)="checkExist($event)" >
                   </div>
+                  <div *ngIf="registerFormGroup.get('email').touched">
+                    <div *ngIf="registerFormGroup.hasError('required',['email'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                      Email is required
+                    </div>
+                  </div>
+                  <div *ngIf="registerFormGroup.get('email').touched">
+                    <div *ngIf="registerFormGroup.hasError('pattern',['email'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                      Email is invalid
+                    </div>
+                  </div>
+                  <ng-container *ngIf="!dontexist && registerFormGroup.get('email').touched">
+                    <div style="color: rgb(255, 0, 0); font-size: 80%;">
+                      Exist
+                    </div>
+                  </ng-container>
                 </div>
 
                 <div class="col-12">
                   <label for="yourUsername" class="form-label">Phone Number</label>
                   <div class="input-group has-validation">
-                      <input type="text" formControlName="phonenumber" class="form-control" id="yourUsername" required="">
+                      <input type="text" formControlName="phone" class="form-control"  >
+                  </div>
+                  <div *ngIf="registerFormGroup.get('phone').touched">
+                    <div *ngIf="registerFormGroup.hasError('required',['phone'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                      Phone is required
+                    </div>
+                  </div>
+                  <div *ngIf="registerFormGroup.get('phone').touched">
+                    <div *ngIf="registerFormGroup.hasError('pattern',['phone'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                      Phone is invalid
+                    </div>
                   </div>
               </div>
 
                 <div class="col-12">
                   <label for="yourPassword" class="form-label">Password</label>
-                  <input type="password" name="password"  formControlName="password" class="form-control" id="yourPassword" required="">
-                </div>
-                <div class="col-12">
-                  <label for="yourPassword" class="form-label">Confirm Password</label>
-                  <input type="password" name="password"  formControlName="cfpassword" class="form-control" id="yourPassword" required="">
+                  <input type="password" name="password"  formControlName="password" class="form-control" id="yourPassword" >
+                  <div *ngIf="registerFormGroup.get('password').touched">
+                    <div *ngIf="registerFormGroup.hasError('required',['password'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                      Password is required
+                    </div>
+                  </div>
+                  <div *ngIf="registerFormGroup.get('password').touched">
+                    <div *ngIf="registerFormGroup.hasError('pattern',['password'])"  style="color: rgb(255, 0, 0); font-size: 80%;">
+                      A strong level password that has at least one lowercase letter, one uppercase letter, one digit, one special character, and is at least eight characters long, max is 30.
+                    </div>
+                  </div>
                 </div>
 
                 <div class="col-12">
-                  <button class="btn btn-primary w-100" type="submit">register</button>
+                  <label for="yourPassword" class="form-label">Confirm Password</label>
+                  <input type="password" name="password"  class="form-control" id="yourPassword" (change)="checkpassword()" [(ngModel)]="comfirmpass" [ngModelOptions]="{standalone: true}">
+
+                  <ng-container *ngIf="!check && comfirmpass != '' ">
+                    <div style="color: rgb(255, 0, 0); font-size: 80%;">
+                      Not match
+                    </div>
+                  </ng-container>
+                </div>
+
+                <br/>&nbsp;&nbsp;
+                <div class="col-12">
+                  <button class="btn btn-primary w-100" type="submit" [disabled]="!dontexist || !check || registerFormGroup.invalid" (click)="submit()">register</button>
                 </div >
                 <div class="col-12">
                    <p class="small mb-0">Already have an account? <a [routerLink]="['/login']">Log in</a></p>

@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
     <!-- Layout config Js -->
-   
+
 
 </head>
 
@@ -59,25 +59,69 @@
                                 <p class="text-muted">Get your free Shradha General Book Stores account now</p>
                             </div>
                             <div class="p-2 mt-4">
-                                <form class="needs-validation">
+                                <form class="needs-validation" [formGroup]="registerFormGroup">
 
                                     <div class="mb-3">
                                         <label for="firstname" class="form-label">First Name</label>
-                                        <input type="text" class="form-control" id="firstname" placeholder="Enter First Name">
+                                        <input type="text" class="form-control" id="firstname" formControlName="firstName">
+                                        <div *ngIf="registerFormGroup.get('firstName').touched">
+                                          <div *ngIf="registerFormGroup.hasError('required',['firstName'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                                            First name ame is required
+                                          </div>
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="lastname" class="form-label">Last Name</label>
-                                        <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name">
+                                        <input type="text" class="form-control" id="lastname" formControlName="lastName">
+                                        <div *ngIf="registerFormGroup.get('lastName').touched">
+                                          <div *ngIf="registerFormGroup.hasError('required',['lastName'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                                            Last name is required
+                                          </div>
+                                        </div>
                                     </div>
 
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="text" class="form-control" id="email" placeholder="Enter email">
+                                        <input type="text" class="form-control" id="email" formControlName="email">
+                                        <div *ngIf="registerFormGroup.get('email').touched">
+                                          <div *ngIf="registerFormGroup.hasError('required',['email'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                                            Email is required
+                                          </div>
+                                        </div>
+                                        <div *ngIf="registerFormGroup.get('email').touched">
+                                          <div *ngIf="registerFormGroup.hasError('pattern',['email'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                                            Email is invalid
+                                          </div>
+                                        </div>
                                     </div>
+                                    <div class="mb-3">
+                                      <label for="phone" class="form-label">Phone Number</label>
+                                      <input type="text" class="form-control" id="phone" placeholder="Enter phone">
+                                      <div *ngIf="registerFormGroup.get('phone').touched">
+                                        <div *ngIf="registerFormGroup.hasError('required',['phone'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                                          Phone is required
+                                        </div>
+                                      </div>
+                                      <div *ngIf="registerFormGroup.get('phone').touched">
+                                        <div *ngIf="registerFormGroup.hasError('pattern',['phone'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                                          Phone is invalid
+                                        </div>
+                                      </div>
+                                  </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="password-input">Password</label>
                                         <div class="position-relative auth-pass-inputgroup">
-                                            <input type="password" class="form-control pe-5 password-input"  placeholder="Enter password" id="password-input">
+                                          <p-password formControlName="password" [toggleMask]="true" [feedback]="false" [styleClass]="'w-100'" [inputStyle]="{'width':'100%','display':'block'}"></p-password>
+                                        </div>
+                                        <div *ngIf="registerFormGroup.get('password').touched">
+                                          <div *ngIf="registerFormGroup.hasError('required',['password'])" style="color: rgb(255, 0, 0); font-size: 80%;">
+                                            Password is required
+                                          </div>
+                                        </div>
+                                        <div *ngIf="registerFormGroup.get('password').touched">
+                                          <div *ngIf="registerFormGroup.hasError('pattern',['password'])"  style="color: rgb(255, 0, 0); font-size: 80%;">
+                                            A strong level password that has at least one lowercase letter, one uppercase letter, one digit, one special character, and is at least eight characters long, max is 30.
+                                          </div>
                                         </div>
                                     </div>
                                     <div class="mb-3">
@@ -85,6 +129,7 @@
                                         <div class="position-relative auth-pass-inputgroup">
                                             <input type="password" class="form-control pe-5 password-input"  placeholder="Enter confirm password" id="password-input">
                                         </div>
+
                                     </div>
 
                                     <div class="mt-4">

@@ -9,4 +9,5 @@ export class AccountAPI{
     status: boolean;
     sercurityCode: string;
     roleId: number[];
+    
 }
