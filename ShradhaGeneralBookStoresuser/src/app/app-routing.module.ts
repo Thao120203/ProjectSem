@@ -47,7 +47,7 @@ const routes: Routes =[
   {path: 'sendemail',component:SendEmailComponent},
   {path: 'register',component:RegisterComponent},
   {path: 'historycart',component:HistoryCartsComponent},
-  {path: 'Active',component:ActiveComponent},
+  {path: 'active',component:ActiveComponent},
 
 ];
 

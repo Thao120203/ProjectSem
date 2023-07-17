@@ -43,20 +43,11 @@
                               <div class="slider-range">
                                   <div data-min="49" data-max="2000" data-unit="$" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="49" data-value-max="360" data-label-result="Range:">
                                       <div class="card flex justify-content-center">
-                                          <p-slider [(ngModel)]="rangeValues" (ngModelChange)="rangePrice()" [min]="0" [max]="1000" [range]="true"></p-slider>
+                                          <p-slider [(ngModel)]="rangeValues" (ngModelChange)="rangePrice()" [min]="0" [max]="20" [range]="true"></p-slider>
                                       </div>
                                   </div>
                                   <div class="range-price">Range: ${{rangeValues[0]}} - ${{rangeValues[1]}}</div>
                               </div>
-                          </div>
-                      </div>
-                      <div class="widget brands mb-50">
-                          <!-- Widget Title 2 -->
-                          <p class="widget-title2 mb-30">Publishers</p>
-                          <div class="widget-desc">
-                              <ul *ngFor="let publisher of publishers">
-                                  <li><a href="#">{{publisher.name}}</a></li>
-                              </ul>
                           </div>
                       </div>
                   </div>

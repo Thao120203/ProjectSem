@@ -86,8 +86,6 @@
                     <img [src]="imageUrl" *ngIf="imageUrl">
                     <div class="pt-2">
                       <input type="file" (change)="onFileSelected($event)" accept="image/*">
-                      <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i
-                          class="bi bi-trash"></i></a>
                     </div>
                   </div>
                 </div>
@@ -131,7 +129,7 @@
               <div class="cart-page-heading mb-30">
                 <h5>Billing Address</h5>
               </div>
-              <a [routerLink]="['/address']">add </a>
+              <a [routerLink]="['/address']" class="btn essence-btn">More Address</a>
 
               <ng-container *ngIf="address != null">
                 <ng-container *ngFor="let item of address">
@@ -210,7 +208,7 @@
                       type="password" class="form-control" id="renewPassword">
                   </div>
                 </div>
-               
+
                 <ng-container *ngIf="check && comfirmpass != null">
                   <div style="color: rgb(255, 0, 0); font-size: 80%;">
                     Not match

@@ -24,7 +24,7 @@ export class ShopComponent implements OnInit{
     categories:Category[] = [];
     categoriesTitle: CategoryMenuParent[] = [];
     categoriesTitleSub: CategoryMenuSub[] = [];
-    rangeValues: number[] = [0, 1000];
+    rangeValues: number[] = [0, 20];
     constructor(
         private reloadService: ReloadService,
         private _cartService: CartService,

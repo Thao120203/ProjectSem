@@ -19,8 +19,9 @@ export class ActiveComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.activevateRoute.paramMap.subscribe((a) => {
+      let parts: string[] = a.get('id').split("&securitycode=");
       this._accountservice
-        .active(a.get('email'), a.get('password'))
+        .active(parts[0], parts[1])
         .then((result) => {
           if (result as boolean) {
             alert('Active successfully');
@@ -31,6 +32,8 @@ export class ActiveComponent implements OnInit {
             alert('Active Unsuccessfully');
           }
         });
+      console.log(parts);
+
     });
   }
 }

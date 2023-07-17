@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit{
           Validators.pattern(/^[0-9]{10,10}$/)
         ]],
         securitycode:['agsdfasdhfg'],
-        roleId: [3],
+        roleId: [[3]],
         status: [false],
         avatar: ['no-avatar.jpg'],
         createdAt: [moment().format('DD/MM/YYYY HH:mm:ss')],
@@ -65,10 +65,12 @@ export class RegisterComponent implements OnInit{
       console.log(this.registerFormGroup)
       if(this.dontexist){
         let account = this.registerFormGroup.value as AccountAPI;
-        this._accountService.create(account).then(result=>{
+        this._accountService.register(account).then(result=>{
           if(result as boolean){
-            // alert("THanhf cong");
-            this.utils.updateToast('Successfully register')
+            alert("THanhf cong");
+            // this.utils.updateToast('Successfully register')]
+
+
             this.router.navigate(['login']);
           }
         });

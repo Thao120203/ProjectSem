@@ -34,8 +34,8 @@ export class AccountService {
       return await lastValueFrom(this.httpclient.post(this.baseUrlservice.baseUrl() + 'Account/Create',account));
     }
 
-    async active(email: string,securityCode: string){
-      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'Account/Active?email=' + email+"&securitycode='" + securityCode));
+    async active(id: string,securityCode: string){
+      return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() +'Account/Active?id=' + id+"&securitycode='" + securityCode));
     }
 
     async checkexists(email: string){

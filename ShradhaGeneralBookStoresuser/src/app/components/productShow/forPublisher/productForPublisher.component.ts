@@ -28,7 +28,7 @@ export class ProductForPublisherComponent implements OnInit{
     categories:Category[] = [];
     categoriesTitle: CategoryMenuParent[] = [];
     categoriesTitleSub: CategoryMenuSub[] = [];
-    rangeValues: number[] = [0, 1000];
+    rangeValues: number[] = [0, 20];
     constructor(
         private sanitizer: DomSanitizer,
         private _cartService: CartService,
