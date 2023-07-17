@@ -112,4 +112,10 @@ export class ProductForPublisherComponent implements OnInit{
     safe(url: string):SafeResourceUrl{
       return this.sanitizer.bypassSecurityTrustResourceUrl(url);
     }
+    search(keyword: any) {
+
+      let value = keyword.target.value;
+      this.productshow = [];
+      this.productshow = this.products.filter(p=> p.name.includes(value));
+      }
 }

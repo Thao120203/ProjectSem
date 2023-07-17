@@ -5,6 +5,7 @@
         <div class="shop_sidebar_area">
           <!-- ##### Single Widget ##### -->
           <div class="widget catagory mb-50">
+            <h5>Search:<input  pInputText (keyup)="search($event)" type="text"></h5>
             <!-- Widget Title -->
             <a [routerLink]="['/categories', { id: 0 }]">
               <h6 class="widget-title mb-30">Catagories</h6>
