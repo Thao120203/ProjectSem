@@ -44,20 +44,24 @@ export class LoginComponent implements OnInit{
       result=>{
         if(result as boolean){
           //làm vào trong lun
-          alert('đăng nhập thành công');
 
           this._accountservice.getbyemail(account.email).then(
             result => {
               let acc = result[0] as AccountAPI2;
-              if(this.loginFormGroup.controls['rememberme'].value){
-                localStorage.setItem('account',JSON.stringify(acc));
+              if(acc.roles.includes('User')){
+                if(this.loginFormGroup.controls['rememberme'].value){
+                  localStorage.setItem('account',JSON.stringify(acc));
+                }
+                sessionStorage.setItem('account',JSON.stringify(acc));
+                console.log(sessionStorage.getItem('account'));
+                console.dir( JSON.parse(sessionStorage.getItem('account')));
+                this.sendService.changeData(acc);
+                alert('đăng nhập thành công');
+                this._route.navigate(['first']);
               }
-              sessionStorage.setItem('account',JSON.stringify(acc));
-              console.log(sessionStorage.getItem('account'));
-              console.dir( JSON.parse(sessionStorage.getItem('account')));
-              this.sendService.changeData(acc);
-              this._route.navigate(['first']);
-
+              else{
+                alert('Insufficient privileges to log in');
+              }
             }
           );
         }else (

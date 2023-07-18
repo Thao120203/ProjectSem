@@ -1,4 +1,3 @@
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ConfirmationService } from 'primeng/api';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';

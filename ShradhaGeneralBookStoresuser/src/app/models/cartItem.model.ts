@@ -4,4 +4,5 @@ export class ItemCart{
   quantity: number;
   cost: number;
   photoPath: string;
+  limit: number;
 }

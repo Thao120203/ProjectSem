@@ -1,5 +1,5 @@
 import { OrderStatus } from '../../../models/orderstatus.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { AuthorService } from 'src/app/Service/author.service';
@@ -15,12 +15,12 @@ import { OrderApi2 } from 'src/app/modelapi/orderapi2.model';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './listOrder.component.html',
+  templateUrl: './listOrderByAccountId.component.html',
   providers: [MessageService, ConfirmationService]
 })
 
-export class ListOrderComponent implements OnInit {
-  orders: OrderApi2[];
+export class ListOrderByAccountIdComponent implements OnInit {
+  orders: OrderApi2[] = [];
   first = 0;
   rows = 10;
   check: boolean = false;
@@ -28,15 +28,20 @@ export class ListOrderComponent implements OnInit {
   constructor(
     private _oderService: OrderService,
     private formbuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private activevateRoute:ActivatedRoute,
   ) { }
   ngOnInit(): void {
-    this._oderService.read().then(result => {
-      this.orders = result as OrderApi2[];
-    },
-      error => {
 
+    this.activevateRoute.paramMap.subscribe(params => {
+      this._oderService.getByAccountId(parseInt(params.get('id'))).then(result => {
+        console.log(this.orders);
+        this.orders = result as OrderApi2[];
+      },
+        error => {
       })
+    })
+
   }
 
   deleted(id: number) {

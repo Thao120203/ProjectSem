@@ -66,4 +66,8 @@ export class ProductService {
   async readbyprice(min:number,max :number) {
     return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadByPrice?min='+min+'&max='+max));
   }
+
+  async readForHot() {
+    return await lastValueFrom(this.httpclient.get(this.baseUrlservice.baseUrl() + 'Product/ReadForHot'));
+  }
 }

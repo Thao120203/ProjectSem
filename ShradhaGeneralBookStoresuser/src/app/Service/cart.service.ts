@@ -34,6 +34,7 @@ export class CartService {
       itemcart.quantity = 1;
       itemcart.cost = product.cost;
       itemcart.photoPath = product.photos[0];
+      itemcart.limit = product.quantity;
       cart.listItemCart.push(itemcart);
     }else{
       cart.listItemCart.find(p=>p.id == product.id).quantity +=1;
@@ -55,6 +56,12 @@ export class CartService {
     cart.listItemCart.find(p=>p.id == id).quantity -=1;
     sessionStorage.setItem('cart', JSON.stringify(cart));
     return cart.listItemCart.find(p=>p.id == id).quantity;
+  }
+
+  public change(id: number, quatity: number) {
+    let cart =  JSON.parse(sessionStorage.getItem('cart')) as Cart;
+    cart.listItemCart.find(p=>p.id == id).quantity = quatity;
+    sessionStorage.setItem('cart', JSON.stringify(cart));
   }
 
   public deleted(id: number){

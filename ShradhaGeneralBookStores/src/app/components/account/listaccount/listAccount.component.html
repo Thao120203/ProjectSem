@@ -57,13 +57,13 @@
               <td><img width="20%" height="20%" src="{{(account.avatar == 'no-avatar.jpg')? 'https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png': account.avatar}}"></td>
               <td>{{account.firstName}}</td>
               <td>{{account.lastName}}</td>
-              <td>{{account.email}}</td>
+              <td><a [routerLink]="['/listorderbyaccountid',{id: account.id}]">{{account.email}}</a></td>
               <td><b>|</b><b *ngFor="let role of account.roles">{{role}}|</b></td>
               <td>{{account.createdAt}}</td>
               <td>{{account.updatedAt}}</td>
               <td>
                 <button type="button" class="btn btn-danger" (click)="deleted(account.id)"><i class="bi bi-trash-fill"></i></button> |
-                <a [routerLink]="['/editaccount',{id: account.id}]"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
+                <a (click)="redirect(account)"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
               </td>
             </tr>
           </ng-template>

@@ -9,7 +9,8 @@ export class UtilsServiceService {
   toast$ = new BehaviorSubject<string>(null)
   updateToast(message: string) {
     this.toast$.next(message);
+    this.toast$ = null;
   }
-  
+
   constructor() { }
 }

@@ -47,6 +47,7 @@ import { ListOrderComponent } from './components/order/listOrder/listOrder.compo
 import { DisAccountComponent } from './components/account/disabledaccount/disListAccount.component';
 import { DisProductComponent } from './components/product/dislistproduct/disListProduct.component';
 import { EditOrderComponent } from './components/order/editOrder/editOrder.component';
+import { ListOrderByAccountIdComponent } from './components/order/listOrderByAccountId/listOrderByAccountId.component';
 
 
 
@@ -73,6 +74,7 @@ const routes: Routes =
 
     {path: 'addorder',component: AddOrderComponent},
     {path: 'listorder',component: ListOrderComponent},
+    {path: 'listorderbyaccountid',component: ListOrderByAccountIdComponent},
     {path: 'editorder',component: EditOrderComponent},
 
     {path: 'addorderstatus',component: AddOrderStatusComponent},

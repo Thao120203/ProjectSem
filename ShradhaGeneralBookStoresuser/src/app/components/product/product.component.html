@@ -371,339 +371,366 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<div class="popular-products-slides owl-carousel owl-theme owl-loaded">
-				<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1710px, 0px, 0px); transition: all 1s ease 0s; width: 3420px;"><div class="owl-item cloned" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-1.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-2.jpg" alt="">
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>topshop</span>
-							<a href="single-product-details.html">
-								<h6>Knot Front Mini Dress</h6>
-							</a>
-							<p class="product-price">$80.00</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="popular-products-slides owl-carousel owl-theme owl-loaded">
+          <div class="owl-stage-outer">
+            <div class="owl-stage" style="
+                transform: translate3d(-1710px, 0px, 0px);
+                transition: all 1s ease 0s;
+                width: 3420px;
+              ">
+              <div class="owl-item cloned" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[0].photos[0]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[0].photos[1]}}" alt="" />
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>{{products[0].categories[0]}}</span>
+                    <a [routerLink]="['/product',{id: products[0].id}]">
+                      <h6>{{products[0].name}}</h6>
+                    </a>
+                    <p class="product-price">{{products[0].cost}}</p>
 
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div><div class="owl-item cloned" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-2.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-3.jpg" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a href="#" (click)="addcart(products[0])" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item cloned" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[3].photos[0]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[3].photos[1]}}" alt="" />
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>{{products[3].categories[0]}}</span>
+                    <a [routerLink]="['/product',{id: products[3].id}]">
+                      <h6>{{products[3].name}}</h6>
+                    </a>
+                    <p class="product-price">${{products[3].cost}}</p>
 
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>topshop</span>
-							<a href="single-product-details.html">
-								<h6>Poplin Displaced Wrap Dress</h6>
-							</a>
-							<p class="product-price">$80.00</p>
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a (click)="addcart(products[3])" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item cloned" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[1].photos[1]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[1].photos[0]}}" alt="" />
 
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div><div class="owl-item cloned" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-3.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-4.jpg" alt="">
+                    <!-- Product Badge -->
+                    <div class="product-badge offer-badge">
+                      <span>-30%</span>
+                    </div>
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>mango</span>
+                    <a href="single-product-details.html">
+                      <h6>{{products[1].categories[0]}}</h6>
+                    </a>
+                    <p class="product-price">
+                      <span class="old-price">$75.00</span> $55.00
+                    </p>
 
-							<!-- Product Badge -->
-							<div class="product-badge offer-badge">
-								<span>-30%</span>
-							</div>
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a href="#" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item cloned" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[2].photos[0]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[2].photos[1]}}" alt="" />
 
+                    <!-- Product Badge -->
+                    <div class="product-badge new-badge">
+                      <span>New</span>
+                    </div>
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>{{products[2].categories[0]}}</span>
+                    <a [routerLink]="['/product',{id: products[2].id}]">
+                      <h6>{{products[2].name}}</h6>
+                    </a>
+                    <p class="product-price">${{products[2].cost}}</p>
 
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a (click)="addcart(products[2])" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[0].photos[0]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[0].photos[1]}}" alt="" />
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>{{products[0].categories[0]}}</span>
+                    <a [routerLink]="['/product',{id: products[0].id}]">
+                      <h6>{{products[0].name}}</h6>
+                    </a>
+                    <p class="product-price">${{products[0].cost}}</p>
 
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>mango</span>
-							<a href="single-product-details.html">
-								<h6>PETITE Crepe Wrap Mini Dress</h6>
-							</a>
-							<p class="product-price"><span class="old-price">$75.00</span> $55.00</p>
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a (click)="addcart(products[0])" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[3].photos[0]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[3].photos[1]}}" alt="" />
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>{{products[3].categories[0]}}</span>
+                    <a [routerLink]="['/product',{id: products[3].id}]">
+                      <h6>{{products[3].name}}</h6>
+                    </a>
+                    <p class="product-price">${{products[3].cost}}</p>
 
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div><div class="owl-item cloned" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-4.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-5.jpg" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a (click)="addcart(products[3])" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item active" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[1].photos[1]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[1].photos[0]}}" alt="" />
 
-							<!-- Product Badge -->
-							<div class="product-badge new-badge">
-								<span>New</span>
-							</div>
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>mango</span>
-							<a href="single-product-details.html">
-								<h6>PETITE Belted Jumper Dress</h6>
-							</a>
-							<p class="product-price">$80.00</p>
+                    <!-- Product Badge -->
 
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div><div class="owl-item" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-1.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-2.jpg" alt="">
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>{{products[1].categories[0]}}</span>
+                    <a [routerLink]="['/product',{id: products[1].id}]">
+                      <h6>{{products[1].name}}</h6>
+                    </a>
+                    <p class="product-price">
+                     ${{products[1].cost}}
+                    </p>
 
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>topshop</span>
-							<a href="single-product-details.html">
-								<h6>Knot Front Mini Dress</h6>
-							</a>
-							<p class="product-price">$80.00</p>
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a (click)="addcart(products[1])" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item active" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[2].photos[0]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[2].photos[1]}}" alt="" />
 
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div><div class="owl-item" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-2.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-3.jpg" alt="">
+                    <!-- Product Badge -->
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>{{products[2].categories[0]}}</span>
+                    <a [routerLink]="['/product',{id: products[2].id}]">
+                      <h6>{{products[2].name}}</h6>
+                    </a>
+                    <p class="product-price">${{products[2].cost}}</p>
 
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a (click)="addcart(products[2])" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item cloned active" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[0].photos[0]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[0].photos[1]}}" alt="" />
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>{{products[0].categories[0]}}</span>
+                    <a [routerLink]="['/product',{id: products[0].id}]">
+                      <h6>{{products[0].name}}</h6>
+                    </a>
+                    <p class="product-price">${{products[0].cost}}</p>
 
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>topshop</span>
-							<a href="single-product-details.html">
-								<h6>Poplin Displaced Wrap Dress</h6>
-							</a>
-							<p class="product-price">$80.00</p>
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a (click)="addcart(products[0])" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item cloned active" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[3].photos[0]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[3].photos[1]}}" alt="" />
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>{{products[3].categories[0]}}</span>
+                    <a [routerLink]="['/product',{id: products[3].id}]">
+                      <h6>{{products[3].name}}</h6>
+                    </a>
+                    <p class="product-price">${{products[3].cost}}</p>
 
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div><div class="owl-item active" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-3.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-4.jpg" alt="">
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a (click)="addcart(products[3])" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item cloned" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[1].photos[1]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[1].photos[0]}}" alt="" />
 
-							<!-- Product Badge -->
-							<div class="product-badge offer-badge">
-								<span>-30%</span>
-							</div>
+                    <!-- Product Badge -->
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>{{products[1].categories[0]}}</span>
+                    <a [routerLink]="['/product',{id: products[1].id}]">
+                      <h6>{{products[1].name}}</h6>
+                    </a>
+                    <p class="product-price">
+                      ${{products[1].cost}}
+                    </p>
 
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a (click)="addcart(products[1])" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item cloned" style="width: 255px; margin-right: 30px">
+                <div class="single-product-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                    <img src="{{products[2].photos[0]}}" alt="" />
+                    <!-- Hover Thumb -->
+                    <img class="hover-img" src="{{products[2].photos[1]}}" alt="" />
 
+                    <!-- Product Badge -->
+                  </div>
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>{{products[2].categories[0]}}</span>
+                    <a [routerLink]="['/product',{id: products[2].id}]">
+                      <h6>{{products[2].name}}</h6>
+                    </a>
+                    <p class="product-price">${{products[2].cost}}</p>
 
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>mango</span>
-							<a href="single-product-details.html">
-								<h6>PETITE Crepe Wrap Mini Dress</h6>
-							</a>
-							<p class="product-price"><span class="old-price">$75.00</span> $55.00</p>
-
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div><div class="owl-item active" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-4.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-5.jpg" alt="">
-
-							<!-- Product Badge -->
-							<div class="product-badge new-badge">
-								<span>New</span>
-							</div>
-
-
-
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>mango</span>
-							<a href="single-product-details.html">
-								<h6>PETITE Belted Jumper Dress</h6>
-							</a>
-							<p class="product-price">$80.00</p>
-
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div><div class="owl-item cloned active" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-1.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-2.jpg" alt="">
-
-
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>topshop</span>
-							<a href="single-product-details.html">
-								<h6>Knot Front Mini Dress</h6>
-							</a>
-							<p class="product-price">$80.00</p>
-
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div><div class="owl-item cloned active" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-2.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-3.jpg" alt="">
-
-
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>topshop</span>
-							<a href="single-product-details.html">
-								<h6>Poplin Displaced Wrap Dress</h6>
-							</a>
-							<p class="product-price">$80.00</p>
-
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div><div class="owl-item cloned" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-3.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-4.jpg" alt="">
-
-							<!-- Product Badge -->
-							<div class="product-badge offer-badge">
-								<span>-30%</span>
-							</div>
-
-
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>mango</span>
-							<a href="single-product-details.html">
-								<h6>PETITE Crepe Wrap Mini Dress</h6>
-							</a>
-							<p class="product-price"><span class="old-price">$75.00</span> $55.00</p>
-
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div><div class="owl-item cloned" style="width: 255px; margin-right: 30px;"><div class="single-product-wrapper">
-						<!-- Product Image -->
-						<div class="product-img">
-							<img src="./assets/img/product-img/product-4.jpg" alt="">
-							<!-- Hover Thumb -->
-							<img class="hover-img" src="./assets/img/product-img/product-5.jpg" alt="">
-
-							<!-- Product Badge -->
-							<div class="product-badge new-badge">
-								<span>New</span>
-							</div>
-						</div>
-						<!-- Product Description -->
-						<div class="product-description">
-							<span>mango</span>
-							<a href="single-product-details.html">
-								<h6>PETITE Belted Jumper Dress</h6>
-							</a>
-							<p class="product-price">$80.00</p>
-
-							<!-- Hover Content -->
-							<div class="hover-content">
-								<!-- Add to Cart -->
-								<div class="add-to-cart-btn">
-									<a href="#" class="btn essence-btn">Add to Cart</a>
-								</div>
-							</div>
-						</div>
-					</div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="display: none;">prev</div><div class="owl-next" style="display: none;">next</div></div><div class="owl-dots" style="display: none;"></div></div></div>
-			</div>
-		</div>
-	</div>
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                      <!-- Add to Cart -->
+                      <div class="add-to-cart-btn">
+                        <a (click)="addcart(products[2])" class="btn essence-btn">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="owl-controls">
+            <div class="owl-nav">
+              <div class="owl-prev" style="display: none">prev</div>
+              <div class="owl-next" style="display: none">next</div>
+            </div>
+            <div class="owl-dots" style="display: none"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 

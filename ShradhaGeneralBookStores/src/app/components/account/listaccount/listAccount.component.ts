@@ -23,7 +23,8 @@ export class ListAccountComponent implements OnInit {
   first = 0;
   rows = 10;
   check: boolean = false;
-  selectedAccount!: Account[] | null;
+  selectedAccount!: AccountAPI2[] | null;
+  accountcurrent: AccountAPI2 = JSON.parse(sessionStorage.getItem('account')) as AccountAPI2;
   constructor(
     private _accountService: AccountService,
     private formbuilder: FormBuilder,
@@ -47,33 +48,69 @@ export class ListAccountComponent implements OnInit {
     })
   }
   deleted(id: number){
-    if (confirm('Are you sure you want to delete')) {
-      this._accountService.delete(id).then(
-        result =>{
-          this.ngOnInit();
-          alert('Deleted');
-        }
-      );
+    if(this.accountcurrent.id != id){
+      if (confirm('Are you sure you want to delete')) {
+        this._accountService.delete(id).then(
+          result =>{
+            this.ngOnInit();
+            alert('Deleted');
+          }
+        );
+      }
+    }else{
+      alert('Cannot delete oneself')
     }
-
   }
   deleteSelected() {
     console.log(this.selectedAccount);
     if (confirm('Are you sure you want to delete')) {
+      let a:number = 0;
+      let b:number = 0;
       for (let i = 0; i < this.selectedAccount.length; i++) {
-        this._accountService.delete(this.selectedAccount[i].id).then(result => {
-          if (result as boolean) {
-            this.check = true;
-            this.selectedAccount = [];
-            this.ngOnInit();
-          }
-          else {
-            alert('Cannot delete');
-          }
-        });
+        console.log(this.selectedAccount[i].roles)
+        if(this.checkdelete(this.selectedAccount[i].roles[0]))
+        {
+          this._accountService.delete(this.selectedAccount[i].id).then(result => {
+            if (result as boolean) {
+              this.check = true;
+            }
+          });
+          a+=1;
+        }else{
+          b+=1;
+        }
       }
-      if (this.check)
-        alert('Deleted');
+      if(a >=0 )
+      {
+        alert('Delete successfully: '+ a);
+      }
+
+      if(b >=0 ){
+        alert('Delete fail: '+ b);
+
+      }
+      this.selectedAccount = [];
+      this.ngOnInit();
     }
+  }
+
+  checkdelete(role:string):boolean {
+    if(this.accountcurrent.roles.includes("Super Admin")){
+      return true;
+    }
+    if(role == "Admin"){
+      return false;
+    }
+    return true;
+  }
+  redirect(account: AccountAPI2){
+    if(this.checkdelete(account.roles[0])){
+      this.router.navigate(['editaccount',{id: account.id}]);
+    }else if(this.accountcurrent.id == account.id){
+      this.router.navigate(['editaccount',{id: account.id}]);
+    }else{
+      alert('Insufficient privileges to edit account');
+    }
+
   }
 }

@@ -26,7 +26,11 @@ export class ProductForAuthorComponent implements OnInit {
   categories: Category[] = [];
   categoriesTitle: CategoryMenuParent[] = [];
   categoriesTitleSub: CategoryMenuSub[] = [];
+
   rangeValues: number[] = [0, 20];
+  lenghtProduct: number = 0;
+  pagenumber: number = 1;
+  pagenumbermax: number = 0;
   constructor(
     private _cartService: CartService,
     private _productService: ProductService,
@@ -34,7 +38,6 @@ export class ProductForAuthorComponent implements OnInit {
     private _categoryService: CategoryService,
     private _authorService: AuthorService,
     private sendDataCartService: SendDataCartService
-
   ) {}
   ngOnInit(): void {
     this.productshow = [];
@@ -45,7 +48,9 @@ export class ProductForAuthorComponent implements OnInit {
           .readforauthorforUser(c.get('id'))
           .then((result) => {
             this.products = result as ProductAPI4[];
-            this.productshow = this.products;
+            this.pagenumbermax = Math.ceil(this.products.length / 9);
+            this.lenghtProduct = this.products.length;
+            this.productshow = this.getData(this.pagenumber, this.products);
           });
 
         //get author
@@ -58,6 +63,9 @@ export class ProductForAuthorComponent implements OnInit {
         this._productService.readforuser().then(
           (result) => {
             this.products = result as ProductAPI4[];
+            this.pagenumbermax = Math.ceil(this.products.length / 9);
+            this.lenghtProduct = this.products.length;
+            this.productshow = this.getData(this.pagenumber, this.products);
           },
           (error) => {
             console.log(error);
@@ -95,19 +103,62 @@ export class ProductForAuthorComponent implements OnInit {
   //   this.reloadService.reloadComponentB();
   // }
   addcart(product: ProductAPI4) {
-    this.sendDataCartService.changeData(this._cartService.add(product) as Cart)
+    this.sendDataCartService.changeData(this._cartService.add(product) as Cart);
   }
 
   sortbyoder(evt: any) {
     let value = evt.target.value;
   }
   rangePrice() {
-    this.productshow = this.products.filter(p => p.cost >= this.rangeValues[0] &&  this.rangeValues[1]);
+    this.productshow = [];
+    this.pagenumber = 1;
+    let productS: ProductAPI4[] = this.products.filter(
+      (p) => p.cost >= this.rangeValues[0] && p.cost <= this.rangeValues[1]
+    );
+    this.pagenumbermax = Math.ceil(productS.length / 9);
+    this.lenghtProduct = productS.length;
+    this.productshow = this.getData(this.pagenumber, productS);
   }
   search(keyword: any) {
-
     let value = keyword.target.value;
     this.productshow = [];
-    this.productshow = this.products.filter(p=> p.name.includes(value));
+    this.pagenumber = 1;
+    let productS: ProductAPI4[] = this.products.filter((p) =>
+      p.name.includes(value)
+    );
+    this.pagenumbermax = Math.ceil(productS.length / 9);
+    this.lenghtProduct = productS.length;
+    this.productshow = this.getData(this.pagenumber, productS);
+  }
+
+  changepage() {
+    if (this.pagenumber <= 0 || this.pagenumber == null) {
+      this.pagenumber = 1;
+    } else if (this.pagenumber > this.pagenumbermax) {
+      this.pagenumber = this.pagenumbermax;
     }
+    this.productshow = this.getData(this.pagenumber, this.products);
+  }
+
+  getData(page: number, products: ProductAPI4[]): ProductAPI4[] {
+    const startIndex = (page - 1) * 9;
+    const endIndex = startIndex + 9;
+    return products.slice(startIndex, endIndex);
+  }
+
+  pluspage() {
+    this.pagenumber += 1;
+    if (this.pagenumber > this.pagenumbermax) {
+      this.pagenumber = this.pagenumbermax;
+    }
+    this.productshow = this.getData(this.pagenumber, this.products);
+  }
+
+  minuspage() {
+    this.pagenumber -= 1;
+    if (this.pagenumber <= 0) {
+      this.pagenumber = 1;
+    }
+    this.productshow = this.getData(this.pagenumber, this.products);
+  }
 }

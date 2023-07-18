@@ -28,6 +28,11 @@ export class ShopComponent implements OnInit {
   categoriesTitle: CategoryMenuParent[] = [];
   categoriesTitleSub: CategoryMenuSub[] = [];
   rangeValues: number[] = [0, 20];
+
+  lenghtProduct:number = 0;
+  pagenumber:number = 1;
+  pagenumbermax:number = 0;
+
   constructor(
     private reloadService: ReloadService,
     private _cartService: CartService,
@@ -36,16 +41,16 @@ export class ShopComponent implements OnInit {
     private _categoryService: CategoryService,
     private _authorService: AuthorService,
     private sendDataCartService: SendDataCartService,
-  ) {
-
-  }
+  ){}
   ngOnInit(): void {
     this.productShow = [];
     this.activevateRoute.paramMap.subscribe(c => {
       if (c.get('id') != "0") {
         this._productService.readforcategoryuser(c.get('id')).then(result => {
           this.products = result as ProductAPI4[];
-          this.productShow = this.products;
+          this.pagenumbermax = Math.ceil(this.products.length / 9);
+          this.lenghtProduct = this.products.length;
+          this.productShow = this.getData(this.pagenumber,this.products);
         },
           error => {
             console.log(error);
@@ -53,20 +58,14 @@ export class ShopComponent implements OnInit {
       } else {
         this._productService.readforuser().then(result => {
           this.products = result as ProductAPI4[];
-          this.productShow = this.products;
-          console.log(this.products);
+          this.pagenumbermax = Math.ceil(this.products.length / 9);
+          this.lenghtProduct = this.products.length;
+          this.productShow = this.getData(this.pagenumber,this.products);
         },
           error => {
             console.log(error);
           })
       }
-      this._authorService.read().then(result => {
-        this.authors = result as Author[];
-        console.log(this.authors);
-      },
-        error => {
-          console.log(this.authors);
-        })
     });
     let parent = 0;
     this._categoryService.read().then(result => {
@@ -91,32 +90,64 @@ export class ShopComponent implements OnInit {
   //   this.reloadService.reloadComponentB();
   // }
   addcart(product: ProductAPI4) {
-    this.sendDataCartService.changeData(this._cartService.add(product) as Cart)
+    this.sendDataCartService.changeData(this._cartService.add(product) as Cart);
   }
 
   sortbyoder(evt: any) {
     let value = evt.target.value;
-
     console.log(value);
-
   }
+
   rangePrice() {
-    this.activevateRoute.paramMap.subscribe(c => {
-      this._productService.readbyprice(this.rangeValues[0], this.rangeValues[1]).then(result => {
-        this.products = result as ProductAPI4[];
-      },
-        error => {
-          console.log(error);
-        })
-    });
+    this.productShow = [];
+    this.pagenumber = 1;
+    let productS:ProductAPI4[] = this.products.filter(p=> p.cost >=this.rangeValues[0] && p.cost <= this.rangeValues[1]);
+    this.pagenumbermax = Math.ceil(productS.length / 9);
+    this.lenghtProduct = productS.length;
+    this.productShow = this.getData(this.pagenumber,productS);
   }
-  cate_0() {
 
-  }
   search(keyword: any) {
-
     let value = keyword.target.value;
     this.productShow = [];
-    this.productShow = this.products.filter(p=> p.name.includes(value));
+    this.pagenumber = 1;
+    let productS:ProductAPI4[] = this.products.filter(p=> p.name.includes(value));
+    this.pagenumbermax = Math.ceil(productS.length / 9);
+    this.lenghtProduct = productS.length;
+    this.productShow = this.getData(this.pagenumber,productS);
+  }
+
+  changepage(){
+    if(this.pagenumber <= 0 || this.pagenumber == null){
+      this.pagenumber = 1;
+    }else if(this.pagenumber > this.pagenumbermax)
+    {
+      this.pagenumber = this.pagenumbermax;
     }
+    this.productShow = this.getData(this.pagenumber,this.products);
+  }
+
+  getData(page: number, products: ProductAPI4[]): ProductAPI4[] {
+    const startIndex = (page - 1) * 9;
+    const endIndex = startIndex + 9;
+    return products.slice(startIndex, endIndex);
+  }
+
+  pluspage(){
+    this.pagenumber+=1;
+    if(this.pagenumber > this.pagenumbermax)
+    {
+      this.pagenumber = this.pagenumbermax;
+    }
+    this.productShow = this.getData(this.pagenumber,this.products);
+  }
+
+  minuspage(){
+    this.pagenumber-=1;
+    if(this.pagenumber <=0 )
+    {
+      this.pagenumber = 1
+    }
+    this.productShow = this.getData(this.pagenumber,this.products);
+  }
 }

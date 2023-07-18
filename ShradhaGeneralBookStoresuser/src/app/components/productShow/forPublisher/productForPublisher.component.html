@@ -98,7 +98,7 @@
                         <!-- Total Products -->
                         <div class="total-products" *ngIf="products != null">
                           <p>
-                            <span>{{ productshow.length }}</span> products found
+                            <span>{{ lenghtProduct }}</span> products found
                           </p>
                         </div>
                         <!-- Sorting -->
@@ -161,21 +161,12 @@
                   </div>
                 </div>
                 <!-- Pagination -->
-                <nav aria-label="navigation">
+                <nav aria-label="navigation" style="margin-left: 30%;">
                   <ul class="pagination mt-50 mb-70">
-                    <li class="page-item">
-                      <a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">...</a></li>
-                    <li class="page-item"><a class="page-link" href="#">21</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="#"
-                        ><i class="fa fa-angle-right"></i
-                      ></a>
-                    </li>
+                      <li (click)="minuspage()" class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+                      <input type="number" [(ngModel)]="pagenumber" (change)="changepage()" style="text-align: center;border-color: #ebebeb;">&nbsp;&nbsp;&nbsp;&nbsp;
+                      <li (click)="pluspage()" class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                      <li class="page-item"><span class="page-link">{{pagenumber + " of " + pagenumbermax}}</span></li>
                   </ul>
                 </nav>
               </div>

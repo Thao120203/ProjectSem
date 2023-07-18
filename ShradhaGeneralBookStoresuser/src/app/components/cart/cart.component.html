@@ -34,6 +34,7 @@
                         type="number"
                         class="qty-text"
                         [(ngModel)]="item.quantity"
+                        (change)="change(item.id)"
                       />
                       <span class="qty-plus" (click)="plusquantity(item.id)"
                         ><i class="fa fa-plus" aria-hidden="true"></i
@@ -132,7 +133,7 @@
 
           <ul class="cart-total-chart">
             <li>
-              <span>Subtotal</span> <span>{{ total }}</span>
+              <span>Subtotal</span> <span>{{"$"+total }}</span>
             </li>
           </ul>
           <a (click)="checkout()" class="btn karl-checkout-btn">Proceed to checkout</a

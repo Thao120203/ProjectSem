@@ -95,6 +95,7 @@ import {  DisProductComponent } from './components/product/dislistproduct/disLis
 import { CardModule } from 'primeng/card';
 import { ListOrderComponent } from './components/order/listOrder/listOrder.component';
 import { EditOrderComponent } from './components/order/editOrder/editOrder.component';
+import { ListOrderByAccountIdComponent } from './components/order/listOrderByAccountId/listOrderByAccountId.component';
 
 
 @NgModule({
@@ -153,7 +154,8 @@ import { EditOrderComponent } from './components/order/editOrder/editOrder.compo
     DisAccountComponent,
     DisProductComponent,
     ListOrderComponent,
-    EditOrderComponent
+    EditOrderComponent,
+    ListOrderByAccountIdComponent
   ],
 
   imports: [
