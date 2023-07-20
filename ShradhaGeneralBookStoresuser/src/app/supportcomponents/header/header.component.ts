@@ -101,7 +101,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(){
-    sessionStorage.clear();
+    sessionStorage.removeItem('account');
     localStorage.clear();
     this.sendService.changeData(null);
     this.router.navigate(['login']);

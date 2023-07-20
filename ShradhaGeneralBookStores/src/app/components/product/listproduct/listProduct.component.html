@@ -40,7 +40,7 @@
                 field="name"></p-columnFilter></th>
               <th scope="col" pSortableColumn="price">Price<p-sortIcon field="price"></p-sortIcon></th>
               <th scope="col" pSortableColumn="quantity">Quantity<p-sortIcon field="quantity"></p-sortIcon></th>
-              <th scope="col" pSortableColumn="cost">Cost<p-sortIcon field="cost"></p-sortIcon></th>         
+              <th scope="col" pSortableColumn="cost">Cost<p-sortIcon field="cost"></p-sortIcon></th>
               <th scope="col">Category</th>
               <th scope="col">Author</th>
               <th scope="col">Publisher</th>
@@ -57,7 +57,7 @@
               </td>
               <td scope="row">{{product.id}}</td>
               <td><img width="50%" height="50%" src="{{product.photo}}"></td>
-              <td>{{product.name}}</td>
+              <td><a href="{{'http://localhost:4400/product;id='+product.id}}">{{product.name}}</a></td>
               <td>{{product.price}}</td>
               <td>{{product.quantity}}</td>
               <td>{{product.cost}}</td>

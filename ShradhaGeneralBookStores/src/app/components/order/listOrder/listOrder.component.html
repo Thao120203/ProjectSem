@@ -49,7 +49,7 @@
                 <p-tableCheckbox [value]="orders"></p-tableCheckbox>
               </td>
               <th scope="row">{{orders.id}}</th>
-              <td>{{orders.address}}</td>
+              <td><a href="{{'http://localhost:4400/historycart;id='+orders.id}}">{{orders.address}}</a> </td>
               <td>{{orders.totalPrice}}</td>
               <td>{{orders.statusPayment}}</td>
               <td>{{orders.createdAt}}</td>

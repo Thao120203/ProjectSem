@@ -69,7 +69,7 @@ export class AddAccountComponent implements OnInit{
           if(result as boolean){
             // alert("THanhf cong");
             this.utils.updateToast('Successfully Added')
-            this.router.navigate(['listProduct']);
+            this.router.navigate(['listaccount']);
           }
         });
       }

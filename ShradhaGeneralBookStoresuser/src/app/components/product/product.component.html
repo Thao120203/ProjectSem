@@ -365,7 +365,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="section-heading text-center">
-					<h2>Similar Products</h2>
+					<h2>Hot Products</h2>
 				</div>
 			</div>
 		</div>
@@ -381,7 +381,7 @@
                 transition: all 1s ease 0s;
                 width: 3420px;
               ">
-              <div class="owl-item cloned" style="width: 255px; margin-right: 30px">
+              <div class="owl-item cloned" style="width: 255px; margin-right: 30px" *ngIf="product.photos != null">
                 <div class="single-product-wrapper">
                   <!-- Product Image -->
                   <div class="product-img">

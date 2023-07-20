@@ -20,7 +20,7 @@ export class CartsComponent implements OnInit {
     private _sendDataCartService: SendDataCartService,
     private router: Router,
     private _productService: ProductService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     if (JSON.parse(sessionStorage.getItem('cart')) as Cart) {
@@ -44,7 +44,6 @@ export class CartsComponent implements OnInit {
         this.total +=
           this.cart.listItemCart[i].quantity * this.cart.listItemCart[i].cost;
       }
-
     } else if (a.quantity <= 0) {
       this.cartService.deleted(id);
       this.cart = JSON.parse(sessionStorage.getItem('cart')) as Cart;
@@ -78,9 +77,14 @@ export class CartsComponent implements OnInit {
         this.cart = JSON.parse(sessionStorage.getItem('cart')) as Cart;
         this.total = 0;
         for (let i = 0; i < this.cart.listItemCart.length; i++) {
-          this.total +=
-            this.cart.listItemCart[i].quantity * this.cart.listItemCart[i].cost;
+          this.total += this.cart.listItemCart[i].quantity * this.cart.listItemCart[i].cost;
+        window.location.reload();
+
         }
+        this._sendDataCartService.changeData(this.cart);
+        this.ngOnInit();
+      } else {
+        this.cartService.change(id, 1);
         this.ngOnInit();
       }
     }
@@ -98,6 +102,7 @@ export class CartsComponent implements OnInit {
   clearcart() {
     this.cartService.clear();
     this._sendDataCartService.changeData(null);
+    this.total = 0;
     this.ngOnInit();
   }
 

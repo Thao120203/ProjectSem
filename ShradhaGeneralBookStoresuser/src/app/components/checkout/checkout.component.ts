@@ -44,6 +44,9 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.account = JSON.parse(sessionStorage.getItem('account')) as AccountAPI2;
+    if(this.account == null){
+      this.router.navigate(['login']);
+    }
     this.cart = JSON.parse(sessionStorage.getItem('cart')) as Cart;
     this.addressProfileService.read().then(
       result => {
@@ -99,6 +102,7 @@ export class CheckoutComponent implements OnInit {
           if(this.paymentmethod == 1){
             this._cartService.clear();
             this._sendatacart.changeData(null);
+            alert('Order successfully completed');
             this.router.navigate(['']);
           }else{
             this._cartService.clear();

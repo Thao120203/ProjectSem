@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ICreateOrderRequest, IPayPalConfig, ITransactionItem } from 'ngx-paypal';
 import { OrderService } from 'src/app/Service/order.service';
 import { OrderServiceDetail } from 'src/app/Service/orderdetail.service';
+import { AccountAPI2 } from 'src/app/modelapi/accountapi2.model';
 import { OrderApi2 } from 'src/app/modelapi/orderapi2.model';
 import { OrderDetailAPI } from 'src/app/modelapi/orderdetailapi.model';
 
@@ -25,6 +26,10 @@ export class CheckOutPayComponent implements OnInit {
     private _orderDetailService: OrderServiceDetail
   ) { }
   ngOnInit(): void {
+    let account = JSON.parse(sessionStorage.getItem('account')) as AccountAPI2;
+    if(account == null){
+      this.router.navigate(['login']);
+    }
     this.activevateRoute.paramMap.subscribe((c) => {
       this._orderService.getByOrderId(parseInt(c.get('id'))).then(
         result => {

@@ -1,7 +1,7 @@
 import { AddressProfileService } from 'src/app/Service/addressprofile.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AddressService } from 'src/app/Service/address.service';
 import { AccountAPI2 } from 'src/app/modelapi/accountapi2.model';
 import { Address } from 'src/app/modelapi/address.model';
@@ -22,7 +22,8 @@ export class AddressComponent implements OnInit {
     private addressService: AddressService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private _addressProfileService:AddressProfileService
+    private _addressProfileService:AddressProfileService,
+    private activevateRoute: ActivatedRoute,
   ){
 
   }
@@ -57,7 +58,16 @@ export class AddressComponent implements OnInit {
       result=>{
         if(result as boolean){
           alert("Add Success!");
-          this.router.navigate(['/profile']);
+          this.activevateRoute.paramMap.subscribe(
+            param=>{
+              if(param.get('checkout') != null){
+                this.router.navigate(['checkout']);
+              }else{
+                this.router.navigate(['profile']);
+
+              }
+            }
+          )
         }
       }
     )

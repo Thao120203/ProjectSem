@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AccountService } from 'src/app/Service/account.service';
+import { AccountAPI2 } from 'src/app/modelapi/accountapi2.model';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,10 @@ export class SendEmailComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
+    let account = JSON.parse(sessionStorage.getItem('account')) as AccountAPI2;
+    if(account != null){
+      this.router.navigate(['first']);
+    }
     this.accountFormGroup = this.formbuilder.group({
       email: [''],
     });

@@ -18,7 +18,7 @@
                     <li *ngIf="order != null"><span>Shipping</span> <span>${{order.totalPrice - total*10/100 - total}}</span></li>
                     <li *ngIf="total != null"><span>VAT</span> <span>${{total*10/100}}</span></li>
                     <li *ngIf="order != null"><span>Total</span> <span>${{order.totalPrice}}</span></li>
-                    <li *ngIf="order != null"><span>Order Status</span> <span>{{order.statusPayment}} <ng-container *ngIf="order.statusId != 15"><a [routerLink]="['/checkoutpay',{id: order.id}]">Paynow</a></ng-container></span></li>
+                    <li *ngIf="order != null"><span>Order Status</span> <span>{{order.statusPayment}} <ng-container *ngIf="order.statusId == 15"><a [routerLink]="['/checkoutpay',{id: order.id}]">Paynow</a></ng-container></span></li>
 
                 </ul>
                 </div>

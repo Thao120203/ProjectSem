@@ -89,7 +89,7 @@
                         <label for="phone_number">Year of Birth:</label>
                         &nbsp;
                         <b>
-                          <span>{{ author.yearOfBirth }}</span>
+                          <span>{{ (author.yearOfBirth == "0")? 'Unknown' : author.yearOfBirth  }}</span>
                         </b>
                       </div>
                       <div class="col-12 mb-3">

@@ -20,7 +20,8 @@
           >
             <ng-template pTemplate="header">
               <tr>
-                <td>Name</td>
+                <td>Name<p-columnFilter type="text"
+                  field="name"></p-columnFilter></td>
                 <td>Born</td>
                 <td>Number</td>
               </tr>
@@ -32,7 +33,7 @@
                     author.name
                   }}</a>
                 </td>
-                <td>{{ author.yearOfBirth }}</td>
+                <td>{{ (author.yearOfBirth == '0')? 'Unknwon': author.yearOfBirth  }}</td>
                 <td>{{ countProduct(author.name) }}</td>
               </tr>
             </ng-template>

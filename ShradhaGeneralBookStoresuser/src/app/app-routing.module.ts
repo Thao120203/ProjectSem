@@ -27,6 +27,7 @@ const routes: Routes =[
   {path : 'product',component: ProductComponent},
   {path : 'cart',component:CartsComponent},
   {path : 'categories',component:ShopComponent},
+  
   {path : 'authors',component:ProductForAuthorComponent},
   {path : 'publishers',component:ProductForPublisherComponent},
   {path : 'listpublisher',component:ListPublisherComponent},

@@ -21,7 +21,10 @@ export class LoginComponent implements OnInit{
     private sendService: SendService
   ){}
   ngOnInit(): void {
-
+    let account = JSON.parse(sessionStorage.getItem('account')) as AccountAPI2;
+    if(account != null){
+      this._route.navigate(['first']);
+    }
     this.loginFormGroup = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
